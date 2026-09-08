@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 20: Serverless Architectures — Step Functions &amp; API Gateway — AWS SA Pro Curriculum</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand-group">
+    <a href="../index.html" class="brand-logo">AWS SA PRO</a>
+    <div class="brand-title">Day 20 of 70 &middot; Week 3</div>
+  </div>
+  <button class="mobile-nav-toggle" onclick="toggleTopLinks()">Menu</button>
+  <div class="top-links">
+    <a href="../index.html">&larr; Full Curriculum</a>
+    <a href="https://github.com/consultantstanleymn/aws-sa-pro-curriculum" target="_blank">GitHub &rarr;</a>
+  </div>
+</header>
+<div class="app-container">
+  <button class="sidebar-toggle btn btn-outline" onclick="toggleSidebar()" style="margin:12px 16px;">Browse all 70 days</button>
+  <aside class="sidebar" id="sidebar">
+    <div class="search-box"><input type="text" id="navSearch" class="search-input" placeholder="Search days..." onkeyup="filterNav()"></div>
+    <div class="nav-section">
+      <div class="nav-section-title">All Days</div>
+      <a href="day-001.html" class="nav-link" data-day="1">Day 1: Multi-Account Architecture &amp; AWS Organizations</a>
+      <a href="day-002.html" class="nav-link" data-day="2">Day 2: Service Control Policy (SCP) Mechanics</a>
+      <a href="day-003.html" class="nav-link" data-day="3">Day 3: AWS Control Tower &amp; Account Factory</a>
+      <a href="day-004.html" class="nav-link" data-day="4">Day 4: IAM Identity Center (AWS SSO) &amp; Federation</a>
+      <a href="day-005.html" class="nav-link" data-day="5">Day 5: IAM Permission Boundaries &amp; STS</a>
+      <a href="day-006.html" class="nav-link" data-day="6">Day 6: Resource Access Manager (RAM) &amp; VPC Sharing</a>
+      <a href="day-007.html" class="nav-link" data-day="7">Day 7: Week 1 Synthesis &amp; Multi-Account Drill</a>
+      <a href="day-008.html" class="nav-link" data-day="8">Day 8: Transit Gateway (TGW) Core Routing</a>
+      <a href="day-009.html" class="nav-link" data-day="9">Day 9: Transit Gateway Peering &amp; Multi-Region</a>
+      <a href="day-010.html" class="nav-link" data-day="10">Day 10: AWS Network Firewall &amp; Centralized Egress</a>
+      <a href="day-011.html" class="nav-link" data-day="11">Day 11: Direct Connect (DX) &amp; DX Gateway</a>
+      <a href="day-012.html" class="nav-link" data-day="12">Day 12: AWS Route 53 Resolver (Hybrid DNS)</a>
+      <a href="day-013.html" class="nav-link" data-day="13">Day 13: AWS PrivateLink &amp; VPC Peering Comparison</a>
+      <a href="day-014.html" class="nav-link" data-day="14">Day 14: Week 2 Synthesis &amp; Networking Lab Exam</a>
+      <a href="day-015.html" class="nav-link" data-day="15">Day 15: Amazon ECS Fargate Architecture &amp; Task Definitions</a>
+      <a href="day-016.html" class="nav-link" data-day="16">Day 16: Amazon EKS Architecture &amp; Managed Node Groups vs Fargate</a>
+      <a href="day-017.html" class="nav-link" data-day="17">Day 17: Auto Scaling Groups — Lifecycle Hooks &amp; Warm Pools</a>
+      <a href="day-018.html" class="nav-link" data-day="18">Day 18: Application Load Balancer — Advanced Routing &amp; Target Groups</a>
+      <a href="day-019.html" class="nav-link" data-day="19">Day 19: AWS Lambda Advanced — Concurrency, VPC Networking &amp; Event Source Mapping</a>
+      <a href="day-020.html" class="nav-link" data-day="20">Day 20: Serverless Architectures — Step Functions &amp; API Gateway</a>
+      <a href="day-021.html" class="nav-link" data-day="21">Day 21: Week Synthesis — Compute Decision Matrix &amp; Scenario Drills</a>
+      <a href="day-022.html" class="nav-link" data-day="22">Day 22: Amazon Aurora Architecture &amp; Aurora Global Database</a>
+      <a href="day-023.html" class="nav-link" data-day="23">Day 23: Amazon RDS Multi-AZ vs Read Replicas &amp; Blue/Green Deployments</a>
+      <a href="day-024.html" class="nav-link" data-day="24">Day 24: Amazon DynamoDB Deep Dive — Partitioning &amp; Capacity Modes</a>
+      <a href="day-025.html" class="nav-link" data-day="25">Day 25: DynamoDB Global Tables &amp; DAX Caching</a>
+      <a href="day-026.html" class="nav-link" data-day="26">Day 26: Amazon S3 Storage Classes, Lifecycle &amp; Replication</a>
+      <a href="day-027.html" class="nav-link" data-day="27">Day 27: Amazon ElastiCache — Redis vs Memcached Architectures</a>
+      <a href="day-028.html" class="nav-link" data-day="28">Day 28: Week Synthesis — Database Selection Matrix &amp; Scenario Drills</a>
+      <a href="day-029.html" class="nav-link" data-day="29">Day 29: CloudWatch Metrics, Alarms &amp; Composite Alarms</a>
+      <a href="day-030.html" class="nav-link" data-day="30">Day 30: CloudWatch Synthetics &amp; Canaries for SLO Monitoring</a>
+      <a href="day-031.html" class="nav-link" data-day="31">Day 31: AWS X-Ray Distributed Tracing</a>
+      <a href="day-032.html" class="nav-link" data-day="32">Day 32: Amazon CloudWatch Logs Insights &amp; Centralized Logging</a>
+      <a href="day-033.html" class="nav-link" data-day="33">Day 33: AWS Fault Injection Service (FIS) — Chaos Engineering Fundamentals</a>
+      <a href="day-034.html" class="nav-link" data-day="34">Day 34: Designing Game Days &amp; Chaos Experiments</a>
+      <a href="day-035.html" class="nav-link" data-day="35">Day 35: Multi-Region Active-Active Architectures</a>
+      <a href="day-036.html" class="nav-link" data-day="36">Day 36: Multi-Region Active-Passive &amp; Pilot Light Patterns</a>
+      <a href="day-037.html" class="nav-link" data-day="37">Day 37: Route 53 Application Recovery Controller (ARC)</a>
+      <a href="day-038.html" class="nav-link" data-day="38">Day 38: Route 53 Routing Policies &amp; Health Checks</a>
+      <a href="day-039.html" class="nav-link" data-day="39">Day 39: RTO/RPO Design Patterns &amp; Backup Strategies (AWS Backup)</a>
+      <a href="day-040.html" class="nav-link" data-day="40">Day 40: Well-Architected Reliability Pillar Deep Dive</a>
+      <a href="day-041.html" class="nav-link" data-day="41">Day 41: Well-Architected Operational Excellence Pillar</a>
+      <a href="day-042.html" class="nav-link" data-day="42">Day 42: Week Synthesis — SRE &amp; DR Scenario Drills</a>
+      <a href="day-043.html" class="nav-link" data-day="43">Day 43: Migration Strategy Framework — The 7 Rs &amp; Migration Hub</a>
+      <a href="day-044.html" class="nav-link" data-day="44">Day 44: AWS Application Discovery Service — Assessment &amp; Portfolio Analysis</a>
+      <a href="day-045.html" class="nav-link" data-day="45">Day 45: AWS Application Migration Service (MGN) — Lift-and-Shift Rehost</a>
+      <a href="day-046.html" class="nav-link" data-day="46">Day 46: AWS Schema Conversion Tool (SCT) — Heterogeneous Schema Conversion</a>
+      <a href="day-047.html" class="nav-link" data-day="47">Day 47: AWS DataSync — Hybrid File &amp; Object Transfer</a>
+      <a href="day-048.html" class="nav-link" data-day="48">Day 48: AWS Storage Gateway — File, Volume &amp; Tape Gateways</a>
+      <a href="day-049.html" class="nav-link" data-day="49">Day 49: AWS Snow Family — Snowball Edge, Snowcone &amp; Snowmobile</a>
+      <a href="day-050.html" class="nav-link" data-day="50">Day 50: Hybrid Cloud Compute — Outposts, Local Zones &amp; Wavelength</a>
+      <a href="day-051.html" class="nav-link" data-day="51">Day 51: VMware Cloud on AWS — Relocate Strategy</a>
+      <a href="day-052.html" class="nav-link" data-day="52">Day 52: Direct Connect Capacity Planning for Large-Scale Migration</a>
+      <a href="day-053.html" class="nav-link" data-day="53">Day 53: Cost Optimization — Savings Plans, RIs &amp; Spot Fleet Strategy</a>
+      <a href="day-054.html" class="nav-link" data-day="54">Day 54: AWS Compute Optimizer, Cost Explorer &amp; Trusted Advisor</a>
+      <a href="day-055.html" class="nav-link" data-day="55">Day 55: FinOps on AWS — Tagging, Budgets &amp; Cost Allocation Reports</a>
+      <a href="day-056.html" class="nav-link" data-day="56">Day 56: AWS Database Migration Service (DMS) — Homogeneous &amp; Heterogeneous Migration with CDC</a>
+      <a href="day-057.html" class="nav-link" data-day="57">Day 57: Full-Length Mock Exam 1 — 75 Questions Timed</a>
+      <a href="day-058.html" class="nav-link" data-day="58">Day 58: Mock Exam 1 Distractor Analysis &amp; Weak Domain Review</a>
+      <a href="day-059.html" class="nav-link" data-day="59">Day 59: Deep Review — Domain 1 Weak Areas (Org/Governance/Networking)</a>
+      <a href="day-060.html" class="nav-link" data-day="60">Day 60: Deep Review — Domain 2 Weak Areas (Resilient Architectures)</a>
+      <a href="day-061.html" class="nav-link" data-day="61">Day 61: Full-Length Mock Exam 2 — 75 Questions Timed</a>
+      <a href="day-062.html" class="nav-link" data-day="62">Day 62: Mock Exam 2 Distractor Analysis &amp; Weak Domain Review</a>
+      <a href="day-063.html" class="nav-link" data-day="63">Day 63: Deep Review — Domain 3 Weak Areas (Migration &amp; Modernization)</a>
+      <a href="day-064.html" class="nav-link" data-day="64">Day 64: Deep Review — Domain 4 Weak Areas (Cost Control)</a>
+      <a href="day-065.html" class="nav-link" data-day="65">Day 65: Full-Length Mock Exam 3 — 75 Questions Timed</a>
+      <a href="day-066.html" class="nav-link" data-day="66">Day 66: Mock Exam 3 Distractor Analysis &amp; Timing/Pacing Strategy</a>
+      <a href="day-067.html" class="nav-link" data-day="67">Day 67: Full-Length Mock Exam 4 — 75 Questions Timed</a>
+      <a href="day-068.html" class="nav-link" data-day="68">Day 68: Mock Exam 4 Distractor Analysis &amp; Flag-and-Review Technique</a>
+      <a href="day-069.html" class="nav-link" data-day="69">Day 69: Full-Length Mock Exam 5 — 75 Questions Timed</a>
+      <a href="day-070.html" class="nav-link" data-day="70">Day 70: Final Review — Exam Day Logistics, Pearson VUE Checklist &amp; Confidence Drills</a>
+    </div>
+  </aside>
+  <main class="main-viewport">
+    <div class="content-wrapper">
+      <div class="day-meta">
+        <span class="pill pill-orange">Day 20 / 70</span>
+        <span class="pill pill-blue">Week 3 of 14</span>
+        <span class="pill pill-green">Phase 2: Compute, Containers &amp; Global Databases</span>
+      </div>
+      <h1 class="hero-title">Serverless Architectures — Step Functions &amp; API Gateway</h1>
+      <div class="services-grid">
+        <span class="service-tag">Step Functions</span>
+        <span class="service-tag">API Gateway</span>
+        <span class="service-tag">EventBridge</span>
+      </div>
+      <div id="tracker"></div>
+      <section class="doc-section">
+        <h2 class="section-heading">Today's Concept</h2>
+        <div class="card card-accent">
+          <p>Step Functions orchestrates multi-step workflows (Lambda, ECS tasks, human approval waits) with built-in retry/catch and Standard (exactly-once, long-running, auditable) vs Express (high-throughput, at-least-once, cheaper) workflow types. API Gateway fronts these with REST/HTTP APIs, request validation, and native service integrations that bypass Lambda entirely for simple pass-through.</p>
+        </div>
+        <h3 class="sub-heading">Hands-on Lab / Practical Action (45 min)</h3>
+        <div class="card">
+          <p>Design a Step Functions Standard workflow with a human-approval wait state and automatic retry/catch on a downstream Lambda failure.</p>
+        </div>
+      </section>
+      <section class="doc-section">
+        <h2 class="section-heading">Scenario Question Drills (20 min)</h2>
+        
+      <div class="scenario-card">
+        <p class="scenario-question"><strong>Q1.</strong> A high-volume IoT pipeline needs to run millions of short workflow executions per day as cheaply as possible, and can tolerate at-least-once execution. Which Step Functions type fits?</p>
+        <div class="scenario-options" id="opts-d20q0">
+            <div class="scenario-option">A. Standard Workflows</div>
+            <div class="scenario-option">B. Express Workflows</div>
+            <div class="scenario-option">C. Both are identical in cost</div>
+            <div class="scenario-option">D. Neither — use SQS only</div>
+        </div>
+        <button class="scenario-reveal-btn" onclick="revealAnswer('d20q0', 1)">Reveal Answer</button>
+        <div class="scenario-explanation" id="exp-d20q0"><strong>Correct answer: B.</strong> Express Workflows are priced per execution/duration for high-volume, short-duration workloads and provide at-least-once semantics, versus Standard's exactly-once but costlier per-transition pricing.</div>
+      </div>
+      </section>
+      <div class="day-nav">
+        <a href="day-019.html">&larr; Day 19: AWS Lambda Advanced — Concurrency, VPC Networking &amp; Event Source Mapping</a>
+        <button class="btn btn-green" onclick="markComplete(20, 'day-021.html')">Mark Day 20 Complete &rarr;</button>
+        <a href="day-021.html">Day 21: Week Synthesis — Compute Decision Matrix &amp; Scenario Drills &rarr;</a>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="../assets/app.js"></script>
+<script>renderTracker('tracker', 20);</script>
+</body>
+</html>
