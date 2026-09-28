@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316">
+        <animate attributeName="stop-color"
+          values="#f97316;#60a5fa;#a78bfa;#34d399;#f97316"
+          dur="6s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="50%" stop-color="#a78bfa">
+        <animate attributeName="stop-color"
+          values="#a78bfa;#34d399;#f97316;#60a5fa;#a78bfa"
+          dur="6s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#34d399">
+        <animate attributeName="stop-color"
+          values="#34d399;#f97316;#60a5fa;#a78bfa;#34d399"
+          dur="6s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="64" height="64" rx="16" fill="#0a0a0b" />
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#g)" opacity="0.94">
+    <animateTransform attributeName="transform" type="rotate"
+      values="0 32 32;360 32 32" dur="14s" repeatCount="indefinite" />
+  </rect>
+
+  <text x="32" y="45" font-family="'Space Grotesk', Arial, sans-serif" font-size="34"
+        font-weight="700" fill="#0a0a0b" text-anchor="middle" filter="url(#glow)">S</text>
+</svg>
