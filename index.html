@@ -335,9 +335,99 @@
     color: var(--muted-fg); border: 1px solid var(--border); border-radius: 999px; padding: 4px 10px;
   }
 
-  /* ---- Live work cards ---- */
-  .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-3); }
-  @media (max-width: 900px) { .work-grid { grid-template-columns: 1fr; } }
+  /* ---- Study Guides side dock ---- */
+  .study-dock {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    z-index: 15;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: color-mix(in srgb, var(--bg-raised) 90%, transparent);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--border);
+    border-right: none;
+    border-radius: 16px 0 0 16px;
+    padding: var(--space-2) var(--space-1) var(--space-2) var(--space-2);
+    box-shadow: -16px 14px 44px -18px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transform: translateY(-50%) translateX(46px);
+    transition: opacity 700ms var(--ease) 300ms, transform 700ms var(--ease) 300ms, border-color 200ms var(--ease);
+  }
+  .study-dock.is-visible { opacity: 1; transform: translateY(-50%) translateX(0); }
+
+  .study-dock-label {
+    font-family: 'Space Grotesk', sans-serif; font-size: 0.66rem; font-weight: 600; color: var(--muted-fg);
+    text-transform: uppercase; letter-spacing: 0.1em; padding: 2px 10px 6px;
+  }
+
+  .study-link {
+    display: flex; align-items: center; gap: 10px;
+    padding: 9px 12px; border-radius: 10px; text-decoration: none; color: var(--fg);
+    transition: background 200ms var(--ease), transform 200ms var(--ease);
+  }
+  .study-link:hover, .study-link:focus-visible { background: color-mix(in srgb, var(--accent) 14%, transparent); transform: translateX(-4px); }
+  .study-link .dot {
+    width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex-shrink: 0;
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 60%, transparent);
+    animation: dockPulse 2.4s ease-in-out infinite;
+  }
+  .study-link .title { display: block; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.85rem; white-space: nowrap; }
+  .study-link .sub { display: block; font-size: 0.7rem; color: var(--muted-fg); white-space: nowrap; }
+  @keyframes dockPulse {
+    0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 55%, transparent); }
+    50% { box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 0%, transparent); }
+  }
+
+  @media (max-width: 900px) {
+    .study-dock {
+      position: static; margin: 0 var(--space-3) var(--space-5); transform: none !important; opacity: 1 !important;
+      flex-direction: row; align-items: center; border-radius: 14px; border-right: 1px solid var(--border);
+      box-shadow: none; overflow-x: auto; gap: 2px;
+    }
+    .study-dock-label { display: none; }
+    .study-link { flex-shrink: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .study-dock { transition: opacity 300ms; }
+    .study-link .dot { animation: none; }
+  }
+
+  /* ---- Ambient sitewide background motion ---- */
+  .bg-ambient { position: fixed; inset: 0; z-index: -20; overflow: hidden; pointer-events: none; }
+  .bg-ambient span {
+    position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.16;
+  }
+  .bg-ambient span:nth-child(1) { width: 480px; height: 480px; top: 8%; left: -8%; background: radial-gradient(circle, var(--accent), transparent 70%); animation: ambientA 34s ease-in-out infinite; }
+  .bg-ambient span:nth-child(2) { width: 420px; height: 420px; top: 55%; right: -10%; background: radial-gradient(circle, #a78bfa, transparent 70%); animation: ambientB 40s ease-in-out infinite; }
+  .bg-ambient span:nth-child(3) { width: 360px; height: 360px; bottom: -8%; left: 30%; background: radial-gradient(circle, #34d399, transparent 70%); animation: ambientC 46s ease-in-out infinite; }
+  @keyframes ambientA { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(6%, 8%); } }
+  @keyframes ambientB { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-7%, -5%); } }
+  @keyframes ambientC { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(4%, -6%) scale(1.1); } }
+  @media (prefers-reduced-motion: reduce) { .bg-ambient { display: none; } }
+
+  /* ---- Staggered card reveal within .reveal sections ---- */
+  .reveal .project-card, .reveal .timeline-item, .reveal .skill-group {
+    opacity: 0; transform: translateY(14px);
+    transition: opacity 550ms var(--ease), transform 550ms var(--ease);
+  }
+  .reveal.is-visible .project-card, .reveal.is-visible .timeline-item, .reveal.is-visible .skill-group { opacity: 1; transform: none; }
+  .reveal.is-visible .project-card:nth-child(1) { transition-delay: 40ms; }
+  .reveal.is-visible .project-card:nth-child(2) { transition-delay: 90ms; }
+  .reveal.is-visible .project-card:nth-child(3) { transition-delay: 140ms; }
+  .reveal.is-visible .project-card:nth-child(4) { transition-delay: 190ms; }
+  .reveal.is-visible .project-card:nth-child(5) { transition-delay: 240ms; }
+  .reveal.is-visible .project-card:nth-child(6) { transition-delay: 290ms; }
+  .reveal.is-visible .project-card:nth-child(7) { transition-delay: 340ms; }
+  .reveal.is-visible .project-card:nth-child(8) { transition-delay: 390ms; }
+  .reveal.is-visible .project-card:nth-child(9) { transition-delay: 440ms; }
+  .reveal.is-visible .project-card:nth-child(10) { transition-delay: 490ms; }
+  .reveal.is-visible .timeline-item:nth-child(1) { transition-delay: 40ms; }
+  .reveal.is-visible .timeline-item:nth-child(2) { transition-delay: 110ms; }
+  .reveal.is-visible .timeline-item:nth-child(3) { transition-delay: 180ms; }
+  .reveal.is-visible .timeline-item:nth-child(4) { transition-delay: 250ms; }
 
   .card {
     display: grid; grid-template-columns: 1fr auto; align-items: center; gap: var(--space-3);
@@ -382,13 +472,14 @@
 </head>
 <body>
 
+  <div class="bg-ambient" aria-hidden="true"><span></span><span></span><span></span></div>
+
   <header id="siteHeader">
     <a class="mark" href="#top">STANLEY N.</a>
     <nav class="primary-nav" aria-label="Section navigation">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
-      <a href="#work">Live Work</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -568,36 +659,23 @@
       </div>
     </section>
 
-    <section id="work" class="container section reveal">
-      <div class="section-head">
-        <div>
-          <p class="section-label">Live now</p>
-          <h2 class="section-title">Currently building</h2>
-        </div>
-      </div>
-      <div class="work-grid">
-        <a class="card" href="/aws-sa-pro-curriculum/">
-          <div>
-            <span class="card-tag">Study Portal</span>
-            <p class="card-title">AWS Solutions Architect Professional</p>
-            <p class="card-desc">A 14-week, day-by-day SAP-C02 curriculum with hands-on labs and scenario questions — built to take someone from zero to exam-ready.</p>
-          </div>
-          <span class="card-arrow" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
-          </span>
-        </a>
-        <a class="card" href="/lsat-170-curriculum/">
-          <div>
-            <span class="card-tag">Study Portal</span>
-            <p class="card-title">LSAT 170 Curriculum</p>
-            <p class="card-desc">A 28-week, day-by-day LSAT prep plan — Logical Reasoning and Reading Comprehension technique, full timed PrepTest cycles, and a trap-answer library, built for a working professional heading toward law school.</p>
-          </div>
-          <span class="card-arrow" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
-          </span>
-        </a>
-      </div>
-    </section>
+    <aside class="study-dock" id="studyDock" aria-label="Study guides">
+      <p class="study-dock-label">Study Guides</p>
+      <a class="study-link" href="/aws-sa-pro-curriculum/">
+        <span class="dot" aria-hidden="true"></span>
+        <span>
+          <span class="title">AWS SA Pro</span>
+          <span class="sub">14-week SAP-C02 curriculum</span>
+        </span>
+      </a>
+      <a class="study-link" href="/lsat-170-curriculum/">
+        <span class="dot" aria-hidden="true"></span>
+        <span>
+          <span class="title">LSAT 170</span>
+          <span class="sub">28-week prep curriculum</span>
+        </span>
+      </a>
+    </aside>
 
     <section id="skills" class="container section reveal">
       <div class="section-head">
@@ -688,6 +766,13 @@
     } else {
       document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
     }
+
+    // ---- Study Guides side dock: fade/slide in shortly after load ----
+    (function () {
+      var dock = document.getElementById('studyDock');
+      if (!dock) return;
+      window.setTimeout(function () { dock.classList.add('is-visible'); }, 500);
+    })();
 
     // ---- Hero ASCII-portrait background: load + subtle 3D mouse-parallax tilt ----
     (function () {
