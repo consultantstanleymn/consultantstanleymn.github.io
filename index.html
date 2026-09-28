@@ -256,9 +256,9 @@
       </div>
       <div class="about-grid">
         <div>
-          <p>I'm a Software Engineer at Mass Technologies, where I build and maintain backend services for healthcare operations software — schema design, REST APIs, and data-integrity work for systems that clinical and administrative teams depend on every day.</p>
-          <p>Before that, I spent two years as a graduate researcher studying how misinformation about transgender and nonbinary communities spreads on TikTok, building a pipeline that processed over a million videos with GPU-accelerated video analysis, OCR, and topic modeling. I've also built real-time data pipelines on AWS, and through August 2026 taught machine learning as adjunct faculty.</p>
-          <p>I'm an AWS Certified Solutions Architect, and outside of work I like fine-tuning small language models on niche datasets just to see what happens.</p>
+          <p>I'm a software engineer at Mass Technologies, working across a multi-module healthcare operations platform — schema design, REST APIs, AWS infrastructure, and the data-integrity work that keeps a growing suite of clinical and administrative tools actually correct.</p>
+          <p>Before that, I spent two years as a graduate researcher studying how misinformation about transgender and nonbinary communities spreads on TikTok, building a pipeline that processed over a million videos with GPU-accelerated video analysis, OCR, and topic modeling. I've also built real-time data pipelines on AWS, and taught machine learning as adjunct faculty through August 2026.</p>
+          <p>I'm an AWS Certified Solutions Architect. Outside of work I build things for fun — agent-orchestration tools, a terminal I can drive from my phone, small language models fine-tuned on niche datasets — mostly to see what breaks.</p>
         </div>
         <ul class="fact-list">
           <li><span class="fact-label">Based in</span><span class="fact-value">Minneapolis / Duluth, MN</span></li>
@@ -353,6 +353,51 @@
           <p class="project-desc">A local MCP server that lets an LLM create and edit Sweet Home 3D floor plans directly — walls, rooms, furniture, and dimensions — by operating on the file format, without the app open.</p>
           <div class="tag-row"><span class="tag">Python</span><span class="tag">MCP</span><span class="tag">CI / CodeQL</span></div>
           <a class="project-link" href="https://github.com/consultantstanleymn/sweethome3d-mcp" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+            View on GitHub
+          </a>
+        </div>
+        <div class="project-card">
+          <h3 class="project-title">AURORA (axis)</h3>
+          <p class="project-desc">A machine-native execution graph language for autonomous AI agents — deterministic DAG compilation, capability-based security on every node, and self-healing execution via JSON Patch recovery, with a compact binary format for agent-to-agent communication.</p>
+          <div class="tag-row"><span class="tag">Rust</span><span class="tag">DAG Compiler</span><span class="tag">Agent Security</span></div>
+          <a class="project-link" href="https://github.com/ssnelavala-masstcs/axis" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+            View on GitHub
+          </a>
+        </div>
+        <div class="project-card">
+          <h3 class="project-title">NeuralFlow</h3>
+          <p class="project-desc">A local-first desktop app for building multi-agent AI workflows visually — drag-and-drop orchestration over LangGraph and CrewAI, running entirely on-device with any model, no Docker or cloud required.</p>
+          <div class="tag-row"><span class="tag">Tauri</span><span class="tag">React Flow</span><span class="tag">LangGraph / CrewAI</span></div>
+          <a class="project-link" href="https://github.com/ssnelavala-masstcs/neuralflow" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+            View on GitHub
+          </a>
+        </div>
+        <div class="project-card">
+          <h3 class="project-title">Tether</h3>
+          <p class="project-desc">A self-hosted, mobile-optimized web terminal that mirrors your laptop's tmux sessions (or spawns fresh PTY shells) so you can monitor and drive a running terminal session from your phone — zero cloud dependencies.</p>
+          <div class="tag-row"><span class="tag">Rust</span><span class="tag">xterm.js</span><span class="tag">PTY</span></div>
+          <a class="project-link" href="https://github.com/ssnelavala-masstcs/tether" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+            View on GitHub
+          </a>
+        </div>
+        <div class="project-card">
+          <h3 class="project-title">Quant Finance Checklist</h3>
+          <p class="project-desc">A self-hostable, real-time synced progress tracker for a 24-week quant finance study plan, with scheduled push notifications for the next uncompleted task — built to keep shared progress in sync across devices.</p>
+          <div class="tag-row"><span class="tag">Supabase</span><span class="tag">Netlify</span><span class="tag">Push Notifications</span></div>
+          <a class="project-link" href="https://github.com/consultantstanleymn/quant-checklist" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+            View on GitHub
+          </a>
+        </div>
+        <div class="project-card">
+          <h3 class="project-title">USMLE AI Research Suite</h3>
+          <p class="project-desc">A three-part research effort on AI in USMLE preparation for international medical graduates: a multimodal multi-agent system for personalized study planning, a cross-sectional survey on AI tool adoption, and a systematic evaluation of LLM performance on USMLE-style questions.</p>
+          <div class="tag-row"><span class="tag">Python</span><span class="tag">Multi-Agent</span><span class="tag">RAG</span><span class="tag">Research</span></div>
+          <a class="project-link" href="https://github.com/ssnelavala-masstcs/Agentic-AI-for-USMLE-Prep" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
             View on GitHub
           </a>
