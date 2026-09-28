@@ -178,7 +178,10 @@
     color: var(--muted-fg); border: 1px solid var(--border); border-radius: 999px; padding: 4px 10px;
   }
 
-  /* ---- Live work card ---- */
+  /* ---- Live work cards ---- */
+  .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-3); }
+  @media (max-width: 900px) { .work-grid { grid-template-columns: 1fr; } }
+
   .card {
     display: grid; grid-template-columns: 1fr auto; align-items: center; gap: var(--space-3);
     background: var(--bg-raised); border: 1px solid var(--border); border-radius: 14px; padding: var(--space-4);
@@ -373,16 +376,28 @@
           <h2 class="section-title">Currently building</h2>
         </div>
       </div>
-      <a class="card" href="/aws-sa-pro-curriculum/">
-        <div>
-          <span class="card-tag">Study Portal</span>
-          <p class="card-title">AWS Solutions Architect Professional</p>
-          <p class="card-desc">A 14-week, day-by-day SAP-C02 curriculum with hands-on labs and scenario questions — built to take someone from zero to exam-ready.</p>
-        </div>
-        <span class="card-arrow" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
-        </span>
-      </a>
+      <div class="work-grid">
+        <a class="card" href="/aws-sa-pro-curriculum/">
+          <div>
+            <span class="card-tag">Study Portal</span>
+            <p class="card-title">AWS Solutions Architect Professional</p>
+            <p class="card-desc">A 14-week, day-by-day SAP-C02 curriculum with hands-on labs and scenario questions — built to take someone from zero to exam-ready.</p>
+          </div>
+          <span class="card-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </span>
+        </a>
+        <a class="card" href="/lsat-170-curriculum/">
+          <div>
+            <span class="card-tag">Study Portal</span>
+            <p class="card-title">LSAT 170 Curriculum</p>
+            <p class="card-desc">A 28-week, day-by-day LSAT prep plan — Logical Reasoning and Reading Comprehension technique, full timed PrepTest cycles, and a trap-answer library, built for a working professional heading toward law school.</p>
+          </div>
+          <span class="card-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </span>
+        </a>
+      </div>
     </section>
 
     <section id="skills" class="container section reveal">
