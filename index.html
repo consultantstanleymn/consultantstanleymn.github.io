@@ -14,9 +14,11 @@
 <meta property="og:title" content="Stanley N. — Software Engineer, Applied ML/NLP &amp; Cloud">
 <meta property="og:description" content="Software engineer in Minneapolis, MN. Backend &amp; cloud engineering, applied ML/NLP research, AWS Certified Solutions Architect. Portfolio, projects, and study guides.">
 <meta property="og:url" content="https://stanley-n.com/">
+<meta property="og:image" content="https://stanley-n.com/assets/headshot.jpg">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stanley N. — Software Engineer, Applied ML/NLP &amp; Cloud">
 <meta name="twitter:description" content="Software engineer in Minneapolis, MN. Backend &amp; cloud engineering, applied ML/NLP research, AWS Certified Solutions Architect.">
+<meta name="twitter:image" content="https://stanley-n.com/assets/headshot.jpg">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%23111113'/%3E%3Ctext x='12' y='17' font-family='Arial,Helvetica,sans-serif' font-size='13' font-weight='700' fill='%23fafafa' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 
@@ -28,6 +30,7 @@
   "name": "Stanley N.",
   "alternateName": "Stanley Sujith Nelavala",
   "url": "https://stanley-n.com/",
+  "image": "https://stanley-n.com/assets/headshot.jpg",
   "email": "mailto:consultantstanleymn@gmail.com",
   "jobTitle": "Software Engineer",
   "worksFor": {
@@ -264,6 +267,47 @@
 
   .hero-actions { display: flex; gap: var(--space-2); flex-wrap: wrap; }
 
+  .hero-grid { display: grid; grid-template-columns: 1.35fr 0.9fr; align-items: center; gap: var(--space-5); }
+  .hero-text { min-width: 0; }
+
+  .hero-portrait {
+    position: relative;
+    justify-self: center;
+    width: min(300px, 100%);
+    aspect-ratio: 2 / 3;
+    animation: portraitFloat 7s ease-in-out infinite;
+  }
+  .hero-portrait img {
+    width: 100%; height: 100%; object-fit: cover;
+    border-radius: 28px;
+    display: block;
+    filter: grayscale(0.1) contrast(1.05);
+    box-shadow: 0 30px 70px -22px rgba(0, 0, 0, 0.55);
+    -webkit-mask-image: linear-gradient(180deg, #000 80%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 80%, transparent 100%);
+    transition: transform 450ms var(--ease), filter 450ms var(--ease);
+  }
+  .hero-portrait:hover img { transform: scale(1.02) translateY(-2px); filter: grayscale(0) contrast(1.05); }
+  .hero-portrait-glow {
+    position: absolute; inset: -20px;
+    border-radius: 36px;
+    z-index: -1;
+    background: linear-gradient(135deg, var(--accent), #a78bfa 50%, #34d399);
+    filter: blur(30px);
+    opacity: 0.32;
+    animation: glowPulse 5s ease-in-out infinite;
+  }
+  @keyframes portraitFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  @keyframes glowPulse { 0%, 100% { opacity: 0.26; } 50% { opacity: 0.44; } }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-portrait { order: -1; width: 168px; margin: 0 auto var(--space-2); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-portrait, .hero-portrait-glow { animation: none; }
+  }
+
   .btn-primary, .btn-secondary {
     display: inline-flex; align-items: center; gap: 8px;
     font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.92rem;
@@ -490,13 +534,19 @@
       <div class="hero-orb hero-orb--b" aria-hidden="true"></div>
       <div class="hero-scan" aria-hidden="true"></div>
       <div class="hero-bg" aria-hidden="true"><pre id="asciiPortrait"></pre></div>
-      <div class="container">
-        <p class="eyebrow">Applied ML/NLP &middot; Full-Stack &amp; Cloud Engineering</p>
-        <h1>I build systems that aren't allowed to have a bad day.</h1>
-        <p class="lede">Software engineer and researcher with an M.S. in Computer Science from the University of Minnesota. I split my time between backend/cloud engineering, NLP research, and — until recently — teaching machine learning.</p>
-        <div class="hero-actions">
-          <a class="btn-primary" href="#projects">See projects</a>
-          <a class="btn-secondary" href="#contact">Get in touch</a>
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Applied ML/NLP &middot; Full-Stack &amp; Cloud Engineering</p>
+          <h1>I build systems that aren't allowed to have a bad day.</h1>
+          <p class="lede">Software engineer and researcher with an M.S. in Computer Science from the University of Minnesota. I split my time between backend/cloud engineering, NLP research, and — until recently — teaching machine learning.</p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="#projects">See projects</a>
+            <a class="btn-secondary" href="#contact">Get in touch</a>
+          </div>
+        </div>
+        <div class="hero-portrait">
+          <div class="hero-portrait-glow" aria-hidden="true"></div>
+          <img src="assets/headshot.jpg" alt="Portrait of Stanley N." width="1334" height="2000" loading="eager" fetchpriority="high">
         </div>
       </div>
     </section>
