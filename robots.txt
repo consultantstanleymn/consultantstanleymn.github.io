@@ -4,3 +4,4 @@ Allow: /
 Sitemap: https://stanley-n.com/sitemap.xml
 Sitemap: https://stanley-n.com/aws-sa-pro-curriculum/sitemap.xml
 Sitemap: https://stanley-n.com/lsat-170-curriculum/sitemap.xml
+Sitemap: https://stanley-n.com/opengym-ios/sitemap.xml

@@ -3,13 +3,75 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>openGym for iPhone, built on Linux — Stanley N.</title>
-<meta name="description" content="A native iPhone gym tracker compiled on a Fedora laptop with no Mac, no Xcode and no App Store: a SwiftPM shell, a JavaScript reimplementation of the Capacitor bridge, and a Darwin SDK built from Xcode 27.">
+<title>Building openGym for iOS on Linux with xtool | Stanley N.</title>
+<meta name="description" content="openGym is a Capacitor app that can&#39;t be built on Linux. How it became a native iPhone app anyway: SwiftPM, a reimplemented bridge, and a Darwin SDK from Xcode 27.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Stanley Sujith Nelavala">
 <link rel="canonical" href="https://stanley-n.com/opengym-ios/">
-<meta property="og:title" content="openGym for iPhone, built on Linux">
-<meta property="og:description" content="A native iPhone app compiled on a Fedora laptop. No Mac, no Xcode, no App Store.">
 <meta property="og:type" content="article">
+<meta property="og:site_name" content="Stanley N.">
+<meta property="og:title" content="Building openGym for iOS on Linux with xtool">
+<meta property="og:description" content="A native iPhone app compiled on a Fedora laptop: SwiftPM shell, a reimplementation of the Capacitor bridge, and a Darwin SDK built from Xcode 27. No Mac, no Xcode, no App Store.">
+<meta property="og:url" content="https://stanley-n.com/opengym-ios/">
+<meta property="og:image" content="https://stanley-n.com/opengym-ios/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The openGym app for iPhone, shown on a dark card beside the headline: an iPhone app compiled on a laptop that can't legally make one.">
+<meta property="article:author" content="Stanley Sujith Nelavala">
+<meta property="article:published_time" content="2026-10-14">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Building openGym for iOS on Linux with xtool">
+<meta name="twitter:description" content="A native iPhone app compiled on a Fedora laptop with xtool. No Mac, no Xcode, no App Store.">
+<meta name="twitter:image" content="https://stanley-n.com/opengym-ios/assets/og.png">
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://stanley-n.com/opengym-ios/#article",
+      "headline": "Building an iOS app on Linux: openGym for iPhone with xtool",
+      "description": "How openGym, a Capacitor project that cannot be built on Linux, was compiled into a native iPhone app on a Fedora laptop: a SwiftPM shell, a JavaScript reimplementation of the Capacitor bridge, and a Darwin SDK built from Xcode 27 with xtool.",
+      "image": "https://stanley-n.com/opengym-ios/assets/og.png",
+      "datePublished": "2026-10-14",
+      "dateModified": "2026-10-14",
+      "inLanguage": "en",
+      "articleSection": "Software Engineering",
+      "proficiencyLevel": "Expert",
+      "keywords": "iOS on Linux, build iOS app without Mac, xtool, SwiftPM, Capacitor, Darwin SDK, openGym, WKWebView, Fedora, cross-compilation, self-hosted",
+      "isAccessibleForFree": true,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://stanley-n.com/opengym-ios/" },
+      "author": {
+        "@type": "Person",
+        "name": "Stanley Sujith Nelavala",
+        "url": "https://stanley-n.com/"
+      },
+      "about": [
+        { "@type": "SoftwareApplication", "name": "xtool", "url": "https://github.com/xtool-org/xtool" },
+        { "@type": "SoftwareApplication", "name": "openGym", "url": "https://github.com/DuarteSantos8/openGym" }
+      ],
+      "mentions": [
+        { "@type": "Product", "name": "iPhone" },
+        { "@type": "SoftwareApplication", "name": "Swift", "alternateName": "Swift 6.4.1" },
+        { "@type": "SoftwareApplication", "name": "Swift Package Manager" }
+      ]
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "openGym-ios",
+      "description": "A SwiftPM iOS shell around openGym, built and signed on Linux with xtool. Compiles a native iPhone app from Fedora with no Mac, no Xcode and no App Store.",
+      "codeRepository": "https://github.com/consultantstanleymn/openGym-ios",
+      "url": "https://github.com/consultantstanleymn/openGym-ios",
+      "license": "https://www.gnu.org/licenses/agpl-3.0.html",
+      "programmingLanguage": ["Swift", "JavaScript", "Shell"],
+      "runtimePlatform": ["iOS 17.4", "Linux"],
+      "dateCreated": "2026-10-14",
+      "author": { "@type": "Person", "name": "Stanley Sujith Nelavala", "url": "https://stanley-n.com/" }
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Archivo:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -57,6 +119,24 @@
     line-height: 1.62;
     -webkit-font-smoothing: antialiased;
   }
+
+  /* ── background ────────────────────────────────────────────────────────────
+     A fine 44px grid on the page's own rhythm, plus one soft pool of light
+     behind the masthead. Both are deliberately faint: this is a technical
+     page and the texture should read as the drawing paper it is, never as
+     decoration competing with the text. Kept in a fixed, non-interactive
+     layer so it costs one composited element, not a repaint on scroll. */
+  body::before {
+    content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(1100px 620px at 50% -8%, rgba(96,165,250,.10), transparent 68%),
+      linear-gradient(rgba(250,250,250,.024) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(250,250,250,.024) 1px, transparent 1px);
+    background-size: 100% 100%, 44px 44px, 44px 44px;
+  }
+  /* Content sits above the fixed layer. Without this the positioned
+     pseudo-element paints over the text. */
+  .back, .masthead, section, footer { position: relative; z-index: 1; }
 
   .mono { font-family: 'Space Mono', ui-monospace, SFMono-Regular, Menlo, monospace; }
   .display { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.028em; }
@@ -257,14 +337,15 @@
   <p class="lede">
     openGym is a self-hosted gym tracker by <a href="https://github.com/DuarteSantos8/openGym" rel="noopener">Duarte Santos</a>.
     Its iOS app is a Capacitor project, and Capacitor cannot be built on Linux — it ships CocoaPods
-    podspecs, no Swift Package Manager manifest, a storyboard and an asset catalog. This is how
-    that app got onto a phone anyway, from a Fedora machine that has never had a Mac on it.
+    podspecs, no Swift Package Manager manifest, a storyboard and an asset catalog. This is how that
+    iOS app got onto an iPhone anyway, from a Fedora machine that has never had a Mac on it — how to
+    build an iOS app on Linux when Xcode is not an option.
   </p>
   <p class="lede credit-line">
     None of the product is mine. The tracker, the training logic, the exercise catalogue and the
-    interface are all openGym's, under the AGPL. What follows is the work of getting that project
-    to build somewhere its authors never intended — and the two pieces of standing on other
-    people's work that made it possible:
+    interface are all openGym's, free and open source under the AGPL. What follows is the work of
+    getting that project to build somewhere its authors never intended — and the two pieces of
+    standing on other people's work that made it possible:
     <a href="https://github.com/xtool-org/xtool" rel="noopener">xtool</a>, which replaces Xcode on
     Linux, and whoever wrote the 6,554-file catalogue behind those exercise demos.
   </p>
@@ -393,7 +474,7 @@
     <li><div><b>Swift 6.4.1 and xtool 1.22.2</b><span>The cross-platform Xcode replacement. Swift is not in Fedora's repositories; it comes from swift.org, and the closest published build is Fedora 41.</span></div></li>
     <li><div><b>A Darwin SDK from Xcode 27</b><span>Built from the archive, slim, in about twelve minutes.</span></div></li>
     <li><div><b>The web bundle</b><span>A phone-flavour Vite build with the native shims aliased in, plus 6,554 exercise stills.</span></div></li>
-    <li><div><b>The app</b><span>A SwiftPM shell that xtool turns into an .app, signed against a free Apple ID and installed over USB.</span></div></li>
+    <li><div><b>The app</b><span>A SwiftPM shell, built on WKWebView, that xtool turns into an .app and an installable .ipa, signed against a free Apple ID and installed over USB.</span></div></li>
   </ol>
 <pre><span class="p">$</span> bash scripts/build-web.sh
 <span class="p">$</span> cd ios-shell && xtool dev run
