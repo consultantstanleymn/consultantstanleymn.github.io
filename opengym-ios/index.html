@@ -195,6 +195,8 @@
     padding-block: var(--space-3); border-top: 1px solid var(--border);
   }
   .credit:first-of-type { border-top: 0; }
+  /* No icon: collapse the 44px track so the content takes the full width. */
+  .credit.no-icon { grid-template-columns: minmax(0, 1fr); }
   .credit img { border-radius: 11px; display: block; width: 44px; height: 44px; background: var(--bg-raised); }
   .credit h3 { margin: 0 0 6px; font-size: 19px; font-weight: 600; }
   .credit h3 a { color: var(--fg); }
@@ -445,7 +447,7 @@
     </div>
   </div>
 
-  <div class="credit">
+  <div class="credit no-icon">
     <div>
       <h3>Everyone else this leans on</h3>
       <ul class="stack">
