@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>openGym for iPhone, built on Linux — Stanley N.</title>
+<meta name="description" content="A native iPhone gym tracker compiled on a Fedora laptop with no Mac, no Xcode and no App Store: a SwiftPM shell, a JavaScript reimplementation of the Capacitor bridge, and a Darwin SDK built from Xcode 27.">
+<link rel="canonical" href="https://stanley-n.com/opengym-ios/">
+<meta property="og:title" content="openGym for iPhone, built on Linux">
+<meta property="og:description" content="A native iPhone app compiled on a Fedora laptop. No Mac, no Xcode, no App Store.">
+<meta property="og:type" content="article">
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Archivo:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* Tokens lifted from the portfolio's own index.html, so the page is the same design system
+   rather than a lookalike. Dark is the default here: CLAUDE.md sets dark-only, and the phone
+   this describes is a dark app. */
+  :root {
+    --bg: #0a0a0b;
+    --bg-raised: #131316;
+    --fg: #fafafa;
+    --muted-fg: #a1a1aa;
+    --border: #27272a;
+    --accent: #60a5fa;
+    --accent-fg: #0a0a0b;
+    --gold: #d4af37;
+    --dead: #f87171;
+    --live: #4ade80;
+    --focus-ring: #fafafa;
+    --shadow: 0 28px 60px -30px rgba(0,0,0,.9);
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 40px;
+    --space-5: 64px;
+    --space-6: 96px;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --max: 980px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; overflow-x: clip; }
+  body { overflow-x: clip; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 17px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .mono { font-family: 'Space Mono', ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .display { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.028em; }
+  .wrap { max-width: var(--max); margin-inline: auto; padding-inline: var(--space-3); }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  :focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; border-radius: 4px; }
+
+  /* ── masthead ───────────────────────────────────────────────────────────────
+     Opens on the constraint rather than the feature. The feature list is the
+     most predictable shape a page like this can take; the constraint is the
+     only interesting thing about it, and it is what the reader will remember. */
+  .masthead { padding-block: var(--space-6) var(--space-5); border-bottom: 1px solid var(--border); }
+  .kicker {
+    display: flex; align-items: center; gap: var(--space-1);
+    font-family: 'Space Mono', monospace; font-size: 13px; letter-spacing: 0.02em;
+    color: var(--muted-fg); margin-bottom: var(--space-3);
+  }
+  .kicker img { width: 34px; height: 34px; border-radius: 9px; display: block; }
+  h1 {
+    font-size: clamp(34px, 7vw, 60px); line-height: 1.04;
+    font-weight: 700; margin: 0 0 var(--space-3); max-width: 17ch;
+  }
+  h1 .was { color: var(--muted-fg); text-decoration: line-through; text-decoration-thickness: 2px; }
+  .lede { font-size: clamp(18px, 2.4vw, 21px); color: var(--muted-fg); max-width: 62ch; margin: 0; }
+
+  /* Three hard facts as a ledger, because they are the whole claim. */
+  .ledger {
+    display: grid; gap: 1px; margin-top: var(--space-5);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    background: var(--border); border: 1px solid var(--border); border-radius: 14px;
+    overflow: hidden;
+  }
+  .ledger div { background: var(--bg); padding: var(--space-3); }
+  .ledger dt {
+    font-family: 'Space Mono', monospace; font-size: 12px; color: var(--muted-fg);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;
+  }
+  .ledger dd {
+    margin: 0; font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(24px, 3.6vw, 32px); font-weight: 700; letter-spacing: -0.03em;
+  }
+  /* The SDK identifier is a string, not a quantity, so it sets smaller than the numbers beside it
+     — but still at a size anyone can read. An inline style did this before, and shrank it to
+     the point that the one fact in the cell was unreadable. */
+  .ledger dd.code {
+    font-family: 'Space Mono', monospace; font-size: clamp(15px, 1.9vw, 19px);
+    letter-spacing: -0.01em; font-weight: 400; padding-block: 6px;
+  }
+
+  section { padding-block: var(--space-4); border-bottom: 1px solid var(--border); }
+  /* Alternating rhythm rather than one repeated value: identical padding on every section is
+     what makes a page feel generated no matter what is in it. */
+  .masthead + section { padding-top: var(--space-5); }
+  section.credits, section:last-of-type { padding-block: var(--space-5); }
+  h2 { font-size: clamp(24px, 3.6vw, 32px); margin: 0 0 var(--space-2); font-weight: 700; }
+  .sub { color: var(--muted-fg); margin: 0 0 var(--space-4); max-width: 64ch; }
+
+  /* ── the blockers ──────────────────────────────────────────────────────────
+     Written as findings, not as a marketing grid. Each one says what was
+     believed, what the evidence was, and what it turned out to be. */
+  .finding {
+    display: grid; grid-template-columns: 24px 1fr; gap: var(--space-2);
+    padding-block: var(--space-3); border-top: 1px solid var(--border);
+  }
+  .finding:first-of-type { border-top: 0; }
+  .finding .mark { font-family: 'Space Mono', monospace; line-height: 1.6; }
+  .finding.no .mark { color: var(--dead); }
+  .finding.yes .mark { color: var(--live); }
+  .finding h3 { margin: 0 0 4px; font-size: 18px; font-weight: 600; }
+  .finding p { margin: 0; color: var(--muted-fg); max-width: 70ch; }
+  .finding code {
+    font-family: 'Space Mono', monospace; font-size: 13.5px;
+    background: var(--bg-raised); border: 1px solid var(--border);
+    border-radius: 6px; padding: 1px 6px; color: var(--fg);
+  }
+
+  /* ── the pull quote ──────────────────────────────────────────────────────── */
+  /* Two across, not auto-fit: at this width auto-fit fitted three and orphaned the fourth on a
+     row of its own, which reads as an accident. 2x2 also keeps each caption on a comfortable
+     measure instead of letting them stretch to a third of the page. */
+  .measure {
+    display: grid; gap: var(--space-3);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+    margin-top: var(--space-4);
+  }
+  .measure div {
+    background: var(--bg-raised); border: 1px solid var(--border);
+    border-radius: 14px; padding: var(--space-3);
+  }
+  .measure b {
+    display: block; font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+    font-size: clamp(26px, 4vw, 36px); letter-spacing: -0.03em; margin-bottom: 6px;
+  }
+  .measure span { color: var(--muted-fg); font-size: 15px; }
+
+  /* ── the phone ───────────────────────────────────────────────────────────── */
+  .device { display: grid; gap: var(--space-5); grid-template-columns: minmax(0, 1fr) minmax(0, 260px); align-items: start; }
+  @media (max-width: 620px) { .device { grid-template-columns: 1fr; } }
+  .device figure { margin: 0; }
+  .device img {
+    width: 100%; max-width: 260px; height: auto; display: block; margin-inline: auto;
+    border-radius: 26px; border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+  .device figcaption { margin-top: var(--space-2); text-align: center; font-size: 14px; color: var(--muted-fg); }
+
+  /* ── how it runs ─────────────────────────────────────────────────────────── */
+  ol.steps { margin: 0; padding-left: 0; list-style: none; counter-reset: s; }
+  ol.steps li {
+    counter-increment: s; display: grid; grid-template-columns: 34px 1fr;
+    gap: var(--space-2); padding-block: var(--space-2); border-top: 1px solid var(--border);
+  }
+  ol.steps li:first-child { border-top: 0; }
+  ol.steps li::before {
+    content: counter(s, decimal-leading-zero);
+    font-family: 'Space Mono', monospace; font-size: 13px; color: var(--gold); line-height: 1.9;
+  }
+  ol.steps b { display: block; font-weight: 600; margin-bottom: 2px; }
+  ol.steps span { color: var(--muted-fg); }
+
+  pre {
+    background: var(--bg-raised); border: 1px solid var(--border); border-radius: 12px;
+    padding: var(--space-3); overflow-x: auto; margin: var(--space-3) 0 0;
+    font-family: 'Space Mono', monospace; font-size: 13.5px; line-height: 1.7; color: var(--fg);
+  }
+  pre .c { color: var(--muted-fg); }
+  pre .p { color: var(--gold); }
+
+  /* ── credits ───────────────────────────────────────────────────────────────
+     Given its own section rather than a line in a footer, because it is the most
+     important thing on the page and a footer is the first place nobody reads. */
+  .credit {
+    display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: var(--space-3);
+    padding-block: var(--space-3); border-top: 1px solid var(--border);
+  }
+  .credit:first-of-type { border-top: 0; }
+  .credit img { border-radius: 11px; display: block; width: 44px; height: 44px; background: var(--bg-raised); }
+  .credit h3 { margin: 0 0 6px; font-size: 19px; font-weight: 600; }
+  .credit h3 a { color: var(--fg); }
+  .credit h3 a:hover { color: var(--accent); }
+  .credit p { margin: 0 0 8px; color: var(--muted-fg); max-width: 70ch; }
+  .credit p.small { font-size: 15px; }
+  .credit code {
+    font-family: 'Space Mono', monospace; font-size: 13px;
+    background: var(--bg-raised); border: 1px solid var(--border);
+    border-radius: 6px; padding: 1px 6px; color: var(--fg);
+  }
+  .credit em { color: var(--fg); font-style: normal; font-weight: 600; }
+  .stack { margin: 0; padding: 0; list-style: none; }
+  .stack li { padding-block: 6px; border-top: 1px solid var(--border); color: var(--muted-fg); max-width: 72ch; }
+  .stack li:first-child { border-top: 0; }
+  .stack strong { color: var(--fg); font-weight: 600; }
+  .credit-line {
+    margin-top: var(--space-3); padding-top: var(--space-3);
+    border-top: 1px solid var(--border); font-size: 16px;
+  }
+
+  /* ── licences ────────────────────────────────────────────────────────────── */
+  .licence { display: grid; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .licence div { background: var(--bg); padding: var(--space-3); }
+  .licence dt { font-weight: 600; margin-bottom: 4px; }
+  .licence dd { margin: 0; color: var(--muted-fg); font-size: 15px; }
+
+  footer { padding-block: var(--space-5) var(--space-6); }
+  footer .cols { display: grid; gap: var(--space-3); grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); }
+  footer h4 { margin: 0 0 6px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted-fg); font-family: 'Space Mono', monospace; font-weight: 400; }
+  footer ul { margin: 0; padding: 0; list-style: none; }
+  footer li { margin-bottom: 4px; }
+  footer p { color: var(--muted-fg); font-size: 14px; }
+
+  .back {
+    display: inline-flex; align-items: center; gap: 6px; font-family: 'Space Mono', monospace;
+    font-size: 13px; margin-bottom: var(--space-4);
+  }
+
+  @media (max-width: 420px) {
+    body { font-size: 16px; }
+    .masthead { padding-block: var(--space-5) var(--space-4); }
+    h1 { max-width: none; }
+    section { padding-block: var(--space-4); }
+  }
+</style>
+</head>
+<body>
+
+<a class="back wrap" href="../">&larr; Stanley N.</a>
+
+<header class="masthead wrap">
+  <div class="kicker">
+    <img src="assets/mark.svg" alt="">
+    <span>Case study</span>
+  </div>
+  <h1>An iPhone app compiled on a laptop that can’t legally make one.</h1>
+  <p class="lede">
+    openGym is a self-hosted gym tracker by <a href="https://github.com/DuarteSantos8/openGym" rel="noopener">Duarte Santos</a>.
+    Its iOS app is a Capacitor project, and Capacitor cannot be built on Linux — it ships CocoaPods
+    podspecs, no Swift Package Manager manifest, a storyboard and an asset catalog. This is how
+    that app got onto a phone anyway, from a Fedora machine that has never had a Mac on it.
+  </p>
+  <p class="lede credit-line">
+    None of the product is mine. The tracker, the training logic, the exercise catalogue and the
+    interface are all openGym's, under the AGPL. What follows is the work of getting that project
+    to build somewhere its authors never intended — and the two pieces of standing on other
+    people's work that made it possible:
+    <a href="https://github.com/xtool-org/xtool" rel="noopener">xtool</a>, which replaces Xcode on
+    Linux, and whoever wrote the 6,554-file catalogue behind those exercise demos.
+  </p>
+
+  <dl class="ledger">
+    <div><dt>Macs involved</dt><dd>0</dd></div>
+    <div><dt>iPhone SDK</dt><dd class="code">iPhoneOS27.0</dd></div>
+    <div><dt>App size</dt><dd>61 MB</dd></div>
+    <div><dt>Build</dt><dd>46s</dd></div>
+  </dl>
+</header>
+
+<main class="wrap">
+
+<section>
+  <h2>Why it did not work, and what was true instead</h2>
+  <p class="sub">
+    Most of the work was finding out which of the obstacles were real. Three of them were believed
+    to be impossible and turned out to be a different problem entirely.
+  </p>
+
+  <div class="finding no">
+    <span class="mark">&#215;</span>
+    <div>
+      <h3>Capacitor cannot be built on Linux</h3>
+      <p>
+        True, and final. <code>@capacitor/ios</code> ships only <code>.podspec</code> files, so
+        SwiftPM cannot consume it; xtool builds SwiftPM only, and has no
+        <code>actool</code> or <code>ibtool</code> for the storyboard and icon catalog. The
+        workaround was to stop using it: openGym's Capacitor imports are all dynamic and
+        gated behind <code>MOBILE</code>, so they never reach a web bundle. Seven modules were
+        reimplemented in JavaScript against a single WebKit message handler, and openGym's own
+        application code is unmodified.
+      </p>
+    </div>
+  </div>
+
+  <div class="finding yes">
+    <span class="mark">&#10003;</span>
+    <div>
+      <h3>The Xcode download was truncated</h3>
+      <p>
+        92 bytes short — in the trailing metadata, not the payload. The file's own table of
+        contents declares the length it should be, so the shortfall was measurable rather than a
+        guess. xtool installed it without complaint and produced
+        <code>iPhoneOS27.0.sdk</code>. Two wrong conclusions came first on the way there: that it
+        was encrypted, and that it needed a 12 GB re-download of an older Xcode.
+      </p>
+    </div>
+  </div>
+
+  <div class="finding yes">
+    <span class="mark">&#10003;</span>
+    <div>
+      <h3>Apple's Xcode archive still describes its own contents</h3>
+      <p>
+        The format is not what the references say. The table of contents sits at offset 28 rather
+        than at the end, which is why <code>libarchive</code> reports a perfectly good file as
+        corrupt, and the inner header does not parse as documented. Ignoring the header and
+        chaining the compression streams through the decompressor read all of it.
+      </p>
+    </div>
+  </div>
+
+  <div class="finding no">
+    <span class="mark">&#215;</span>
+    <div>
+      <h3>Screenshots off the phone are not available</h3>
+      <p>
+        Not from here. The usual tool needs a Developer Disk Image mounted on the device, and
+        Xcode 27 does not ship one — Apple fetches them when a Mac attaches a phone. Decompressing
+        the whole archive settled it rather than assuming.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>The numbers that decided it</h2>
+  <p class="sub">Each of these came out of measuring something, and each changed what got built.</p>
+  <div class="measure">
+    <div>
+      <b>9.06 GB</b>
+      <span>decompressed out of a 1.9 GB Xcode archive, to search it. Zero Disk Images found.</span>
+    </div>
+    <div>
+      <b>1.35:1</b>
+      <span>the gold accent on white, measured. Now 4.51:1. Four of eight accents failed; all eight were solved for.</span>
+    </div>
+    <div>
+      <b>13,109</b>
+      <span>copyrighted exercise images ruled out of the public repository, and kept out of the app bundle git too.</span>
+    </div>
+    <div>
+      <b>139</b>
+      <span>notification lines across five registers, from 117 on the first pass once the copy started colliding.</span>
+    </div>
+  </div>
+</section>
+
+<section class="device">
+  <div>
+    <h2>What is on the phone</h2>
+    <p class="sub">
+      A full native shell: the app's own state mirrored to durable storage, scheduled workout
+      reminders and streak milestones, a Keychain for the two secrets it holds, the share sheet for
+      backups, and the print sheet for the weekly plan. Exercise demos are 6,554 images of a
+      catalogue that never leaves the device.
+    </p>
+    <p>
+      One correction worth stating plainly: the live camera QR scanner is not implemented. Photo
+      import of a check-in code works, because the decoder the browser build already ships turned
+      out to be pure JavaScript. Rebuilding ML Kit's full-screen camera UI was not worth the risk
+      to a working app.
+    </p>
+  </div>
+  <figure>
+    <img src="assets/screenshot-settings.png" width="1290" height="2796"
+         alt="The About &amp; updates screen on the phone, showing the app at version 1.4.1, a screenshot row, and openGym's AGPL and media attribution.">
+    <figcaption>The About page, photographed by the app itself.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>How a build runs</h2>
+  <p class="sub">Two commands, on Linux, with no Xcode, no signing certificate held by hand and no Mac in the loop.</p>
+  <ol class="steps">
+    <li><div><b>Swift 6.4.1 and xtool 1.22.2</b><span>The cross-platform Xcode replacement. Swift is not in Fedora's repositories; it comes from swift.org, and the closest published build is Fedora 41.</span></div></li>
+    <li><div><b>A Darwin SDK from Xcode 27</b><span>Built from the archive, slim, in about twelve minutes.</span></div></li>
+    <li><div><b>The web bundle</b><span>A phone-flavour Vite build with the native shims aliased in, plus 6,554 exercise stills.</span></div></li>
+    <li><div><b>The app</b><span>A SwiftPM shell that xtool turns into an .app, signed against a free Apple ID and installed over USB.</span></div></li>
+  </ol>
+<pre><span class="p">$</span> bash scripts/build-web.sh
+<span class="p">$</span> cd ios-shell && xtool dev run
+<span class="c"># Building for debug...
+# Build complete! (46.46 secs)
+# Installing to device: Stanley Sujith's iPhone</span></pre>
+</section>
+
+<section class="credits" id="credits">
+  <h2>Credits</h2>
+  <p class="sub">
+    This page describes other people's software. All of it is worth using, and the first entry is
+    the one that matters.
+  </p>
+
+  <div class="credit">
+    <img src="assets/mark.svg" alt="" width="44" height="44" loading="lazy">
+    <div>
+      <h3><a href="https://github.com/DuarteSantos8/openGym" rel="noopener">openGym</a> — Duarte Santos</h3>
+      <p>
+        The self-hosted gym and bodyweight tracker this app is. Every workout, routine, set,
+        progression rule, chart and screen is theirs, under the AGPL-3.0-or-later; the training
+        logic is a set of pure functions with unit tests beside them, and it is the reason there is
+        anything here to package. Also a 6,554-exercise catalogue, 19 languages, and roughly 1,800
+        commits maintained to a release every two weeks.
+      </p>
+      <p class="small">
+        If you want the original, it is the better product and it runs on Linux, Docker, a NAS or
+        a Raspberry Pi in about four minutes: <code>docker compose up</code>. This page is only
+        about getting <em>their</em> code onto an iPhone, which is a narrower thing.
+      </p>
+    </div>
+  </div>
+
+  <div class="credit">
+    <img class="third" src="https://raw.githubusercontent.com/xtool-org/xtool/main/assets/xtool-icon.png" alt="" width="44" height="44" loading="lazy" onerror="this.style.visibility='hidden'">
+    <div>
+      <h3><a href="https://github.com/xtool-org/xtool" rel="noopener">xtool</a> — the xtool contributors</h3>
+      <p>
+        The cross-platform replacement for Xcode, MIT licensed. It parses Apple's Xcode archive,
+        builds a Darwin Swift SDK from it, and links a SwiftPM package into a signed .app on Linux.
+        Nothing on this page would exist without it — every step that was not a dead end was
+        xtool doing something the documentation did not promise.
+      </p>
+      <p class="small">
+        Release 1.20.1's notes mention Xcode 27 linking specifically, which is the version this
+        build ended up using.
+      </p>
+    </div>
+  </div>
+
+  <div class="credit">
+    <div>
+      <h3>Everyone else this leans on</h3>
+      <ul class="stack">
+        <li><strong>Gym visual</strong> — Aliaksandr Makatserchyk, for the exercise illustrations and animations. Licensed to openGym, not redistributable, which is the single hardest constraint on publishing any of this.</li>
+        <li><strong>Melih Colpan</strong> — MuscleMap, MIT, for the body-map geometry behind the muscle heatmaps.</li>
+        <li><strong>Swift, LLVM, swift-corelibs</strong> — Apache 2.0 with LLVM exceptions. The toolchain.</li>
+        <li><strong>jsQR</strong> — cozmo, Apache 2.0, the fallback decoder for QR check-in codes.</li>
+        <li><strong>The Fedora and libimobiledevice communities</strong> — for making an iPhone talk to Linux at all.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Licences</h2>
+  <p class="sub">The parts are not all mine, and saying which is which is the point of this section.</p>
+  <dl class="licence">
+    <div>
+      <dt>openGym</dt>
+      <dd>
+        <a href="https://github.com/DuarteSantos8/openGym" rel="noopener">DuarteSantos8/openGym</a>,
+        AGPL-3.0-or-later. Everything under <code>frontend/</code>, <code>api/</code>,
+        <code>catalogue/</code> and <code>mcp/</code> is theirs.
+      </dd>
+    </div>
+    <div>
+      <dt>This page and this build</dt>
+      <dd>
+        The SwiftPM shell, the JavaScript shims, the tooling and these docs:
+        <strong>AGPL-3.0-or-later, and additionally GPL-3.0-or-later</strong>. AGPL section 13
+        permits that dual offer explicitly. This page is
+        <a href="LICENSE" rel="noopener">GPL-3.0-or-later</a>, © Stanley Sujith Nelavala.
+      </dd>
+    </div>
+    <div>
+      <dt>Exercise media</dt>
+      <dd>
+        © Aliaksandr Makatserchyk, Gym visual. Licensed for use within openGym, explicitly not
+        redistributable as part of an independent app or website. It is excluded from the public
+        repository entirely and is never committed, which is why a clone does not build without
+        cloning openGym first.
+      </dd>
+    </div>
+    <div>
+      <dt>xtool, jsQR, WebKit</dt>
+      <dd>The build tool is MIT. The fallback QR decoder is Apache-2.0. Both are credited in the repository's NOTICE.</dd>
+    </div>
+  </dl>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="cols">
+    <div>
+      <h4>Repository</h4>
+      <ul>
+        <li><a href="https://github.com/consultantstanleymn/openGym-ios" rel="noopener">Source</a></li>
+        <li><a href="https://github.com/consultantstanleymn/openGym-ios/blob/main/NOTICE.md" rel="noopener">NOTICE</a></li>
+        <li><a href="https://github.com/consultantstanleymn/openGym-ios/blob/main/LICENSE" rel="noopener">LICENSE</a> <span style="color:var(--muted-fg)">(AGPL)</span></li>
+        <li><a href="https://github.com/consultantstanleymn/openGym-ios/blob/main/LICENSE-GPL-3.0.txt" rel="noopener">LICENSE-GPL-3.0</a></li>
+        <li><a href="LICENSE" rel="noopener">This page's licence</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Upstream</h4>
+      <ul>
+        <li><a href="https://github.com/DuarteSantos8/openGym" rel="noopener">openGym</a></li>
+        <li><a href="https://github.com/xtool-org/xtool" rel="noopener">xtool</a></li>
+        <li><a href="https://gymvisual.com" rel="noopener">Gym visual</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Elsewhere</h4>
+      <ul>
+        <li><a href="../">Portfolio</a></li>
+        <li><a href="https://github.com/consultantstanleymn" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
