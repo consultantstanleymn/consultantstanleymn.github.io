@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A voice tutor for iPhone, built on a Linux laptop | Stanley N.</title>
+<meta name="description" content="Aurelia is a SwiftUI voice tutor for AWS, LSAT and quant that compiles on Fedora with xtool. No Mac, no Xcode, no device screenshots, and no working logs — so the app logs to a file and you read it over USB.">
+<link rel="canonical" href="https://stanley-n.com/aurelia-ios/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Stanley N.">
+<meta property="og:title" content="A voice tutor for iPhone, built on a Linux laptop">
+<meta property="og:description" content="Aurelia: 238 AWS and LSAT days plus 24 quant weeks, taught by conversation, compiled on Fedora with xtool. The interesting part is what happens when you cannot see the app you are debugging.">
+<meta property="og:url" content="https://stanley-n.com/aurelia-ios/">
+<meta property="og:image" content="https://stanley-n.com/aurelia-ios/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The golden Aurelia crab on a near-black card beside the words: a voice tutor for iPhone, built on a Linux laptop.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A voice tutor for iPhone, built on a Linux laptop">
+<meta name="twitter:description" content="SwiftUI, compiled and signed on Fedora with xtool. No Mac involved. Includes what it cost to debug an app you cannot see.">
+<meta name="twitter:image" content="https://stanley-n.com/aurelia-ios/assets/og.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "A voice tutor for iPhone, built on a Linux laptop",
+  "description": "How a native SwiftUI voice tutor for AWS, LSAT and quant was compiled, signed and debugged on Fedora with xtool, and what it took to debug an app you cannot see.",
+  "url": "https://stanley-n.com/aurelia-ios/",
+  "image": "https://stanley-n.com/aurelia-ios/assets/og.png",
+  "datePublished": "2026-10-15",
+  "dateModified": "2026-10-15",
+  "author": {
+    "@type": "Person",
+    "name": "Stanley Sujith Nelavala",
+    "url": "https://stanley-n.com/"
+  },
+  "publisher": { "@type": "Person", "name": "Stanley N.", "url": "https://stanley-n.com/" },
+  "keywords": ["SwiftUI", "iOS", "Linux", "xtool", "AVAudioSession", "speech recognition", "text to speech", "Swift Package Manager", "SQLite", "spaced repetition"],
+  "proficiencyLevel": "Expert",
+  "dependencies": "Swift 6.4.1, xtool 1.22.2"
+}
+</script>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+
+  :root {
+    --bg: #0a0a0b;
+    --bg-raised: #131316;
+    --fg: #fafafa;
+    --muted-fg: #a1a1aa;
+    --border: #27272a;
+    --gold: #d4af37;
+    --gold-dim: #8a7328;
+    --dead: #f87171;
+    --live: #4ade80;
+    --focus-ring: #fafafa;
+    --shadow: 0 28px 60px -30px rgba(0,0,0,.9);
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 40px;
+    --space-5: 64px;
+    --space-6: 96px;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --max: 980px;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    background-image:
+      radial-gradient(900px 500px at 78% -8%, rgba(212,175,55,.10), transparent 62%),
+      radial-gradient(700px 420px at 6% 4%, rgba(212,175,55,.05), transparent 60%);
+    background-attachment: fixed;
+    color: var(--fg);
+    font: 17px/1.65 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  a { color: var(--gold); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: #ecc94f; }
+  :focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; border-radius: 3px; }
+
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--space-3); }
+
+  header.top {
+    padding: var(--space-4) 0 var(--space-3);
+    display: flex; align-items: center; gap: var(--space-2);
+  }
+  header.top img { width: 46px; height: 46px; display: block; }
+  header.top .who { font-size: 14px; color: var(--muted-fg); }
+  header.top .who strong { color: var(--fg); font-weight: 600; }
+
+  .back { margin-left: auto; font-size: 14px; }
+
+  .lede { padding: var(--space-4) 0 var(--space-5); border-top: 1px solid var(--border); }
+  .kicker {
+    font: 600 12px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase;
+    color: var(--gold); margin: 0 0 var(--space-2);
+  }
+  h1 {
+    font-size: clamp(30px, 5.4vw, 50px); line-height: 1.1; letter-spacing: -.022em;
+    margin: 0 0 var(--space-2); font-weight: 700;
+  }
+  .dek { font-size: clamp(17px, 2.1vw, 20px); color: var(--muted-fg); margin: 0; max-width: 62ch; }
+
+  section { padding: var(--space-5) 0; border-top: 1px solid var(--border); }
+  h2 {
+    font-size: clamp(21px, 3vw, 28px); line-height: 1.22; letter-spacing: -.015em;
+    margin: 0 0 var(--space-3); font-weight: 650;
+  }
+  h3 { font-size: 17px; margin: var(--space-3) 0 var(--space-1); font-weight: 600; }
+  p { margin: 0 0 var(--space-2); max-width: 66ch; }
+  p:last-child { margin-bottom: 0; }
+
+  .grid { display: grid; gap: var(--space-3); grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+
+  .card {
+    background: var(--bg-raised); border: 1px solid var(--border);
+    border-radius: 14px; padding: var(--space-3);
+  }
+  .card .n {
+    font: 700 clamp(26px, 4vw, 34px)/1.05 var(--mono); color: var(--gold);
+    letter-spacing: -.02em; margin: 0 0 var(--space-1);
+  }
+  .card .l { font-size: 14px; color: var(--muted-fg); margin: 0; }
+
+  pre {
+    background: #08080a; border: 1px solid var(--border); border-left: 3px solid var(--gold-dim);
+    border-radius: 10px; padding: var(--space-2) var(--space-3); overflow-x: auto;
+    font: 13.5px/1.72 var(--mono); color: #d4d4d8; margin: var(--space-2) 0 var(--space-3);
+  }
+  pre .c { color: #6b7280; }
+  pre .k { color: var(--gold); }
+  pre .g { color: var(--live); }
+  pre .r { color: var(--dead); }
+
+  .device { display: grid; gap: var(--space-3); grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+  figure.note {
+    margin: var(--space-3) 0 0; padding: var(--space-2) var(--space-3);
+    border-left: 3px solid var(--gold); background: rgba(212,175,55,.05);
+    border-radius: 0 10px 10px 0; font-size: 15.5px; color: #e4e4e7;
+  }
+  figure.note figcaption { display: block; margin-top: 6px; font-size: 13px; color: var(--muted-fg); }
+
+  ul.plain { list-style: none; padding: 0; margin: 0 0 var(--space-2); }
+  ul.plain li { padding: 7px 0 7px 26px; position: relative; border-bottom: 1px solid rgba(39,39,42,.6); }
+  ul.plain li:last-child { border-bottom: 0; }
+  ul.plain li::before { content: "→"; position: absolute; left: 0; color: var(--gold); }
+  ul.plain li b { font-weight: 600; }
+  ul.plain li code { color: var(--muted-fg); }
+
+  code {
+    font: 14px var(--mono); background: #1b1b1f; border: 1px solid var(--border);
+    border-radius: 5px; padding: 1px 6px; color: #e4e4e7;
+  }
+  pre code { background: none; border: 0; padding: 0; font-size: inherit; }
+
+  table { width: 100%; border-collapse: collapse; margin: var(--space-2) 0; font-size: 15.5px; }
+  th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { color: var(--muted-fg); font-weight: 600; font-size: 13px; letter-spacing: .05em; text-transform: uppercase; }
+  td:first-child { font-family: var(--mono); font-size: 14px; color: var(--gold); white-space: nowrap; }
+  .yes { color: var(--live); }
+  .no  { color: var(--dead); }
+
+  .credits h2, .licences h2 { margin-bottom: var(--space-2); }
+  .credits p, .licences p { font-size: 15.5px; }
+
+  footer {
+    border-top: 1px solid var(--border); padding: var(--space-4) 0 var(--space-5);
+    font-size: 14px; color: var(--muted-fg); display: flex; flex-wrap: wrap; gap: var(--space-2); justify-content: space-between;
+  }
+
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    section { padding: var(--space-4) 0; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <img src="assets/crab.svg" width="46" height="46" alt="">
+    <div class="who"><strong>Stanley Sujith Nelavala</strong><br>Software engineer, Linux</div>
+    <a class="back" href="/">← All writing</a>
+  </header>
+
+  <div class="lede">
+    <p class="kicker">Case study</p>
+    <h1>A tutor that answers back, built on a laptop that cannot make iPhone apps.</h1>
+    <p class="dek">Aurelia teaches AWS, LSAT and quant by conversation. It speaks, it listens, it
+    draws on a whiteboard, and it remembers what you got wrong last week. It was compiled, signed
+    and installed on Fedora, with no Mac anywhere in the process — and the harder problem turned
+    out to be debugging an app you are completely unable to see.</p>
+  </div>
+
+  <section id="what">
+    <h2>What it is</h2>
+    <p>The tutor's replies arrive as a token stream with hidden tags woven through the speech.
+    The app takes each one as it arrives rather than waiting for the reply to finish, so the board
+    fills in while it is still talking.</p>
+<pre><span class="c"># A reply, as it streams in. Speech is spoken; the tags are not.</span>
+<span class="c">#</span> Right, so S3 cross-region replication is not a backup strategy,
+<span class="c">#</span> it is a disaster recovery one —
+<span class="c">#</span> &lt;board&gt;RPO=15min RTO=4h&lt;/board&gt;
+<span class="c">#</span> &lt;log&gt;S3 replication strategy|correct&lt;/log&gt;
+<span class="c">#</span> &lt;note&gt;Confused retention with RPO — revisit D3.&lt;/note&gt;
+<span class="c">#</span> &lt;todo&gt;Redraw the async replication diagram tomorrow&lt;/todo&gt;</pre>
+    <p>There are 238 days of AWS and LSAT material and 24 weeks of quant checklist behind it. The
+    answer key is withheld from the prompt on purpose, so the tutor has to hear what the learner
+    actually says rather than reading the right answer off the page.</p>
+    <p>It knows the material, what you miss, your streak, which syllabus sections you have covered,
+    and what you said last time. A miss sends the topic back tomorrow; a hit moves it up a ladder of
+    1, 3, 7, 16 and 35 days.</p>
+
+    <div class="grid" style="margin-top:var(--space-3)">
+      <div class="card"><p class="n">262</p><p class="l">days and weeks of material parsed and tested</p></div>
+      <div class="card"><p class="n">74</p><p class="l">tests, running natively on Linux</p></div>
+      <div class="card"><p class="n">73</p><p class="l">distinct points the app can log</p></div>
+      <div class="card"><p class="n">61%</p><p class="l">of 5,125 lines of Swift have no UI in them, so all 74 tests run on Linux</p></div>
+    </div>
+  </section>
+
+  <section id="invisible">
+    <h2>You cannot see the app</h2>
+    <p>Here is the part that made this different from everything else I have built on Linux.
+    <code>xtool</code> will compile, sign and install an iOS app on a Mac-less machine, and then
+    the two things you normally rely on stop working.</p>
+    <p><b>There are no device screenshots.</b> Xcode 27 ships no Developer Disk Image, so nothing
+    can capture the screen. <code>xtool launch</code> cannot start apps on this device either, so
+    the app has to be launched by tapping its icon like a person would.</p>
+    <p>And <code>NSLog</code> goes nowhere. There is no console to watch.</p>
+    <p>So the first useful thing I wrote was not the tutor. It was a log file:</p>
+<pre><span class="c"># Every decision, every format, every chunk, appended to Documents/</span>
+DiagLog.event(<span class="k">"audio.activated"</span>, [<span class="k">"try"</span>: <span class="g">1</span>])
+DiagLog.event(<span class="k">"audio.format"</span>,  [<span class="k">"channels"</span>: <span class="g">1</span>, <span class="k">"sampleRate"</span>: <span class="g">48000</span>])
+DiagLog.event(<span class="k">"turn.begin"</span>,    [<span class="k">"chars"</span>: <span class="g">41</span>])
+DiagLog.event(<span class="k">"http.first"</span>,    [<span class="k">"ms"</span>: <span class="g">214</span>])
+DiagLog.event(<span class="k">"stt.partial"</span>,   [<span class="k">"final"</span>: <span class="g">true</span>, <span class="k">"text"</span>: <span class="k">"cross region replication"</span>])</pre>
+    <p>Then it gets pulled off the device over USB, because there is no other way in:</p>
+<pre>mkdir -p /tmp/aurelia
+ifuse -u 00008130-0006516C02C0001C <span class="k">--documents</span> ch.stanley.aurelia /tmp/aurelia
+cat /tmp/aurelia/aurelia.log</pre>
+    <p>Not decoration. The turn that hung silently for fifteen minutes was one log line away from
+    being found, and without this file it would still be hanging.</p>
+  </section>
+
+  <section id="found">
+    <h2>What the log found</h2>
+    <p>Three bugs that were completely invisible from the code, and that each look like nothing
+    at all when you read the source.</p>
+
+    <h3>One audio session, two owners</h3>
+    <p>The app talks and it listens, and <code>AVAudioSession</code> allows exactly one thing at a
+    time. When the voice-playback queue claimed the session and set its category on initialisation,
+    the microphone could no longer open — and the failure was a single line:</p>
+<pre><span class="r">Session activation failed</span></pre>
+    <p>Not a crash, not a hang, not an empty state. The recogniser now walks a ladder of
+    category and option combinations and takes the first that actually activates, because which
+    one is accepted depends on what the system is already doing with audio.</p>
+
+    <h3><code>installTap</code> raises, and it does not throw</h3>
+    <p>The canonical Swift snippet is <code>try AVAudioSession...installTap(...)</code>, which makes
+    it look like a failure a <code>catch</code> can handle. It is not one. Reading
+    <code>inputNode.outputFormat(forBus:)</code> before the session is configured and activated
+    reports 0 Hz and 0 channels, and <code>installTap</code> raises on that rather than returning
+    an error. A <code>catch</code> cannot save you. Check the values instead.</p>
+
+    <h3>The microphone was never broken</h3>
+    <p>This one was my mistake, and it is the reason I am writing the section. I had listed the
+    microphone as unverified and queued up an audio debugging session. The log had been saying
+    the whole time:</p>
+<pre>perm.speechStatus raw=<span class="g">3</span>
+perm.micStatus granted=<span class="g">true</span>
+audio.activated try=<span class="g">1</span>
+audio.format channels=<span class="g">1</span> sampleRate=<span class="g">48000</span>
+audio.engineRunning
+stt.partial final=<span class="g">true</span> text=<span class="k">"cross region replication"</span></pre>
+    <p>Recognition had worked. The transcript was reaching the app and the composer was dropping
+    it. Chasing the audio stack would have found nothing, and the bug I was about to fix would
+    have still been there.</p>
+
+    <figure class="note">
+      The lesson is not "add logging". It is that a log is only worth having if you read it before
+      forming the theory. I had a theory, it was wrong, and the evidence was sitting in a file I
+      had not opened.
+      <figcaption>Worth the whole exercise, honestly.</figcaption>
+    </figure>
+  </section>
+
+  <section id="structure">
+    <h2>Why the core has no UI in it</h2>
+    <p>Everything testable lives in a target with no SwiftUI and no UIKit, which means
+    <code>swift test</code> runs natively on Linux in about sixteen seconds. Nothing is mocked,
+    because there is nothing to mock: the tag parser, the curriculum loader, the HTML reader, the
+    prompt assembly, the progress ladder and the SSE reader are all Foundation.</p>
+<pre><span class="c">Sources/StudyBuddyCore/    Foundation only — this is what the 74 tests run</span>
+  TagParser.swift        the speech / side-effect split
+  ContentStore.swift     reads the bundled curricula
+  MiniHTML.swift         just enough HTML for fixed generated pages
+  PromptBuilder.swift    the persona and prompt assembly
+  ProgressStore.swift    SQLite, a direct port of the Python schema
+  ProgressMath.swift     the ladder, extracted so it can be tested
+  SSEReader.swift        one AVAudioSession-safe reader
+
+Sources/StudyBuddy/      the app. Builds only through xtool.
+  BoardView.swift        the whiteboard; one web view, for mermaid only
+  SpeechRecognizer.swift on-device listening</pre>
+    <p>The whiteboard is the part I like most. The model can draw a table, a table of values, a
+    code block, a formula or a mermaid diagram, and all five render natively — except mermaid,
+    which gets the single <code>WKWebView</code> in the app, scoped to that one case and nothing
+    else. An unrecognised board kind falls back to a plain list, because the model does invent
+    kinds, and rendering nothing is the worst possible answer.</p>
+  </section>
+
+  <section id="build">
+    <h2>How a build runs</h2>
+<pre>export PATH=<span class="k">"$HOME/.local/swift/usr/bin:$PATH"</span>   <span class="c"># Swift 6.4.1 is not on PATH by default</span>
+
+bash tools/stage-content.sh                        <span class="c"># copy the curricula in</span>
+bash tools/inject-key.sh                           <span class="c"># bake the provider key in</span>
+swift test                                         <span class="c"># 74 tests, on Linux</span>
+
+xtool dev build                                    <span class="c"># → xtool/Aurelia.app</span>
+xtool dev build --configuration release --ipa      <span class="c"># → 11.8 MB</span>
+xtool install xtool/Aurelia.ipa</pre>
+    <table>
+      <tr><th>Requirement</th><th>Value</th></tr>
+      <tr><td>Swift</td><td>6.4.1, Linux, no Mac toolchain</td></tr>
+      <tr><td>xtool</td><td>1.22.2</td></tr>
+      <tr><td>SDK</td><td>built from Xcode 27 with <code>xtool sdk install --slim</code></td></tr>
+      <tr><td>Signing</td><td>a free personal team, on Linux</td></tr>
+      <tr><td>Mac required</td><td class="no">none</td></tr>
+    </table>
+    <p>The provider key is compiled into the binary by a script that writes a gitignored file. That
+    is a deliberate trade for a personal app and it is the wrong default for anything else —
+    anyone with the .ipa has the key. For a release build this belongs in the Keychain.</p>
+  </section>
+
+  <section id="limits">
+    <h2>What is not finished</h2>
+    <p>Listed because a case study that only lists achievements is advertising, not engineering.</p>
+    <ul class="plain">
+      <li><b>No real tutor turn has completed on the phone.</b> The silent hang was traced to the
+      HTTP layer and fixed, but the phone went unavailable before it could be re-run.</li>
+      <li><b>The whiteboard, progress and reminders have never been seen by a human on a
+      device.</b> All three are written, compiled and unit-tested. None has been looked at.</li>
+      <li><b>Chatterbox voice has never run.</b> It is written behind the same protocol as the
+      system voice, but it needs a server, and 350M parameters will not run on a phone.</li>
+      <li><b>The free-models route is closed.</b> OpenCode's gateway answers a direct call from
+      another app with <code>403 can only be used from within OpenCode</code>. That is a
+      restriction on the client, not on the key. A workaround exists — shell out to the opencode
+      CLI, which is inside OpenCode and therefore allowed — but it needs a machine switched on,
+      so it is not the default.</li>
+    </ul>
+  </section>
+
+  <section class="credits" id="credits">
+    <h2>Credits</h2>
+    <p><b><a href="https://github.com/DuarteSantos8/openGym">openGym</a></b> — Duarte Santos.
+    The iOS build established that a SwiftUI app compiles on Linux with xtool; the same
+    techniques carry over here, and <a href="/opengym-ios/">that case study</a> covers the
+    build itself in more depth.</p>
+    <p><b><a href="https://github.com/xtool-org/xtool">xtool</a></b> — the cross-platform Xcode
+    replacement that makes any of this possible.</p>
+    <p><b><a href="https://github.com/resemble-ai/chatterbox">Chatterbox</a></b> — Resemble AI,
+    MIT. The only free speech model with real paralinguistic control: it understands
+    <code>[laugh]</code>, <code>[chuckle]</code> and <code>[sigh]</code> as text, and has an
+    exaggeration slider. A tutor's prosody carries meaning the transcript does not, so the engine
+    is handed a mood rather than a string — a hint slows down, praise lifts slightly, and a
+    correction stays level rather than dropping, which reads as disappointment.</p>
+    <p><b><a href="https://github.com/consultantstanleymn/study-mentor">study-mentor</a></b> —
+    the Python tutor Aurelia is a rewrite of. The tag protocol, the prompt persona, the SQLite
+    schema and the spaced-repetition ladder are all ports of it.</p>
+  </section>
+
+  <section class="licences" id="licences">
+    <h2>Licences</h2>
+    <p>Aurelia is MIT, © Stanley Sujith Nelavala. The AWS and LSAT curricula are MIT. The quant
+    checklist is Apache-2.0. Chatterbox is MIT. openGym is AGPL-3.0, and is linked here rather
+    than vendored.</p>
+  </section>
+
+  <footer>
+    <span>Stanley Sujith Nelavala — MIT</span>
+    <span><a href="https://github.com/consultantstanleymn/aurelia-ios">github.com/consultantstanleymn/aurelia-ios</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
