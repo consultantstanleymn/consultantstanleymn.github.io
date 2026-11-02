@@ -445,6 +445,22 @@
     .study-link .dot { animation: none; }
   }
 
+
+  /* ---- Resources (curated, not my work) ---- */
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  .resource-list { list-style: none; padding: 0; margin: 0; }
+  .resource-card { display: flex; flex-direction: column; gap: var(--space-1); background: var(--bg-raised); border: 1px dashed var(--border); border-radius: 14px; padding: var(--space-4); }
+  .resource-card .badge { align-self: flex-start; font-family: 'Space Grotesk', sans-serif; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted-fg); border: 1px solid var(--border); border-radius: 999px; padding: 2px 10px; }
+  .resource-card .project-title a { text-decoration: none; }
+  .resource-card .project-title a:hover, .resource-card .project-title a:focus-visible { color: var(--accent); }
+  .resource-credit { font-size: 0.82rem; color: var(--muted-fg); margin: 0; }
+  .resource-intro { color: var(--muted-fg); max-width: 60ch; margin: 0 0 var(--space-4); }
+  .study-dock-label--curated { margin-top: 6px; padding-top: 10px; border-top: 1px dashed var(--border); }
+  .dot--curated { background: var(--muted-fg) !important; animation: none !important; }
+  .reveal .resource-card { opacity: 0; transform: translateY(14px); transition: opacity 550ms var(--ease), transform 550ms var(--ease); }
+  .reveal.is-visible .resource-card { opacity: 1; transform: none; }
+  @media (max-width: 900px) { .study-dock-label--curated { display: none; } }
+
   /* ---- Ambient sitewide background motion ---- */
   .bg-ambient { position: fixed; inset: 0; z-index: -20; overflow: hidden; pointer-events: none; }
   .bg-ambient span {
@@ -530,6 +546,7 @@
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
+      <a href="#resources">Resources</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -748,8 +765,27 @@
       </div>
     </section>
 
-    <aside class="study-dock" id="studyDock" aria-label="Study guides">
-      <p class="study-dock-label">Study Guides</p>
+    <section id="resources" class="container section reveal">
+      <div class="section-head">
+        <div>
+          <p class="section-label">Resources</p>
+          <h2 class="section-title">Recommended resources</h2>
+        </div>
+      </div>
+      <p class="resource-intro">Things other people built that I find useful. I didn&rsquo;t create any of these; all credit goes to the authors linked on each card. I&rsquo;ll keep adding to this list.</p>
+      <ul class="project-grid resource-list">
+        <li class="resource-card">
+          <span class="badge">Recommended &middot; not my work</span>
+          <h3 class="project-title"><a href="https://github.com/aasthas2022/SDE-Interview-and-Prep-Roadmap/tree/main" target="_blank" rel="noopener external">SDE Interview &amp; Prep Roadmap<span class="sr-only"> (external, opens in new tab)</span> &#8599;</a></h3>
+          <p class="resource-credit">By <a href="https://github.com/aasthas2022" target="_blank" rel="noopener external">aasthas2022</a> on GitHub &middot; added <time datetime="2026-11-01">Nov 2026</time></p>
+          <p class="project-desc"><strong>My take:</strong> a checklist-driven roadmap (~700 topics, prioritized P0&ndash;P2) covering DSA, system design, OS, networking, databases, security and agentic AI/LLM engineering for SDE interviews. A good way to see what to study and track progress.</p>
+          <div class="tag-row"><span class="tag">Interviews</span><span class="tag">System Design</span><span class="tag">DSA</span><span class="tag">Agentic AI</span></div>
+        </li>
+      </ul>
+    </section>
+
+    <aside class="study-dock" id="studyDock" aria-label="Study guides and recommended resources">
+      <p class="study-dock-label">My Study Guides</p>
       <a class="study-link" href="/aws-sa-pro-curriculum/">
         <span class="dot" aria-hidden="true"></span>
         <span>
@@ -762,6 +798,14 @@
         <span>
           <span class="title">LSAT 170</span>
           <span class="sub">28-week prep curriculum</span>
+        </span>
+      </a>
+      <p class="study-dock-label study-dock-label--curated">Recommended &middot; not mine</p>
+      <a class="study-link" href="#resources">
+        <span class="dot dot--curated" aria-hidden="true"></span>
+        <span>
+          <span class="title">Resources</span>
+          <span class="sub">Useful things others built</span>
         </span>
       </a>
     </aside>
