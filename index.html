@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Stanley N. — Software engineer in Minneapolis, MN. Backend &amp; cloud engineering (AWS, PostgreSQL, REST APIs), applied ML/NLP research, and an AWS Certified Solutions Architect. Portfolio, open-source projects, and study guides.">
+<meta name="description" content="Stanley N. — Software engineer in Minneapolis, MN. Full-stack and cloud engineering (Python, FastAPI, React, TypeScript, AWS, PostgreSQL), applied ML/NLP research, and an AWS Certified Solutions Architect. Portfolio, open-source projects, and study guides.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://stanley-n.com/">
 <title>Stanley N. — Software Engineer, Applied ML/NLP &amp; Cloud</title>
@@ -12,7 +12,7 @@
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Stanley N.">
 <meta property="og:title" content="Stanley N. — Software Engineer, Applied ML/NLP &amp; Cloud">
-<meta property="og:description" content="Software engineer in Minneapolis, MN. Backend &amp; cloud engineering, applied ML/NLP research, AWS Certified Solutions Architect. Portfolio, projects, and study guides.">
+<meta property="og:description" content="Software engineer in Minneapolis, MN. Full-stack and cloud engineering, applied ML/NLP research, AWS Certified Solutions Architect. Portfolio, projects, and study guides.">
 <meta property="og:url" content="https://stanley-n.com/">
 <meta property="og:image" content="https://stanley-n.com/assets/headshot.jpg">
 <meta name="twitter:card" content="summary">
@@ -36,7 +36,7 @@
   "url": "https://stanley-n.com/",
   "image": "https://stanley-n.com/assets/headshot.jpg",
   "email": "mailto:consultantstanleymn@gmail.com",
-  "jobTitle": "Software Engineer",
+  "jobTitle": "Software Development Engineer",
   "worksFor": {
     "@type": "Organization",
     "name": "Mass Technologies"
@@ -59,12 +59,12 @@
   "knowsAbout": [
     "Python", "Java", "TypeScript", "SQL", "AWS", "PostgreSQL",
     "Machine Learning", "Natural Language Processing", "REST API design",
-    "Docker", "React", "Kafka", "Cloud Architecture"
+    "Docker", "React", "FastAPI", "React Native", "GitHub Actions", "Kafka", "Cloud Architecture"
   ],
   "sameAs": [
     "https://github.com/consultantstanleymn",
     "https://github.com/stanley-s-nelavala",
-    "https://www.linkedin.com/in/stanley-sujithnelavala"
+    "https://www.linkedin.com/in/stanley-sujith-nelavala"
   ]
 }
 </script>
@@ -354,6 +354,8 @@
   .timeline-role { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 600; margin: 0 0 2px; letter-spacing: -0.01em; }
   .timeline-org { font-size: 0.92rem; color: var(--accent); font-weight: 500; margin: 0 0 10px; }
   .timeline-desc { font-size: 0.96rem; color: var(--muted-fg); margin: 0; max-width: 62ch; }
+  .timeline-desc + .timeline-desc { margin-top: 10px; }
+  .timeline-desc strong { color: var(--fg); font-weight: 600; }
   @media (max-width: 640px) { .timeline-item { grid-template-columns: 1fr; gap: 6px; } }
 
   /* ---- Project cards ---- */
@@ -561,7 +563,7 @@
         <div class="hero-text">
           <p class="eyebrow">Applied ML/NLP &middot; Full-Stack &amp; Cloud Engineering</p>
           <h1>I build systems that aren't allowed to have a bad day.</h1>
-          <p class="lede">Software engineer and researcher with an M.S. in Computer Science from the University of Minnesota. I split my time between backend/cloud engineering, NLP research, and — until recently — teaching machine learning.</p>
+          <p class="lede">Full-stack software engineer with an M.S. in Computer Science (4.0 GPA) and a year of production work on a multi-tenant hospital operations platform. I build FastAPI and PostgreSQL backends, React and React Native apps, and the AWS pipelines that ship them. I also do applied NLP research and have taught machine learning.</p>
           <div class="hero-actions">
             <a class="btn-primary" href="#projects">See projects</a>
             <a class="btn-secondary" href="#contact">Get in touch</a>
@@ -583,15 +585,15 @@
       </div>
       <div class="about-grid">
         <div>
-          <p>I'm a software engineer at Mass Technologies, working across a multi-module healthcare operations platform — schema design, REST APIs, AWS infrastructure, and the data-integrity work that keeps a growing suite of clinical and administrative tools actually correct.</p>
+          <p>I'm a software development engineer at Mass Technologies. I build and own features across a multi-tenant hospital operations platform: FastAPI and PostgreSQL backends, React and TypeScript web apps, an Expo mobile app, and the AWS and GitHub Actions pipelines that release them. I built a design service for hospitals end to end, an on-device voice assistant for the mobile app, and a signed machine-to-machine API for a large medical device catalog.</p>
           <p>Before that, I spent two years as a graduate researcher studying how misinformation about transgender and nonbinary communities spreads on TikTok, building a pipeline that processed over a million videos with GPU-accelerated video analysis, OCR, and topic modeling. I've also built real-time data pipelines on AWS, and taught machine learning as adjunct faculty through August 2026.</p>
           <p>I'm an AWS Certified Solutions Architect. Outside of work I build things for fun — agent-orchestration tools, a terminal I can drive from my phone, small language models fine-tuned on niche datasets — mostly to see what breaks.</p>
         </div>
         <ul class="fact-list">
           <li><span class="fact-label">Based in</span><span class="fact-value">Minneapolis / Duluth, MN</span></li>
-          <li><span class="fact-label">Education</span><span class="fact-value">M.S. Computer Science, University of Minnesota</span></li>
+          <li><span class="fact-label">Education</span><span class="fact-value">M.S. Computer Science, University of Minnesota Duluth (4.0 GPA)</span></li>
           <li><span class="fact-label">Certification</span><span class="fact-value">AWS Certified Solutions Architect — Associate</span></li>
-          <li><span class="fact-label">Currently</span><span class="fact-value">Software Engineer, Mass Technologies</span></li>
+          <li><span class="fact-label">Currently</span><span class="fact-value">Software Development Engineer, Mass Technologies</span></li>
         </ul>
       </div>
     </section>
@@ -607,9 +609,13 @@
         <div class="timeline-item">
           <div class="timeline-date">Nov 2025 &ndash; Present</div>
           <div>
-            <h3 class="timeline-role">Software Engineer</h3>
-            <p class="timeline-org">Mass Technologies</p>
-            <p class="timeline-desc">Backend and cloud engineer on a multi-module healthcare operations platform used by hospital and clinical teams to manage assets, compliance, security, and facility workflows across a growing suite of interconnected services. I design and evolve PostgreSQL schemas and REST APIs, build and harden AWS infrastructure (IAM, networking, compute, monitoring), and do cross-service integration work to keep data consistent as the platform scales. I also contribute to CI/CD pipelines and security-hardening initiatives, and review code across the wider engineering team.</p>
+            <h3 class="timeline-role">Software Development Engineer</h3>
+            <p class="timeline-org">Mass Technologies, Dayton, OH</p>
+            <p class="timeline-desc">Build and own features across 23 repositories on a multi-tenant hospital operations platform. Backends use FastAPI and PostgreSQL, web apps use React and TypeScript, and the mobile app uses Expo. A platform service resolves the tenant database for every request.</p>
+            <p class="timeline-desc"><strong>Design service for hospitals.</strong> Built the v2 product from scratch, backend and web: guided design modes, document ingestion and extraction, constraint checking, versioning, and a drawing assistant with a validator. Wrote a deterministic layout engine that packs rooms on a grid and places doors, zones, and exits in code, with a setting to draw with an LLM or in code only. Built roles, sharing, and a review workflow, plus export to DXF at true scale and to PDF.</p>
+            <p class="timeline-desc"><strong>Mobile app (iOS and Android).</strong> Built the React Native app with scan-to-search, barcode prefill, attachment upload, and a design system. Built an on-device voice assistant with Whisper speech recognition, Kokoro text to speech, and an optional small language model, so voice works without a cloud call. Set up separate iOS and Android release pipelines with TestFlight submit.</p>
+            <p class="timeline-desc"><strong>Device catalog and machine-to-machine API.</strong> Designed and built the signed API that connects the device catalog to the planning, ordering, and detection services, with per-call tenant claims, replay protection, and a Redis rate limiter. Hardened it after a security audit. Built ranked device search and batch import matching.</p>
+            <p class="timeline-desc"><strong>Quality and delivery.</strong> Automated Playwright end-to-end tests through MFA sign-in, built a k6 performance kit, and ran releases and CI (checks, Dependabot, CODEOWNERS) behind a suite of 1,300+ tests. Contribute to security hardening with GuardDuty malware scanning for S3 and CodeQL.</p>
           </div>
         </div>
         <div class="timeline-item">
@@ -647,6 +653,21 @@
         </div>
       </div>
       <div class="project-grid">
+        <div class="project-card">
+          <h3 class="project-title">RxDesign: design service for hospitals</h3>
+          <p class="project-desc">A managed service that turns a hospital's needs into a floor plan. Guided setup, document ingestion, constraint and adjacency checks, a deterministic layout engine, versioning, sharing with roles, and export to DXF and PDF. Backed by 69 offline tests that use fake models.</p>
+          <div class="tag-row"><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">LLM</span><span class="tag">S3</span></div>
+        </div>
+        <div class="project-card">
+          <h3 class="project-title">RxAsset mobile app with on-device voice</h3>
+          <p class="project-desc">An iOS and Android app for hospital asset teams. Scan to search, barcode prefill, offline-friendly drafts, and a voice assistant that runs fully on the phone with Whisper, Kokoro, and an optional Qwen model. Includes separate release pipelines with TestFlight submit.</p>
+          <div class="tag-row"><span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">Whisper</span><span class="tag">Kokoro</span><span class="tag">EAS</span></div>
+        </div>
+        <div class="project-card">
+          <h3 class="project-title">RxCatalog machine-to-machine API</h3>
+          <p class="project-desc">A signed service-to-service API for a large medical device catalog, with per-call tenant claims, replay protection, an atomic Redis rate limiter, ranked device search, and batch import matching.</p>
+          <div class="tag-row"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">JSONB</span></div>
+        </div>
           <div class="project-card">
             <h3 class="project-title">Aurelia &mdash; a voice tutor for iPhone, built on Linux</h3>
             <p class="project-desc">The native SwiftUI rewrite of Study Mentor: 238 AWS and LSAT days plus 24 quant weeks taught by conversation, with a live whiteboard, spaced repetition and SQLite progress. Compiled and signed on Fedora with xtool. The hard part was that the app cannot be screenshotted and its logs go nowhere, so it writes its own log file and you pull it over USB.</p>
@@ -820,15 +841,15 @@
       <div class="skills-grid">
         <div class="skill-group">
           <h3>Languages</h3>
-          <div class="tag-row"><span class="tag">Python</span><span class="tag">Java</span><span class="tag">TypeScript</span><span class="tag">Rust</span><span class="tag">C / C++</span><span class="tag">SQL</span><span class="tag">Dart</span><span class="tag">Swift</span><span class="tag">Bash</span></div>
+          <div class="tag-row"><span class="tag">Python</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">Java</span><span class="tag">Rust</span><span class="tag">C / C++</span><span class="tag">SQL</span><span class="tag">Dart</span><span class="tag">Swift</span><span class="tag">Bash</span></div>
         </div>
         <div class="skill-group">
           <h3>Cloud &amp; DevOps</h3>
-          <div class="tag-row"><span class="tag">AWS (EC2, S3, RDS, IAM, Glue, Athena)</span><span class="tag">Docker</span><span class="tag">Git / GitHub</span><span class="tag">GitHub Actions</span><span class="tag">GitHub Pages</span><span class="tag">Kafka</span><span class="tag">Jira</span></div>
+          <div class="tag-row"><span class="tag">AWS (ECS, ECR, ALB, RDS, Lambda, S3, CloudFront, IAM, Secrets Manager, CloudWatch, EventBridge, SES, SNS, Glue, Athena)</span><span class="tag">Docker</span><span class="tag">AWS SAM / CDK</span><span class="tag">GitHub Actions (reusable workflows, OIDC)</span><span class="tag">Git / GitHub</span><span class="tag">Kafka</span><span class="tag">Jira</span></div>
         </div>
         <div class="skill-group">
           <h3>Web &amp; Mobile</h3>
-          <div class="tag-row"><span class="tag">React</span><span class="tag">Flask</span><span class="tag">Node.js</span><span class="tag">Flutter</span><span class="tag">Tauri</span><span class="tag">Firebase</span></div>
+          <div class="tag-row"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Vite</span><span class="tag">Zustand</span><span class="tag">FastAPI</span><span class="tag">SQLAlchemy / Alembic</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">Flask</span><span class="tag">Node.js</span><span class="tag">React Native / Expo</span><span class="tag">Flutter</span><span class="tag">Tauri</span><span class="tag">Firebase</span></div>
         </div>
         <div class="skill-group">
           <h3>Data &amp; ML</h3>
@@ -837,6 +858,10 @@
         <div class="skill-group">
           <h3>AI &amp; Agents</h3>
           <div class="tag-row"><span class="tag">MCP</span><span class="tag">LangGraph</span><span class="tag">CrewAI</span><span class="tag">RAG</span><span class="tag">Multi-Agent Systems</span><span class="tag">Claude Code</span></div>
+        </div>
+        <div class="skill-group">
+          <h3>Testing &amp; Security</h3>
+          <div class="tag-row"><span class="tag">pytest</span><span class="tag">Vitest</span><span class="tag">Playwright</span><span class="tag">k6</span><span class="tag">ruff / ESLint</span><span class="tag">CodeQL</span><span class="tag">GuardDuty</span><span class="tag">Dependabot</span><span class="tag">IAM roles</span></div>
         </div>
         <div class="skill-group">
           <h3>Web Platform &amp; SEO</h3>
@@ -860,7 +885,7 @@
           </a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/in/stanley-sujithnelavala" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/stanley-sujith-nelavala" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-4 0v6h-4v-6a6 6 0 0 1 6-6Z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="1.6"/></svg>
             LinkedIn
           </a>
