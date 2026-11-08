@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Stanley N. — Software engineer in Huntington, IN. Full-stack and cloud engineering (Python, FastAPI, React, TypeScript, AWS, PostgreSQL), applied ML/NLP research, and an AWS Certified Solutions Architect. Portfolio, open-source projects, and study guides.">
+<meta name="description" content="Stanley N. — Software engineer in Huntington, IN. Full-stack and cloud engineering (Python, FastAPI, React, TypeScript, Rust, AWS, PostgreSQL), customer integrations (webhooks, OAuth2/OIDC, LLM agents), applied ML/NLP research, and an AWS Certified Solutions Architect. Portfolio, open-source projects, and study guides.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://stanley-n.com/">
 <title>Stanley N. — Software Engineer, Applied ML/NLP &amp; Cloud</title>
@@ -492,6 +492,16 @@
   .reveal.is-visible .project-card:nth-child(8) { transition-delay: 390ms; }
   .reveal.is-visible .project-card:nth-child(9) { transition-delay: 440ms; }
   .reveal.is-visible .project-card:nth-child(10) { transition-delay: 490ms; }
+  .reveal.is-visible .project-card:nth-child(11) { transition-delay: 540ms; }
+  .reveal.is-visible .project-card:nth-child(12) { transition-delay: 590ms; }
+  .reveal.is-visible .project-card:nth-child(13) { transition-delay: 640ms; }
+  .reveal.is-visible .project-card:nth-child(14) { transition-delay: 690ms; }
+  .reveal.is-visible .project-card:nth-child(15) { transition-delay: 740ms; }
+  .reveal.is-visible .project-card:nth-child(16) { transition-delay: 790ms; }
+  .reveal.is-visible .project-card:nth-child(17) { transition-delay: 840ms; }
+  .reveal.is-visible .project-card:nth-child(18) { transition-delay: 890ms; }
+  .reveal.is-visible .project-card:nth-child(19) { transition-delay: 940ms; }
+  .reveal.is-visible .project-card:nth-child(20) { transition-delay: 990ms; }
   .reveal.is-visible .timeline-item:nth-child(1) { transition-delay: 40ms; }
   .reveal.is-visible .timeline-item:nth-child(2) { transition-delay: 110ms; }
   .reveal.is-visible .timeline-item:nth-child(3) { transition-delay: 180ms; }
@@ -654,6 +664,33 @@
       </div>
       <div class="project-grid">
         <div class="project-card">
+          <h3 class="project-title">Agent Integration Platform</h3>
+          <p class="project-desc">An LLM support-triage agent with tool use, per-tenant tool allow-lists, step limits and cited answers from retrieved documents. Customer integrations include signed inbound and outbound webhooks, an OAuth2 helper and a REST connector, backed by an eval harness gated in CI and 80 passing tests.</p>
+          <div class="tag-row"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span><span class="tag">Terraform</span></div>
+          <a class="project-link" href="https://github.com/consultantstanleymn/agent-integration-platform" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+            View on GitHub
+          </a>
+        </div>
+        <div class="project-card">
+          <h3 class="project-title">Customer Integration Console</h3>
+          <p class="project-desc">A full-stack console to connect data sources, run incremental ETL into PostgreSQL and monitor runs. It adds OIDC single sign-on, role-based access, an append-only audit log, a dead-letter queue with replay and data quality checks, with 99 tests plus Playwright end-to-end tests.</p>
+          <div class="tag-row"><span class="tag">TypeScript</span><span class="tag">Next.js</span><span class="tag">Fastify</span><span class="tag">PostgreSQL</span><span class="tag">Kubernetes</span></div>
+          <a class="project-link" href="https://github.com/consultantstanleymn/customer-integration-console" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+            View on GitHub
+          </a>
+        </div>
+        <div class="project-card">
+          <h3 class="project-title">Webhook and Connector Gateway</h3>
+          <p class="project-desc">A Rust gateway that verifies HMAC-SHA256 signed customer webhooks in constant time, applies per-tenant rate limits and idempotency, and stores events durably before delivery with transforms. A worker pool handles retries with backoff, dead letters with replay and circuit breakers, with 53 tests.</p>
+          <div class="tag-row"><span class="tag">Rust</span><span class="tag">axum</span><span class="tag">tokio</span><span class="tag">SQLite</span><span class="tag">Docker</span></div>
+          <a class="project-link" href="https://github.com/consultantstanleymn/webhook-connector-gateway" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+            View on GitHub
+          </a>
+        </div>
+        <div class="project-card">
           <h3 class="project-title">RxDesign: design service for hospitals</h3>
           <p class="project-desc">A managed service that turns a hospital's needs into a floor plan. Guided setup, document ingestion, constraint and adjacency checks, a deterministic layout engine, versioning, sharing with roles, and export to DXF and PDF. Backed by 70+ offline tests that use fake models.</p>
           <div class="tag-row"><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">LLM</span><span class="tag">S3</span></div>
@@ -750,7 +787,7 @@
         <div class="project-card">
           <h3 class="project-title">NeuralFlow</h3>
           <p class="project-desc">A local-first desktop app for building multi-agent AI workflows visually — drag-and-drop orchestration over LangGraph and CrewAI, running entirely on-device with any model, no Docker or cloud required.</p>
-          <div class="tag-row"><span class="tag">Tauri</span><span class="tag">React Flow</span><span class="tag">LangGraph / CrewAI</span></div>
+          <div class="tag-row"><span class="tag">Tauri</span><span class="tag">Next.js</span><span class="tag">Fastify</span><span class="tag">React Flow</span><span class="tag">LangGraph / CrewAI</span></div>
           <a class="project-link" href="https://github.com/ssnelavala-masstcs/neuralflow" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
             View on GitHub
@@ -845,7 +882,7 @@
         </div>
         <div class="skill-group">
           <h3>Cloud &amp; DevOps</h3>
-          <div class="tag-row"><span class="tag">AWS (ECS, ECR, ALB, RDS, Lambda, S3, CloudFront, IAM, Secrets Manager, CloudWatch, EventBridge, SES, SNS, Glue, Athena)</span><span class="tag">Docker</span><span class="tag">AWS SAM / CDK</span><span class="tag">GitHub Actions (reusable workflows, OIDC)</span><span class="tag">Git / GitHub</span><span class="tag">Kafka</span><span class="tag">Jira</span></div>
+          <div class="tag-row"><span class="tag">AWS (ECS, ECR, ALB, RDS, Lambda, S3, CloudFront, IAM, Secrets Manager, CloudWatch, EventBridge, SES, SNS, Glue, Athena)</span><span class="tag">Docker</span><span class="tag">AWS SAM / CDK</span><span class="tag">Terraform</span><span class="tag">Kubernetes manifests</span><span class="tag">GitHub Actions (reusable workflows, OIDC)</span><span class="tag">Git / GitHub</span><span class="tag">Kafka</span><span class="tag">Jira</span></div>
         </div>
         <div class="skill-group">
           <h3>Web &amp; Mobile</h3>
@@ -857,11 +894,11 @@
         </div>
         <div class="skill-group">
           <h3>AI &amp; Agents</h3>
-          <div class="tag-row"><span class="tag">MCP</span><span class="tag">LangGraph</span><span class="tag">CrewAI</span><span class="tag">RAG</span><span class="tag">Multi-Agent Systems</span><span class="tag">Claude Code</span></div>
+          <div class="tag-row"><span class="tag">MCP</span><span class="tag">LangGraph</span><span class="tag">CrewAI</span><span class="tag">RAG</span><span class="tag">Multi-Agent Systems</span><span class="tag">Claude Code</span><span class="tag">LLM Tool Use</span><span class="tag">Evals</span></div>
         </div>
         <div class="skill-group">
           <h3>Testing &amp; Security</h3>
-          <div class="tag-row"><span class="tag">pytest</span><span class="tag">Vitest</span><span class="tag">Playwright</span><span class="tag">k6</span><span class="tag">ruff / ESLint</span><span class="tag">CodeQL</span><span class="tag">GuardDuty</span><span class="tag">Dependabot</span><span class="tag">IAM roles</span></div>
+          <div class="tag-row"><span class="tag">pytest</span><span class="tag">Vitest</span><span class="tag">Playwright</span><span class="tag">k6</span><span class="tag">ruff / ESLint</span><span class="tag">CodeQL</span><span class="tag">GuardDuty</span><span class="tag">Dependabot</span><span class="tag">IAM roles</span><span class="tag">Webhooks / HMAC</span><span class="tag">OAuth2 / OIDC</span></div>
         </div>
         <div class="skill-group">
           <h3>Web Platform &amp; SEO</h3>
