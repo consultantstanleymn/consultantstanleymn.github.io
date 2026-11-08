@@ -1007,7 +1007,7 @@
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.12 });
+      }, { threshold: 0, rootMargin: "0px 0px -6% 0px" });
       document.querySelectorAll('.reveal').forEach(function (el) { observer.observe(el); });
     } else {
       document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
