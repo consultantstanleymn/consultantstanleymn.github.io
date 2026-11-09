@@ -550,19 +550,25 @@
     color: var(--muted-fg); font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center;
     gap: var(--space-2); flex-wrap: wrap;
   }
-  .cookie-note {
-    max-width: var(--max); margin: 0 auto; padding: 0 var(--space-3);
-  }
-  .cookie-note details {
-    border: 1px solid var(--border); border-radius: 12px; background: var(--bg-raised);
-    padding: 14px 18px; font-size: 0.92rem; color: var(--muted-fg);
-  }
-  .cookie-note summary { cursor: pointer; color: var(--fg); font-weight: 500; }
-  .cookie-note summary:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; }
-  .cookie-note h3 { margin: 14px 0 6px; font-size: 0.95rem; color: var(--fg); }
-  .cookie-note ul, .cookie-note ol { margin: 0; padding-left: 1.2rem; }
-  .cookie-note li { margin: 3px 0; }
-  .cookie-note p { margin: 8px 0 0; }
+  .cc { position: fixed; right: 20px; bottom: 20px; z-index: 60; width: min(400px, calc(100vw - 32px));
+    max-height: calc(100vh - 40px); overflow-y: auto;
+    background: var(--bg-raised); color: var(--fg); border: 1px solid var(--border); border-radius: 16px;
+    padding: 20px; box-shadow: 0 12px 40px rgba(0,0,0,0.18); font-size: 0.9rem; line-height: 1.5;
+    opacity: 0; transform: translateY(16px); transition: opacity .4s var(--ease), transform .4s var(--ease); }
+  .cc.is-visible { opacity: 1; transform: none; }
+  .cc[hidden] { display: none; }
+  .cc h2 { margin: 0 0 6px; font-size: 1rem; font-weight: 600; }
+  .cc p { margin: 0 0 14px; color: var(--muted-fg); }
+  .cc-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .cc button { font: inherit; font-weight: 500; padding: 9px 14px; border-radius: 10px; cursor: pointer;
+    border: 1px solid var(--border); background: transparent; color: var(--fg); }
+  .cc button:hover { border-color: var(--fg); }
+  .cc button.cc-primary { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
+  .cc button:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+  .cc h3 { margin: 4px 0 6px; font-size: 0.95rem; }
+  .cc ul, .cc ol { margin: 0 0 12px; padding-left: 1.2rem; color: var(--muted-fg); }
+  .cc li { margin: 3px 0; }
+  @media (prefers-reduced-motion: reduce) { .cc { transition: none; } }
 </style>
 </head>
 <body>
@@ -999,14 +1005,22 @@
     </section>
   </main>
 
-  <aside class="cookie-note" aria-label="Cookie notice">
-    <details>
-      <summary>Cookie notice: this site serves none. The recipe below is optional.</summary>
-      <p>This site sets no cookies, runs no trackers and stores nothing in your browser. The only thing it asks for is the web fonts. If you still want cookies, here is a recipe.</p>
+  <div class="cc" id="cookieBanner" role="dialog" aria-live="polite" aria-labelledby="ccTitle" hidden>
+    <div id="ccMain">
+      <h2 id="ccTitle">We value your privacy</h2>
+      <p>This site sets no cookies, runs no trackers and stores nothing in your browser. If you want cookies anyway, we have a recipe.</p>
+      <div class="cc-actions">
+        <button type="button" class="cc-primary" data-cc="recipe">Accept cookies</button>
+        <button type="button" data-cc="recipe">Manage cookies</button>
+        <button type="button" data-cc="close">Decline</button>
+      </div>
+    </div>
+    <div id="ccRecipe" hidden>
+      <h2>Your cookie preferences</h2>
       <h3>Chocolate chip cookies (about 24)</h3>
       <ul>
         <li>225 g (1 cup) butter, softened</li>
-        <li>150 g (3/4 cup) brown sugar and 100 g (1/2 cup) white sugar</li>
+        <li>150 g (3/4 cup) brown sugar, 100 g (1/2 cup) white sugar</li>
         <li>2 eggs and 2 tsp vanilla extract</li>
         <li>280 g (2 1/4 cups) flour, 1 tsp baking soda, 1 tsp salt</li>
         <li>340 g (2 cups) chocolate chips</li>
@@ -1017,10 +1031,11 @@
         <li>Add the eggs and vanilla. Mix well.</li>
         <li>Stir in the flour, baking soda and salt. Fold in the chips.</li>
         <li>Drop spoonfuls on a lined tray. Bake 9 to 11 minutes.</li>
-        <li>Cool for 5 minutes. Eat them. Accept the terms and conditions of deliciousness.</li>
+        <li>Cool for 5 minutes, then eat them.</li>
       </ol>
-    </details>
-  </aside>
+      <div class="cc-actions"><button type="button" class="cc-primary" data-cc="close">Done</button></div>
+    </div>
+  </div>
 
   <footer>
     <span>&copy; <span id="year"></span> Stanley N.</span>
@@ -1094,6 +1109,23 @@
       heroSection.addEventListener('mouseleave', function () {
         targetX = 0; targetY = 0;
       }, { passive: true });
+    })();
+    // ---- Cookie banner (joke): no cookies, no storage; shows on each load ----
+    (function () {
+      var b = document.getElementById('cookieBanner');
+      if (!b) return;
+      b.hidden = false;
+      window.setTimeout(function () { b.classList.add('is-visible'); }, 800);
+      b.addEventListener('click', function (e) {
+        var a = e.target.getAttribute && e.target.getAttribute('data-cc');
+        if (a === 'recipe') {
+          document.getElementById('ccMain').hidden = true;
+          document.getElementById('ccRecipe').hidden = false;
+        } else if (a === 'close') {
+          b.classList.remove('is-visible');
+          window.setTimeout(function () { b.hidden = true; }, 400);
+        }
+      });
     })();
   </script>
 </body>
