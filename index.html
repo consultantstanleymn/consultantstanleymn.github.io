@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Stanley N. — Software engineer in Huntington, IN. Full-stack and cloud engineering (Python, FastAPI, React, TypeScript, Rust, AWS, PostgreSQL), customer integrations (webhooks, OAuth2/OIDC, LLM agents), applied ML/NLP research, and an AWS Certified Solutions Architect. Portfolio, open-source projects, and study guides.">
+<meta name="description" content="Stanley N. — Backend and platform software engineer, open to relocate to the SF Bay Area, New York or Seattle. Python, FastAPI and AWS engineering (Python, FastAPI, React, TypeScript, Rust, AWS, PostgreSQL), customer integrations (webhooks, OAuth2/OIDC, LLM agents), applied ML/NLP research, and an AWS Certified Solutions Architect. Portfolio, open-source projects, and study guides.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://stanley-n.com/">
-<title>Stanley N. — Software Engineer, Applied ML/NLP &amp; Cloud</title>
+<title>Stanley N. — Backend &amp; Platform Software Engineer</title>
 
 <!-- Open Graph / social previews -->
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Stanley N.">
 <meta property="og:title" content="Stanley N. — Software Engineer, Applied ML/NLP &amp; Cloud">
-<meta property="og:description" content="Software engineer in Huntington, IN. Full-stack and cloud engineering, applied ML/NLP research, AWS Certified Solutions Architect. Portfolio, projects, and study guides.">
+<meta property="og:description" content="Backend and platform software engineer. Python, FastAPI, AWS and AI-agent projects with measured results, AWS Certified Solutions Architect. Portfolio, projects, and study guides.">
 <meta property="og:url" content="https://stanley-n.com/">
 <meta property="og:image" content="https://stanley-n.com/assets/headshot.jpg">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stanley N. — Software Engineer, Applied ML/NLP &amp; Cloud">
-<meta name="twitter:description" content="Software engineer in Huntington, IN. Backend &amp; cloud engineering, applied ML/NLP research, AWS Certified Solutions Architect.">
+<meta name="twitter:description" content="Backend and platform software engineer. Python, FastAPI, AWS, applied ML/NLP research, AWS Certified Solutions Architect.">
 <meta name="twitter:image" content="https://stanley-n.com/assets/headshot.jpg">
 
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -569,6 +569,10 @@
   .cc ul, .cc ol { margin: 0 0 12px; padding-left: 1.2rem; color: var(--muted-fg); }
   .cc li { margin: 3px 0; }
   @media (prefers-reduced-motion: reduce) { .cc { transition: none; } }
+  .proof-strip { list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-3); padding: 0; margin: 0 0 var(--space-4); }
+  .proof-strip li { display: flex; flex-direction: column; gap: 2px; border-left: 2px solid var(--accent); padding-left: 12px; }
+  .proof-strip strong { font-family: 'Space Grotesk', sans-serif; font-size: 1.15rem; font-weight: 600; letter-spacing: -0.01em; }
+  .proof-strip span { font-size: 0.8rem; color: var(--muted-fg); }
 </style>
 </head>
 <body>
@@ -595,11 +599,17 @@
       <div class="hero-bg" aria-hidden="true"><pre id="asciiPortrait"></pre></div>
       <div class="container hero-grid">
         <div class="hero-text">
-          <p class="eyebrow">Applied ML/NLP &middot; Full-Stack &amp; Cloud Engineering</p>
+          <p class="eyebrow">Backend &amp; Platform Engineering &middot; AI Integration &middot; AWS</p>
           <h1>I build systems that aren't allowed to have a bad day.</h1>
-          <p class="lede">Full-stack software engineer with an M.S. in Computer Science (4.0 GPA) and a year of production work on a multi-tenant hospital operations platform. I build FastAPI and PostgreSQL backends, React and React Native apps, and the AWS pipelines that ship them. I also do applied NLP research and have taught machine learning.</p>
+          <p class="lede">Software engineer with an M.S. in Computer Science (4.0 GPA) and a year on a 10-person hospital operations platform. I build Python and FastAPI services, React and React Native apps, and the AWS pipelines that ship them. Open to relocate: SF Bay Area, New York, Seattle.</p>
+          <ul class="proof-strip" aria-label="Measured results">
+            <li><strong>285 ms &rarr; 0.20 ms</strong><span>catalog query, keyset paging</span></li>
+            <li><strong>14% &rarr; 93%</strong><span>mobile test coverage</span></li>
+            <li><strong>138 s &rarr; linear</strong><span>regex DoS bug closed</span></li>
+          </ul>
           <div class="hero-actions">
-            <a class="btn-primary" href="#projects">See projects</a>
+            <a class="btn-primary" href="assets/Stanley_Nelavala_Resume.pdf" target="_blank" rel="noopener">View resume</a>
+            <a class="btn-secondary" href="#projects">See projects</a>
             <a class="btn-secondary" href="#contact">Get in touch</a>
           </div>
         </div>
@@ -624,7 +634,7 @@
           <p>I'm an AWS Certified Solutions Architect. Outside of work I build things for fun — agent-orchestration tools, a terminal I can drive from my phone, small language models fine-tuned on niche datasets — mostly to see what breaks.</p>
         </div>
         <ul class="fact-list">
-          <li><span class="fact-label">Based in</span><span class="fact-value">Huntington, IN</span></li>
+          <li><span class="fact-label">Based in</span><span class="fact-value">Huntington, IN. Open to relocate: SF Bay Area, New York, Seattle</span></li>
           <li><span class="fact-label">Education</span><span class="fact-value">M.S. Computer Science, University of Minnesota Duluth (4.0 GPA)</span></li>
           <li><span class="fact-label">Certification</span><span class="fact-value">AWS Certified Solutions Architect — Associate</span></li>
           <li><span class="fact-label">Currently</span><span class="fact-value">Software Development Engineer, Mass Technologies</span></li>
@@ -644,7 +654,7 @@
           <div class="timeline-date">Nov 2025 &ndash; Present</div>
           <div>
             <h3 class="timeline-role">Software Development Engineer</h3>
-            <p class="timeline-org">Mass Technologies, Dayton, OH</p>
+            <p class="timeline-org">Mass Technologies, Huntington, IN</p>
             <p class="timeline-desc">Build and own features across 23 repositories on a multi-tenant hospital operations platform. Backends use FastAPI and PostgreSQL, web apps use React and TypeScript, and the mobile app uses Expo. A platform service resolves the tenant database for every request.</p>
             <p class="timeline-desc"><em>Proprietary code.</em></p>
             <p class="timeline-desc"><strong>Design service for hospitals.</strong> Built the v2 product from scratch, backend and web: guided design modes, document ingestion and extraction, constraint checking, versioning, and a drawing assistant with a validator. Wrote a deterministic layout engine that packs rooms on a grid and places doors, zones, and exits in code, with a setting to draw with an LLM or in code only. Built roles, sharing, and a review workflow, plus export to DXF at true scale and to PDF.</p>
