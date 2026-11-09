@@ -71,7 +71,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Archivo:ital,wght@0,400;0,500;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&family=Archivo:ital,wght@0,400;0,500;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #fafafa;
@@ -573,6 +573,51 @@
   .proof-strip li { display: flex; flex-direction: column; gap: 2px; border-left: 2px solid var(--accent); padding-left: 12px; }
   .proof-strip strong { font-family: 'Space Grotesk', sans-serif; font-size: 1.15rem; font-weight: 600; letter-spacing: -0.01em; }
   .proof-strip span { font-size: 0.8rem; color: var(--muted-fg); }
+  /* ---- Character pass: warm paper, ink, terracotta. No blue, no glow. ---- */
+  :root {
+    --bg: #f3eee4; --bg-raised: #fbf8f1; --fg: #1d1a16; --muted-fg: #5b5348;
+    --border: #cfc5b3; --accent: #b4432a; --accent-fg: #ffffff; --focus-ring: #1d1a16;
+    --display: 'Fraunces', Georgia, serif; --mono: 'Space Mono', ui-monospace, Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #17130f; --bg-raised: #201b16; --fg: #f1eadc; --muted-fg: #b3a998; --border: #3b342b; --accent: #e8825f; --accent-fg: #17130f; --focus-ring: #f1eadc; }
+  }
+  body { background-image: radial-gradient(color-mix(in srgb, var(--fg) 7%, transparent) 1px, transparent 1px); background-size: 22px 22px; }
+  .bg-ambient, .hero-orb, .hero-scan, .hero-portrait-glow { display: none !important; }
+  .hero-bg pre { background: none; -webkit-background-clip: border-box; background-clip: border-box; color: var(--fg); animation: none; opacity: 0.09; }
+  h1, h2, h3, .mark, .project-title, .timeline-role, .proof-strip strong, .section-title { font-family: var(--display); letter-spacing: -0.015em; }
+  h1 { font-weight: 600; letter-spacing: -0.025em; line-height: 1.04; max-width: 15ch; font-size: clamp(2.4rem, 6vw, 4.4rem); }
+  h1 em { font-style: italic; color: var(--accent); font-weight: 500; }
+  .mark { font-weight: 700; letter-spacing: 0.04em; }
+  .eyebrow, .section-label, .btn-primary, .btn-secondary, .fact-label, .tag, .project-link, .timeline-date { font-family: var(--mono); }
+  .eyebrow, .section-label { color: var(--accent); letter-spacing: 0.14em; font-size: 0.78rem; }
+  .section { border-top: 2px solid var(--fg); }
+  .section-title { font-weight: 600; font-size: clamp(1.7rem, 3.6vw, 2.5rem); }
+  .btn-primary, .btn-secondary { border-radius: 2px; border: 2px solid var(--fg); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; box-shadow: 3px 3px 0 var(--fg); transition: transform 120ms var(--ease), box-shadow 120ms var(--ease); }
+  .btn-primary { background: var(--accent); color: var(--accent-fg); border-color: var(--fg); }
+  .btn-secondary { background: var(--bg-raised); }
+  .btn-primary:hover, .btn-secondary:hover, .btn-primary:focus-visible, .btn-secondary:focus-visible { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--fg); opacity: 1; border-color: var(--fg); }
+  .btn-primary:active, .btn-secondary:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--fg); }
+  .hero-portrait { animation: none; transform: rotate(-1.6deg); }
+  .hero-portrait img { border-radius: 2px; border: 2px solid var(--fg); box-shadow: 10px 10px 0 var(--accent); -webkit-mask-image: none; mask-image: none; filter: grayscale(0.15) contrast(1.05) sepia(0.12); }
+  .hero-portrait:hover img { transform: none; filter: none; }
+  .project-card, .resource-card, .card { border-radius: 3px !important; border: 1.5px solid var(--fg) !important; box-shadow: 4px 4px 0 color-mix(in srgb, var(--fg) 85%, transparent); background: var(--bg-raised); transition: transform 140ms var(--ease), box-shadow 140ms var(--ease); }
+  .project-card:hover, .card:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--accent); }
+  .resource-card { border-style: dashed !important; box-shadow: none; }
+  .tag { border-radius: 2px !important; border: 1px solid var(--fg) !important; background: transparent !important; color: var(--fg) !important; text-transform: none; letter-spacing: 0; }
+  .proof-strip li { border-left: 3px solid var(--accent); }
+  .proof-strip strong { font-size: 1.3rem; }
+  .contact-list a { border-bottom: 2px solid var(--fg); }
+  .contact-list a:hover, .contact-list a:focus-visible { color: var(--accent); border-color: var(--accent); }
+  .cc { border-radius: 3px; border: 2px solid var(--fg); box-shadow: 6px 6px 0 var(--fg); }
+  .cc h2, .cc h3 { font-family: var(--display); }
+  .cc button { border-radius: 2px; border: 2px solid var(--fg); font-family: var(--mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .cc button.cc-primary { background: var(--accent); border-color: var(--fg); color: var(--accent-fg); }
+  footer { border-top: 2px solid var(--fg); font-family: var(--mono); font-size: 0.78rem; }
+  .proof-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2); max-width: 600px; }
+  .proof-strip span { font-size: 0.74rem; line-height: 1.35; }
+  .proof-strip strong { font-size: 1.1rem; line-height: 1.15; }
+  @media (max-width: 600px) { .proof-strip { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -600,12 +645,12 @@
       <div class="container hero-grid">
         <div class="hero-text">
           <p class="eyebrow">Backend &amp; Platform Engineering &middot; AI Integration &middot; AWS</p>
-          <h1>I build systems that aren't allowed to have a bad day.</h1>
+          <h1>I build systems that aren't allowed to have a <em>bad day.</em></h1>
           <p class="lede">Software engineer who owns systems end to end. On a 10-person hospital operations platform I designed the service-to-service API every module uses and built a design service and an iOS and Android app. M.S. in Computer Science (4.0 GPA). Open to relocate: SF Bay Area, New York, Seattle.</p>
           <ul class="proof-strip" aria-label="What I have owned">
-            <li><strong>Every module</strong><span>one service-to-service API I designed</span></li>
-            <li><strong>3 products</strong><span>built end to end: design service, mobile app, catalog API</span></li>
-            <li><strong>168 &rarr; 53 hrs a week</strong><span>dev and test server runtime</span></li>
+            <li><strong>Every module</strong><span>runs on one API I designed</span></li>
+            <li><strong>3 products</strong><span>built end to end</span></li>
+            <li><strong>168 &rarr; 53 hrs a week</strong><span>dev server hours</span></li>
           </ul>
           <div class="hero-actions">
             <a class="btn-primary" href="assets/Stanley_Nelavala_Resume.pdf" target="_blank" rel="noopener">View resume</a>
@@ -1066,7 +1111,7 @@
 
   <footer>
     <span>&copy; <span id="year"></span> Stanley N.</span>
-    <span>Built by hand, no framework.</span>
+    <span>Built with dedication and ambition.</span>
   </footer>
 
   <script>
