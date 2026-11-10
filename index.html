@@ -345,6 +345,7 @@
           <button type="button" data-lens="platform" aria-pressed="false">Platform / SRE</button>
           <button type="button" data-lens="ai" aria-pressed="false">AI</button>
           <button type="button" data-lens="jpmc" aria-pressed="false" class="seg-special" hidden>JPMorganChase</button>
+          <button type="button" data-lens="jpmc-payments" aria-pressed="false" class="seg-special" hidden>JPMorganChase Payments</button>
           <button type="button" data-lens="meta" aria-pressed="false" class="seg-special" hidden>Meta</button>
           <button type="button" data-lens="master" aria-pressed="false" class="seg-special" hidden>Everything</button>
         </div>
@@ -784,6 +785,15 @@
         projects: ['led', 'ledui', 'cds', 'rxcatalog', 'rxdesign', 'rxasset'],
         skills: ['Java and Spring Boot', 'Python and FastAPI', 'React and TypeScript', 'SQL and PostgreSQL', 'AWS (ECS, RDS, S3)', 'GitHub Actions CI/CD', 'Observability (Prometheus, Grafana, OpenTelemetry)', 'Test automation (Cucumber, REST Assured, Selenium, JMeter)', 'C# and .NET', 'Kafka API (Redpanda)']
       },
+      'jpmc-payments': {
+        name: 'JPMorganChase Payments', skillsFor: 'the Software Engineer II Payments Platform role', file: 'JPMC_Payments',
+        eyebrow: 'Payments engineering &middot; Java &middot; Spring Boot &middot; SQL &middot; AWS',
+        h1: 'Payment services that stay correct <em>when retries and failures hit.</em>',
+        lede: 'Software engineer who builds money-path services. My public Java and Spring Boot payments ledger handles authorize, capture, void, refund and transfer with idempotency keys, a transactional outbox, SLOs and a scripted failure lab, and my C# card dispute service lets exactly one of two racing decisions win. At work I design secure service-to-service APIs and tune SQL for a multi-tenant platform.',
+        proof: [['0 money', 'created or lost (property tests and k6 check)'], ['Exactly 1 winner', 'when two dispute decisions race (C#)'], ['285 &rarr; 0.20 ms', 'keyset paging, row 150,000 (dev)']],
+        projects: ['led', 'cds', 'ledui', 'rxcatalog', 'rgw', 'rxdesign'],
+        skills: ['Java and Spring Boot', 'SQL and PostgreSQL', 'Idempotency, outbox and Kafka API', 'Application resiliency (failure labs, dead letters)', 'Operational stability (SLOs, Prometheus, Grafana)', 'Test automation (JUnit 5, Cucumber, REST Assured)', 'AWS (ECS, RDS, S3, GuardDuty)', 'Secure APIs (signed service calls, STRIDE)', 'React and TypeScript', 'C# and ASP.NET Core']
+      },
       meta: {
         name: 'Meta', skillsFor: 'Meta software engineer roles', file: 'Meta',
         eyebrow: 'Backend and infrastructure &middot; Python &middot; Rust &middot; Go',
@@ -811,7 +821,7 @@
     var more = document.getElementById('moreProjects');
     var allTools = document.getElementById('allTools');
     var buttons = document.querySelectorAll('.segmented button');
-    var SPECIAL = { jpmc: 1, meta: 1, master: 1 };
+    var SPECIAL = { jpmc: 1, 'jpmc-payments': 1, meta: 1, master: 1 };
 
     function lensFromUrl() {
       var p = null;
