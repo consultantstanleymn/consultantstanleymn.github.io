@@ -347,6 +347,7 @@
           <button type="button" data-lens="jpmc" aria-pressed="false" class="seg-special" hidden>JPMorganChase</button>
           <button type="button" data-lens="jpmc-payments" aria-pressed="false" class="seg-special" hidden>JPMorganChase Payments</button>
           <button type="button" data-lens="mintive" aria-pressed="false" class="seg-special" hidden>Mintive</button>
+          <button type="button" data-lens="genius" aria-pressed="false" class="seg-special" hidden>Genius AI</button>
           <button type="button" data-lens="meta" aria-pressed="false" class="seg-special" hidden>Meta</button>
           <button type="button" data-lens="master" aria-pressed="false" class="seg-special" hidden>Everything</button>
         </div>
@@ -804,6 +805,15 @@
         projects: ['agt', 'rgw', 'inf', 'rxcatalog', 'con', 'rxdesign'],
         skills: ['Claude Code, Codex, opencode, DeepSeek', 'Agent fleets with acceptance checks', 'LangGraph and MCP', 'Python and FastAPI', 'Rust, Go and TypeScript', 'PostgreSQL and Redis', 'Evals, guardrails and audit logs', 'LLM failover and cost records', 'AWS and Terraform', 'OpenTelemetry, k6 and SLOs']
       },
+      genius: {
+        name: 'Genius AI', skillsFor: 'the Genius AI Software Engineer role', file: 'Genius',
+        eyebrow: 'AI-first product and platform &middot; TypeScript &middot; React Native &middot; Postgres &middot; AWS',
+        h1: 'AI features that ship, <em>on a platform that holds.</em>',
+        lede: 'Software engineer who ships AI-powered features and the reliable platform under them. My public LangGraph and MCP agent platform has human approval, an audit log, 62 replay evals and LLM failover, and my Java payments ledger keeps money correct with idempotency keys and SLOs. I build with Claude Code, Codex and opencode every day and check agent output with tests and acceptance checks.',
+        proof: [['62 evals', 'deterministic replay checks on the agent platform'], ['0 money', 'created or lost (property tests and k6 check)'], ['285 &rarr; 0.20 ms', 'keyset paging, row 150,000 (dev)']],
+        projects: ['agt', 'led', 'ledui', 'rxasset', 'rxcatalog', 'inf'],
+        skills: ['Claude Code, Codex, opencode', 'Agent runs with acceptance checks', 'LangGraph and MCP', 'TypeScript and React', 'React Native (Expo)', 'Python, Java and Go', 'PostgreSQL and SQL', 'AWS and Terraform', 'Payments: idempotency, outbox, SLOs', 'Testing: Playwright, k6, property tests']
+      },
       meta: {
         name: 'Meta', skillsFor: 'Meta software engineer roles', file: 'Meta',
         eyebrow: 'Backend and infrastructure &middot; Python &middot; Rust &middot; Go',
@@ -831,7 +841,7 @@
     var more = document.getElementById('moreProjects');
     var allTools = document.getElementById('allTools');
     var buttons = document.querySelectorAll('.segmented button');
-    var SPECIAL = { jpmc: 1, 'jpmc-payments': 1, mintive: 1, meta: 1, master: 1 };
+    var SPECIAL = { jpmc: 1, 'jpmc-payments': 1, mintive: 1, genius: 1, meta: 1, master: 1 };
 
     function lensFromUrl() {
       var p = null;
