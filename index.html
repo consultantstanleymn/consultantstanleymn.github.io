@@ -350,6 +350,7 @@
           <button type="button" data-lens="genius" aria-pressed="false" class="seg-special" hidden>Genius AI</button>
           <button type="button" data-lens="pylon" aria-pressed="false" class="seg-special" hidden>Pylon</button>
           <button type="button" data-lens="suno" aria-pressed="false" class="seg-special" hidden>Suno</button>
+          <button type="button" data-lens="ande" aria-pressed="false" class="seg-special" hidden>Ande</button>
           <button type="button" data-lens="meta" aria-pressed="false" class="seg-special" hidden>Meta</button>
           <button type="button" data-lens="master" aria-pressed="false" class="seg-special" hidden>Everything</button>
         </div>
@@ -834,6 +835,15 @@
         projects: ['agt', 'con', 'rxdesign', 'rxasset', 'rxcatalog', 'rgw'],
         skills: ['Agents and MCP tools', 'LangGraph, evals and audit logs', 'Python and FastAPI', 'TypeScript, React and Next.js', 'Service-to-service auth and OIDC', 'Internal tooling and workflow automation', 'AWS (ECS, RDS, GuardDuty)', 'PostgreSQL and Redis', 'Claude Code, Codex, opencode', 'Agent runs with acceptance checks']
       },
+      ande: {
+        name: 'Ande', skillsFor: 'the Ande Software Engineer, AI (Early Career) role', file: 'Ande',
+        eyebrow: 'AI agents &middot; typed tools &middot; evals &middot; TypeScript and Python',
+        h1: 'Agents you can trust with <em>real money and real people.</em>',
+        lede: 'Early-career software engineer who builds LLM agents with typed tools, human approval before anything consequential, 62 replay evals, prompt-injection tests and LLM failover. At work I built the hospital design service with an LLM setting and offline tests, and the signed service API every module uses. I measure before and after, and I code with Claude Code, Codex and opencode every day.',
+        proof: [['62 evals', 'deterministic replay checks on the agent platform'], ['0 money', 'created or lost in the payments ledger (checked)'], ['220+ tests', 'on the design API, no LLM calls']],
+        projects: ['agt', 'inf', 'led', 'rxdesign', 'rxasset', 'rxcatalog'],
+        skills: ['LLM agents and tool use', 'LangGraph and MCP', 'Evals, guardrails and prompt-injection tests', 'Human-approval flows', 'LLM failover and cost records', 'Python and FastAPI', 'TypeScript and React', 'PostgreSQL and pgvector', 'Claude Code, Codex, opencode', 'Agent runs with acceptance checks']
+      },
       meta: {
         name: 'Meta', skillsFor: 'Meta software engineer roles', file: 'Meta',
         eyebrow: 'Backend and infrastructure &middot; Python &middot; Rust &middot; Go',
@@ -861,7 +871,7 @@
     var more = document.getElementById('moreProjects');
     var allTools = document.getElementById('allTools');
     var buttons = document.querySelectorAll('.segmented button');
-    var SPECIAL = { jpmc: 1, 'jpmc-payments': 1, mintive: 1, genius: 1, pylon: 1, suno: 1, meta: 1, master: 1 };
+    var SPECIAL = { jpmc: 1, 'jpmc-payments': 1, mintive: 1, genius: 1, pylon: 1, suno: 1, ande: 1, meta: 1, master: 1 };
 
     function lensFromUrl() {
       var p = null;
