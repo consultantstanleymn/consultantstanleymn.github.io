@@ -346,6 +346,7 @@
           <button type="button" data-lens="ai" aria-pressed="false">AI</button>
           <button type="button" data-lens="jpmc" aria-pressed="false" class="seg-special" hidden>JPMorganChase</button>
           <button type="button" data-lens="jpmc-payments" aria-pressed="false" class="seg-special" hidden>JPMorganChase Payments</button>
+          <button type="button" data-lens="mintive" aria-pressed="false" class="seg-special" hidden>Mintive</button>
           <button type="button" data-lens="meta" aria-pressed="false" class="seg-special" hidden>Meta</button>
           <button type="button" data-lens="master" aria-pressed="false" class="seg-special" hidden>Everything</button>
         </div>
@@ -794,6 +795,15 @@
         projects: ['led', 'cds', 'ledui', 'rxcatalog', 'rgw', 'rxdesign'],
         skills: ['Java and Spring Boot', 'SQL and PostgreSQL', 'Idempotency, outbox and Kafka API', 'Application resiliency (failure labs, dead letters)', 'Operational stability (SLOs, Prometheus, Grafana)', 'Test automation (JUnit 5, Cucumber, REST Assured)', 'AWS (ECS, RDS, S3, GuardDuty)', 'Secure APIs (signed service calls, STRIDE)', 'React and TypeScript', 'C# and ASP.NET Core']
       },
+      mintive: {
+        name: 'Mintive', skillsFor: 'the Mintive Software Engineer role', file: 'Mintive',
+        eyebrow: 'Backend &middot; agent infrastructure &middot; MCP &middot; AI-native development',
+        h1: 'Governed agent systems, <em>built and scaled with agents.</em>',
+        lede: 'Software engineer who builds backend and infrastructure for agents. My public LangGraph and MCP platform scopes what an agent can see and write, asks a human to approve, keeps an audit log and fails over between LLMs. I sized a Go inference service for a 10x peak, and I build every day with Claude Code, Codex, opencode and a DeepSeek harness, running agent fleets under written acceptance checks.',
+        proof: [['62 evals', 'deterministic replay checks on the agent platform'], ['2 to 3 replicas', 'for a 10x peak (local benchmark)'], ['34 packets', 'built by a planner, manager and worker agent run']],
+        projects: ['agt', 'rgw', 'inf', 'rxcatalog', 'con', 'rxdesign'],
+        skills: ['Claude Code, Codex, opencode, DeepSeek', 'Agent fleets with acceptance checks', 'LangGraph and MCP', 'Python and FastAPI', 'Rust, Go and TypeScript', 'PostgreSQL and Redis', 'Evals, guardrails and audit logs', 'LLM failover and cost records', 'AWS and Terraform', 'OpenTelemetry, k6 and SLOs']
+      },
       meta: {
         name: 'Meta', skillsFor: 'Meta software engineer roles', file: 'Meta',
         eyebrow: 'Backend and infrastructure &middot; Python &middot; Rust &middot; Go',
@@ -821,7 +831,7 @@
     var more = document.getElementById('moreProjects');
     var allTools = document.getElementById('allTools');
     var buttons = document.querySelectorAll('.segmented button');
-    var SPECIAL = { jpmc: 1, 'jpmc-payments': 1, meta: 1, master: 1 };
+    var SPECIAL = { jpmc: 1, 'jpmc-payments': 1, mintive: 1, meta: 1, master: 1 };
 
     function lensFromUrl() {
       var p = null;
