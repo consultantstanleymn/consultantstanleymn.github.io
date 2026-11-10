@@ -8,11 +8,11 @@
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#FFFBF2">
 <link rel="canonical" href="https://stanley-n.com/">
-<title>Stanley N. | Software Engineer</title>
+<title>Stanley N. | AI Full Stack Software Engineer</title>
 
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Stanley N.">
-<meta property="og:title" content="Stanley N. | Software Engineer">
+<meta property="og:title" content="Stanley N. | AI Full Stack Software Engineer">
 <meta property="og:description" content="Full stack, backend, platform and AI engineering with public code and tests. M.S. Computer Science, AWS Certified Solutions Architect.">
 <meta property="og:url" content="https://stanley-n.com/">
 <meta property="og:image" content="https://stanley-n.com/assets/headshot.jpg">
@@ -323,9 +323,9 @@
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
-      <a class="btn btn-sun btn-small js-resume" href="assets/resume/Stanley_Nelavala_Resume_Fullstack.pdf" target="_blank" rel="noopener">Resume</a>
+      <a class="btn btn-sun btn-small js-resume" href="assets/resume/Stanley_Nelavala_Resume_AIFullStack.pdf" target="_blank" rel="noopener">Resume</a>
     </nav>
-    <a class="btn btn-sun btn-small nav-resume js-resume" href="assets/resume/Stanley_Nelavala_Resume_Fullstack.pdf" target="_blank" rel="noopener">Resume</a>
+    <a class="btn btn-sun btn-small nav-resume js-resume" href="assets/resume/Stanley_Nelavala_Resume_AIFullStack.pdf" target="_blank" rel="noopener">Resume</a>
   </header>
 
   <div class="lens-bar" id="lensBar">
@@ -337,6 +337,7 @@
           <button type="button" data-lens="backend" aria-pressed="false">Backend</button>
           <button type="button" data-lens="platform" aria-pressed="false">Platform / SRE</button>
           <button type="button" data-lens="ai" aria-pressed="false">AI</button>
+          <button type="button" data-lens="aifs" aria-pressed="false" class="seg-special" hidden>AI full stack</button>
           <button type="button" data-lens="jpmc" aria-pressed="false" class="seg-special" hidden>JPMorganChase</button>
           <button type="button" data-lens="jpmc-payments" aria-pressed="false" class="seg-special" hidden>JPMorganChase Payments</button>
           <button type="button" data-lens="mintive" aria-pressed="false" class="seg-special" hidden>Mintive</button>
@@ -364,8 +365,8 @@
     <section class="hero" id="top">
       <div class="container hero-grid">
         <div>
-          <p class="eyebrow" id="lensEyebrow">Full stack engineering &middot; Python &middot; React &middot; AWS</p>
-          <h1 id="lensHeadline">From the database to the <em>phone in your hand.</em></h1>
+          <p class="eyebrow" id="lensEyebrow">AI full stack engineering &middot; Python &middot; React &middot; Agents &middot; AWS</p>
+          <h1 id="lensHeadline">Hospital software, <em>with AI built in and tested.</em></h1>
           <p class="lede" id="lensLede">Full stack engineer at a 10-person hospital operations startup: FastAPI and PostgreSQL backends, React and TypeScript web apps, and a React Native app released to iOS and Android through separate pipelines. M.S. in Computer Science (4.0 GPA) and AWS Certified Solutions Architect.</p>
           <p class="where"><span>Huntington, IN</span><span>Open to relocate anywhere</span></p>
           <ul class="proof-strip" id="lensProof" aria-label="Highlights">
@@ -374,9 +375,9 @@
             <li><strong>220+ tests</strong><span>RxDesign test suite</span></li>
           </ul>
           <div class="hero-actions">
-            <a class="btn btn-primary js-resume" href="assets/resume/Stanley_Nelavala_Resume_Fullstack.pdf" target="_blank" rel="noopener">
+            <a class="btn btn-primary js-resume" href="assets/resume/Stanley_Nelavala_Resume_AIFullStack.pdf" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg>
-              <span class="js-resume-label">Full stack resume</span>
+              <span class="js-resume-label">AI full stack resume</span>
             </a>
             <a class="btn btn-plain" href="#projects">See projects</a>
             <a class="btn btn-plain" href="#contact">Get in touch</a>
@@ -727,8 +728,8 @@
         <h2 class="section-title">Say hello</h2>
       </div>
       <ul class="contact-list">
-        <li><a class="btn btn-primary js-resume" href="assets/resume/Stanley_Nelavala_Resume_Fullstack.pdf" target="_blank" rel="noopener"><span class="js-resume-label">Full stack resume</span></a></li>
-        <li><a class="btn btn-plain js-resume js-download" href="assets/resume/Stanley_Nelavala_Resume_Fullstack.pdf" download="Stanley_Nelavala_Resume_Fullstack.pdf">Download PDF</a></li>
+        <li><a class="btn btn-primary js-resume" href="assets/resume/Stanley_Nelavala_Resume_AIFullStack.pdf" target="_blank" rel="noopener"><span class="js-resume-label">AI full stack resume</span></a></li>
+        <li><a class="btn btn-plain js-resume js-download" href="assets/resume/Stanley_Nelavala_Resume_AIFullStack.pdf" download="Stanley_Nelavala_Resume_AIFullStack.pdf">Download PDF</a></li>
         <li><a class="btn btn-plain" href="mailto:consultantstanleymn@gmail.com">consultantstanleymn@gmail.com</a></li>
         <li><a class="btn btn-plain" href="https://www.linkedin.com/in/stanley-sujith-nelavala" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
         <li><a class="btn btn-plain" href="https://github.com/consultantstanleymn" target="_blank" rel="noopener noreferrer">GitHub</a></li>
@@ -746,6 +747,15 @@
   (function () {
     var R = 'assets/resume/Stanley_Nelavala_Resume_';
     var LENSES = {
+      aifs: {
+        name: 'AI full stack', skillsFor: 'AI full stack roles', file: 'AIFullStack',
+        eyebrow: 'AI full stack engineering &middot; Python &middot; React &middot; Agents &middot; AWS',
+        h1: 'Hospital software, <em>with AI built in and tested.</em>',
+        lede: 'AI full stack engineer at Mass Technologies, a 10-person startup building the RxApps360 hospital platform: FastAPI and PostgreSQL backends, React and TypeScript web apps, and a React Native app for iOS and Android. I add AI where it can be tested: a design service with a deterministic layout engine and an LLM setting, an on-device voice assistant, and public LangGraph and MCP agent projects with replay evals. I build with Claude Code, Codex and opencode every day. M.S. in Computer Science (4.0 GPA) and AWS Certified Solutions Architect.',
+        proof: [['3 products', 'built end to end at work'], ['62 evals', 'deterministic replay on the agent platform'], ['285 &rarr; 0.20 ms', 'deep catalog query (dev database)']],
+        projects: ['rxdesign', 'rxasset', 'agt', 'rxcatalog', 'inf', 'studymentor'],
+        skills: ['Python', 'TypeScript and React', 'FastAPI', 'PostgreSQL and pgvector', 'React Native and Expo', 'LangGraph and MCP', 'Evals and guardrails', 'Claude Code, Codex, opencode', 'AWS (ECS, RDS, S3)', 'GitHub Actions CI/CD']
+      },
       fullstack: {
         name: 'Full stack', skillsFor: 'full stack roles', file: 'Fullstack',
         eyebrow: 'Full stack engineering &middot; Python &middot; React &middot; AWS',
@@ -944,13 +954,13 @@
     var more = document.getElementById('moreProjects');
     var allTools = document.getElementById('allTools');
     var buttons = document.querySelectorAll('.segmented button');
-    var SPECIAL = { jpmc: 1, 'jpmc-payments': 1, mintive: 1, genius: 1, pylon: 1, suno: 1, ande: 1, nuvo: 1, embeddingvc: 1, automat: 1, syntra: 1, wonder: 1, fortinet: 1, fab2: 1, notion: 1, meta: 1, master: 1 };
+    var SPECIAL = { aifs: 1, jpmc: 1, 'jpmc-payments': 1, mintive: 1, genius: 1, pylon: 1, suno: 1, ande: 1, nuvo: 1, embeddingvc: 1, automat: 1, syntra: 1, wonder: 1, fortinet: 1, fab2: 1, notion: 1, meta: 1, master: 1 };
 
     function lensFromUrl() {
       var p = null;
       try { p = new URLSearchParams(window.location.search).get('lens'); } catch (e) {}
       p = p ? p.toLowerCase() : '';
-      return Object.prototype.hasOwnProperty.call(LENSES, p) ? p : 'fullstack';
+      return Object.prototype.hasOwnProperty.call(LENSES, p) ? p : 'aifs';
     }
 
     function apply(name, updateUrl) {
@@ -993,10 +1003,10 @@
         var right = act.offsetLeft + act.offsetWidth;
         if (right > sc.scrollLeft + sc.clientWidth || act.offsetLeft < sc.scrollLeft) sc.scrollLeft = Math.max(0, right - sc.clientWidth + 12);
       }
-      document.title = name === 'fullstack' ? 'Stanley N. | Software Engineer' : 'Stanley N. | ' + L.name + ' | Software Engineer';
+      document.title = name === 'aifs' ? 'Stanley N. | AI Full Stack Software Engineer' : 'Stanley N. | ' + L.name + ' | Software Engineer';
 
       if (updateUrl && window.history && history.replaceState) {
-        var url = window.location.pathname + (name === 'fullstack' ? '' : '?lens=' + name) + window.location.hash;
+        var url = window.location.pathname + (name === 'aifs' ? '' : '?lens=' + name) + window.location.hash;
         history.replaceState(null, '', url);
       }
     }
