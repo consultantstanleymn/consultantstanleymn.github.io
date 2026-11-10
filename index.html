@@ -356,6 +356,7 @@
           <button type="button" data-lens="syntra" aria-pressed="false" class="seg-special" hidden>Syntra</button>
           <button type="button" data-lens="wonder" aria-pressed="false" class="seg-special" hidden>Wonderschool</button>
           <button type="button" data-lens="fortinet" aria-pressed="false" class="seg-special" hidden>Fortinet</button>
+          <button type="button" data-lens="thrivent" aria-pressed="false" class="seg-special" hidden>Thrivent</button>
           <button type="button" data-lens="fab2" aria-pressed="false" class="seg-special" hidden>fab2</button>
           <button type="button" data-lens="notion" aria-pressed="false" class="seg-special" hidden>Notion</button>
           <button type="button" data-lens="meta" aria-pressed="false" class="seg-special" hidden>Meta</button>
@@ -905,6 +906,15 @@
         projects: ['rxdesign', 'rxasset', 'agt', 'rxcatalog', 'inf', 'con'],
         skills: ['AI agents and tool use', 'LangGraph and MCP', 'Evals and guardrails', 'Python and FastAPI', 'TypeScript and React', 'React Native (Expo)', 'PostgreSQL', 'AWS (ECS, RDS, S3)', 'Claude Code, Codex, opencode', 'Agent runs with acceptance checks']
       },
+      thrivent: {
+        name: 'Thrivent', skillsFor: 'the Thrivent Application Engineer, Asset Management role', file: 'Thrivent',
+        eyebrow: 'Application engineering &middot; Java &middot; SQL &middot; data pipelines &middot; APIs',
+        h1: 'Applications and data pipelines, <em>supported end to end.</em>',
+        lede: 'Application engineer who builds, supports and documents. At work I designed the signed service-to-service API every platform module uses, cut a deep catalog query from 285 ms to 0.20 ms with keyset paging, and automated server and database schedules (168 to about 53 hours a week). In public code I built a Java and Spring Boot payments ledger and a dbt and Airflow pipeline with data contracts. I taught Java at the college level.',
+        proof: [['285 &rarr; 0.20 ms', 'row 150,000 of 328k rows (dev)'], ['108 tests', 'on the dbt and Airflow data pipeline'], ['168 &rarr; 53 h', 'weekly dev and test server runtime']],
+        projects: ['led', 'fhr', 'rxcatalog', 'rxdesign', 'con', 'agt'],
+        skills: ['Java and Spring Boot', 'SQL and PostgreSQL', 'dbt and Airflow', 'Python and FastAPI', 'REST and signed APIs', 'Linux and Docker', 'AWS (ECS, RDS, S3)', 'GitHub and GitHub Actions', 'Troubleshooting and runbooks', 'Claude Code, Codex, opencode']
+      },
       fortinet: {
         name: 'Fortinet', skillsFor: 'the Fortinet Early Careers AI Automation Engineer role', file: 'Fortinet',
         eyebrow: 'AI automation &middot; agents &middot; security-minded platforms &middot; Python',
@@ -959,7 +969,7 @@
     var more = document.getElementById('moreProjects');
     var allTools = document.getElementById('allTools');
     var buttons = document.querySelectorAll('.segmented button');
-    var SPECIAL = { aifs: 1, jpmc: 1, 'jpmc-payments': 1, mintive: 1, genius: 1, pylon: 1, suno: 1, ande: 1, nuvo: 1, embeddingvc: 1, automat: 1, syntra: 1, wonder: 1, fortinet: 1, fab2: 1, notion: 1, meta: 1, master: 1 };
+    var SPECIAL = { aifs: 1, jpmc: 1, 'jpmc-payments': 1, mintive: 1, genius: 1, pylon: 1, suno: 1, ande: 1, nuvo: 1, embeddingvc: 1, automat: 1, syntra: 1, wonder: 1, fortinet: 1, thrivent: 1, fab2: 1, notion: 1, meta: 1, master: 1 };
 
     function lensFromUrl() {
       var p = null;
