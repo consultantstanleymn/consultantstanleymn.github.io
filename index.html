@@ -364,7 +364,7 @@
           <ul class="proof-strip" id="lensProof" aria-label="Highlights">
             <li><strong>3 products</strong><span>built end to end at work</span></li>
             <li><strong>285 &rarr; 0.20 ms</strong><span>deep catalog query (dev database)</span></li>
-            <li><strong>14% &rarr; 93%</strong><span>mobile test coverage</span></li>
+            <li><strong>220+ tests</strong><span>RxDesign test suite</span></li>
           </ul>
           <div class="hero-actions">
             <a class="btn btn-primary js-resume" href="assets/resume/Stanley_Nelavala_Resume_Fullstack.pdf" target="_blank" rel="noopener">
@@ -415,7 +415,7 @@
             <p class="timeline-desc">Build and own features across 23 repositories on a multi-tenant hospital operations platform (pre-launch; numbers come from dev and test environments). Backends use FastAPI and PostgreSQL, web apps use React and TypeScript, and the mobile app uses Expo. Proprietary code.</p>
             <p class="timeline-desc"><strong>Service-to-service API.</strong> Designed, built and integrated into every platform module the signed M2M API: each call proves which service and tenant sent it. Hardened it after a security audit with a Redis rate limiter and replay protection.</p>
             <p class="timeline-desc"><strong>Design service for hospitals.</strong> Built RxDesign, backend and web: guided design modes, document ingestion, constraint checking, versioning, roles and sharing, and export to DXF at true scale and PDF. Wrote a deterministic layout engine that places rooms on a 0.5 ft grid with doors, exits and flow lines, with a setting to draw with an LLM or in code only. 220+ offline tests on the API.</p>
-            <p class="timeline-desc"><strong>Mobile app (iOS and Android).</strong> Built the React Native app with scan-to-search and an on-device voice assistant (Whisper, Kokoro and an optional small model run on the phone, no cloud call). Set up separate iOS and Android release pipelines with automatic TestFlight submission and raised statement coverage from 14% to 93%.</p>
+            <p class="timeline-desc"><strong>Mobile app (iOS and Android).</strong> Built the React Native app with scan-to-search and an on-device voice assistant (Whisper, Kokoro and an optional small model run on the phone, no cloud call). Set up separate iOS and Android release pipelines with automatic TestFlight submission.</p>
             <p class="timeline-desc"><strong>Performance and quality.</strong> Replaced offset paging with keyset paging on the catalog: on a 328,000-device dev database the query for row 150,000 fell from 285 ms to 0.20 ms. Cut the planning Items page from 3 calls and 162 KB to 2 calls and 37 KB. Fixed a regular expression denial-of-service bug (an 80-character input took about 138 s; the new pattern matched the old results on 60,000 random inputs).</p>
             <p class="timeline-desc"><strong>Cloud cost and security.</strong> Automated weekday start and stop of dev and acceptance ECS services and RDS databases: about 53 hours a week instead of 168. Standardized GuardDuty malware scanning of uploads across 9 app modules and triaged CodeQL findings.</p>
           </div>
@@ -464,7 +464,7 @@
         <article class="project-card" data-id="rxasset">
           <div class="card-top"><span class="badge badge-work">Work &middot; proprietary</span></div>
           <h3 class="project-title">RxAsset mobile app with on-device voice</h3>
-          <p class="project-desc">An iOS and Android app for hospital asset teams with scan-to-search, barcode prefill and a voice assistant that runs on the phone (Whisper, Kokoro, optional Qwen), with no cloud call. Separate release pipelines with automatic TestFlight submission; statement coverage raised from 14% to 93% with 582 tests.</p>
+          <p class="project-desc">An iOS and Android app for hospital asset teams with scan-to-search, barcode prefill and a voice assistant that runs on the phone (Whisper, Kokoro, optional Qwen), with no cloud call. Separate release pipelines with automatic TestFlight submission.</p>
           <div class="tag-row"><span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">EAS</span><span class="tag">GitHub Actions</span><span class="tag">Jest</span><span class="tag">Whisper</span></div>
         </article>
         <article class="project-card" data-id="con">
@@ -484,7 +484,7 @@
         <article class="project-card" data-id="agt">
           <div class="card-top"><span class="badge badge-public">Public code</span></div>
           <h3 class="project-title">Agent Integration Platform</h3>
-          <p class="project-desc">A support-case platform on a LangGraph workflow: typed state, a Postgres checkpointer, human approval that resumes after restart, step and token budgets, and one constrained MCP write tool. 62 deterministic replay evals, prompt-injection tests, output guardrails, PII redaction and an append-only audit log. Hybrid retrieval (pgvector and full-text search fused by RRF) with access labels, and failover between two LLM adapters with token cost records. 304 tests at 94% coverage.</p>
+          <p class="project-desc">A support-case platform on a LangGraph workflow: typed state, a Postgres checkpointer, human approval that resumes after restart, step and token budgets, and one constrained MCP write tool. 62 deterministic replay evals, prompt-injection tests, output guardrails, PII redaction and an append-only audit log. Hybrid retrieval (pgvector and full-text search fused by RRF) with access labels, and failover between two LLM adapters with token cost records. 304 tests.</p>
           <div class="tag-row"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">LangGraph</span><span class="tag">MCP</span><span class="tag">pgvector</span><span class="tag">Redis</span><span class="tag">Terraform</span></div>
           <div class="links"><a class="project-link" href="https://github.com/consultantstanleymn/agent-integration-platform" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a></div>
         </article>
@@ -673,7 +673,7 @@
           </div>
           <div class="skill-group">
             <h3>AI and ML</h3>
-            <div class="tag-row"><span class="tag">LangGraph</span><span class="tag">MCP</span><span class="tag">RAG and hybrid retrieval (RRF)</span><span class="tag">Deterministic LLM evals</span><span class="tag">Human-in-the-loop approvals</span><span class="tag">Guardrails and PII redaction</span><span class="tag">LLM failover and cost records</span><span class="tag">PyTorch</span><span class="tag">ONNX Runtime</span><span class="tag">int8 quantization</span><span class="tag">QLoRA and PEFT</span><span class="tag">BERTopic</span><span class="tag">PaddleOCR</span><span class="tag">On-device speech (Whisper, Kokoro)</span><span class="tag">Pandas</span></div>
+            <div class="tag-row"><span class="tag">LangGraph</span><span class="tag">MCP</span><span class="tag">RAG and hybrid retrieval (RRF)</span><span class="tag">Deterministic LLM evals</span><span class="tag">Human-in-the-loop approvals</span><span class="tag">Guardrails and PII redaction</span><span class="tag">LLM failover and cost records</span><span class="tag">PyTorch</span><span class="tag">ONNX Runtime</span><span class="tag">int8 quantization</span><span class="tag">QLoRA and PEFT</span><span class="tag">BERTopic</span><span class="tag">PaddleOCR</span><span class="tag">On-device speech (Whisper, Kokoro)</span><span class="tag">Pandas</span><span class="tag">AI-assisted development</span><span class="tag">Claude Code</span><span class="tag">Codex</span><span class="tag">opencode</span><span class="tag">DeepSeek</span></div>
           </div>
           <div class="skill-group">
             <h3>Cloud and delivery</h3>
@@ -744,7 +744,7 @@
         eyebrow: 'Full stack engineering &middot; Python &middot; React &middot; AWS',
         h1: 'From the database to the <em>phone in your hand.</em>',
         lede: 'Full stack engineer at a 10-person hospital operations startup: FastAPI and PostgreSQL backends, React and TypeScript web apps, and a React Native app released to iOS and Android through separate pipelines. M.S. in Computer Science (4.0 GPA) and AWS Certified Solutions Architect.',
-        proof: [['3 products', 'built end to end at work'], ['285 &rarr; 0.20 ms', 'deep catalog query (dev database)'], ['14% &rarr; 93%', 'mobile test coverage']],
+        proof: [['3 products', 'built end to end at work'], ['285 &rarr; 0.20 ms', 'deep catalog query (dev database)'], ['220+ tests', 'RxDesign test suite']],
         projects: ['rxdesign', 'rxasset', 'con', 'ledui', 'agt', 'mina'],
         skills: ['Python', 'TypeScript and React', 'FastAPI', 'PostgreSQL and SQL', 'React Native and Expo', 'Next.js', 'AWS (ECS, RDS, S3)', 'GitHub Actions CI/CD', 'Playwright and Vitest', 'Java and Spring Boot']
       },
