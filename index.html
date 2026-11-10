@@ -352,6 +352,13 @@
           <button type="button" data-lens="suno" aria-pressed="false" class="seg-special" hidden>Suno</button>
           <button type="button" data-lens="ande" aria-pressed="false" class="seg-special" hidden>Ande</button>
           <button type="button" data-lens="nuvo" aria-pressed="false" class="seg-special" hidden>Nuvo</button>
+          <button type="button" data-lens="embeddingvc" aria-pressed="false" class="seg-special" hidden>Embedding VC</button>
+          <button type="button" data-lens="automat" aria-pressed="false" class="seg-special" hidden>Automat</button>
+          <button type="button" data-lens="syntra" aria-pressed="false" class="seg-special" hidden>Syntra</button>
+          <button type="button" data-lens="wonder" aria-pressed="false" class="seg-special" hidden>Wonderschool</button>
+          <button type="button" data-lens="fortinet" aria-pressed="false" class="seg-special" hidden>Fortinet</button>
+          <button type="button" data-lens="fab2" aria-pressed="false" class="seg-special" hidden>fab2</button>
+          <button type="button" data-lens="notion" aria-pressed="false" class="seg-special" hidden>Notion</button>
           <button type="button" data-lens="meta" aria-pressed="false" class="seg-special" hidden>Meta</button>
           <button type="button" data-lens="master" aria-pressed="false" class="seg-special" hidden>Everything</button>
         </div>
@@ -854,6 +861,69 @@
         projects: ['agt', 'led', 'cds', 'inf', 'rxdesign', 'rxcatalog'],
         skills: ['LLM agents and tool use', 'LangGraph and MCP', 'Evals and guardrails', 'Prompt-injection tests and PII redaction', 'LLM failover and cost records', 'Python and FastAPI', 'Payments: idempotency, outbox, concurrency', 'PostgreSQL and pgvector', 'TypeScript and React', 'Claude Code, Codex, opencode']
       },
+      embeddingvc: {
+        name: 'Embedding VC', skillsFor: 'the Embedding VC AI Engineer (Early Career) role', file: 'EmbeddingVC',
+        eyebrow: 'LLM agents &middot; voice AI &middot; full-stack products &middot; Python and TypeScript',
+        h1: 'Shipped AI features, <em>from agents to on-device voice.</em>',
+        lede: 'Early-career AI engineer with an M.S. in Computer Science and a year at a 10-person startup. At work I built a hospital design service with an LLM setting, a mobile app with an on-device voice assistant, and the signed API every module uses. My public LangGraph and MCP platform has human approval and 62 replay evals. I use Claude Code, Codex and opencode every day.',
+        proof: [['On-device', 'voice assistant, no cloud call (React Native)'], ['62 evals', 'deterministic replay checks on the agent platform'], ['220+ tests', 'on the design API, no LLM calls']],
+        projects: ['rxasset', 'rxdesign', 'agt', 'rxcatalog', 'inf', 'con'],
+        skills: ['LLM agents and tool use', 'Voice AI (on-device speech)', 'LangGraph and MCP', 'Evals and guardrails', 'Python and FastAPI', 'TypeScript and React', 'React Native (Expo)', 'PostgreSQL and pgvector', 'Claude Code, Codex, opencode', 'Agent runs with acceptance checks']
+      },
+      automat: {
+        name: 'Automat', skillsFor: 'the Automat Software Engineer (Junior/Intermediate) role', file: 'Automat',
+        eyebrow: 'Full-stack agents &middot; workflow automation &middot; internal platforms &middot; Python and TypeScript',
+        h1: 'Agents and automation, <em>built full stack and owned end to end.</em>',
+        lede: 'Product-minded full-stack engineer who builds agents and workflow automation. At work I automated AWS server schedules (168 to about 53 hours a week), standardized malware scanning across 9 app modules, and built the design service and mobile app. My public LangGraph and MCP platform has human approval and 62 replay evals, and an agent-fleet pipeline built two services in 34 packets.',
+        proof: [['168 &rarr; 53 h', 'weekly dev and test server runtime'], ['62 evals', 'deterministic replay checks on the agent platform'], ['34 packets', 'built by a planner, manager and worker agent run']],
+        projects: ['rxdesign', 'agt', 'rxasset', 'rxcatalog', 'con', 'inf'],
+        skills: ['Agents and workflow automation', 'LangGraph and MCP tools', 'Human-approval flows', 'Python and FastAPI', 'TypeScript, React and Next.js', 'React Native (Expo)', 'PostgreSQL and Redis', 'AWS (ECS, RDS)', 'Claude Code, Codex, opencode', 'Agent runs with acceptance checks']
+      },
+      syntra: {
+        name: 'Syntra', skillsFor: 'the Syntra Applied Healthcare AI Engineer role', file: 'Syntra',
+        eyebrow: 'Healthcare AI &middot; agents &middot; clinical data &middot; Python and TypeScript',
+        h1: 'Healthcare AI, <em>from hospital software to agents.</em>',
+        lede: 'Software engineer who builds hospital software today and healthcare AI in public projects. At work I built a hospital design service, a signed service API every module uses, and malware scanning across 9 modules. My LangGraph and MCP platform has human approval, PII redaction, audit logs and 62 replay evals, and my FHIR pipeline has data contracts, k-anonymity and HIPAA-style controls.',
+        proof: [['9 modules', 'with standardized upload malware scanning'], ['62 evals', 'deterministic replay checks on the agent platform'], ['108 tests', 'on the FHIR analytics pipeline']],
+        projects: ['rxdesign', 'agt', 'fhr', 'rxasset', 'rxcatalog', 'inf'],
+        skills: ['LLM agents and tool use', 'LangGraph and MCP', 'PII redaction and audit logs', 'FHIR and dbt data contracts', 'Python and FastAPI', 'TypeScript and React', 'PostgreSQL and pgvector', 'AWS (ECS, RDS, GuardDuty)', 'Claude Code, Codex, opencode', 'Agent runs with acceptance checks']
+      },
+      wonder: {
+        name: 'Wonderschool', skillsFor: 'the Wonderschool Early Career Software Engineer, Applied AI role', file: 'Wonder',
+        eyebrow: 'Applied AI &middot; agents &middot; Python and TypeScript &middot; full stack',
+        h1: 'Applied AI, <em>shipped from design to release.</em>',
+        lede: 'Early-career software engineer with an M.S. in Computer Science and a year at a 10-person startup, shipping Python and TypeScript products: a design service with an LLM setting, a React Native app with an on-device voice assistant, and a signed API every module calls. My public LangGraph and MCP agent platform has human approval and 62 replay evals.',
+        proof: [['62 evals', 'deterministic replay checks on the agent platform'], ['Every module', 'calls one service API I designed'], ['220+ tests', 'on the design API, no LLM calls']],
+        projects: ['rxdesign', 'rxasset', 'agt', 'rxcatalog', 'inf', 'con'],
+        skills: ['AI agents and tool use', 'LangGraph and MCP', 'Evals and guardrails', 'Python and FastAPI', 'TypeScript and React', 'React Native (Expo)', 'PostgreSQL', 'AWS (ECS, RDS, S3)', 'Claude Code, Codex, opencode', 'Agent runs with acceptance checks']
+      },
+      fortinet: {
+        name: 'Fortinet', skillsFor: 'the Fortinet Early Careers AI Automation Engineer role', file: 'Fortinet',
+        eyebrow: 'AI automation &middot; agents &middot; security-minded platforms &middot; Python',
+        h1: 'Automation that works, <em>and stays secure.</em>',
+        lede: 'Engineer who automates real work and keeps it secure. At work I automated AWS server schedules (168 to about 53 hours a week), standardized malware scanning across 9 app modules, and designed the signed service-to-service API every module uses, hardened after a security audit. My agent platform has guardrails, prompt-injection tests and an audit log.',
+        proof: [['168 &rarr; 53 h', 'weekly dev and test server runtime'], ['9 modules', 'with standardized upload malware scanning'], ['62 evals', 'deterministic replay checks on the agent platform']],
+        projects: ['agt', 'rxcatalog', 'rxdesign', 'con', 'rxasset', 'inf'],
+        skills: ['AI automation and agents', 'LangGraph and MCP tools', 'Guardrails and prompt-injection tests', 'Service-to-service auth and OIDC', 'Python and FastAPI', 'TypeScript and React', 'AWS (ECS, RDS, GuardDuty)', 'Rate limiting and replay protection', 'Claude Code, Codex, opencode', 'Agent runs with acceptance checks']
+      },
+      fab2: {
+        name: 'fab2', skillsFor: 'the fab2 Software Engineer, AI Platform role', file: 'Fab2',
+        eyebrow: 'AI platform &middot; agents &middot; MCP &middot; evals &middot; inference infrastructure',
+        h1: 'AI platforms: <em>agents, evals and fast, sized inference.</em>',
+        lede: 'Full-stack engineer who builds AI platforms: a public LangGraph and MCP agent platform with 62 deterministic replay evals and LLM failover, a Go inference service (ONNX, int8) sized for a 10x peak, and a Rust gateway. At a 10-person startup I own services across frontend, backend and AWS. I use Claude Code, Codex and opencode every day and still read every line.',
+        proof: [['62 evals', 'deterministic replay checks on the agent platform'], ['2 to 3 replicas', 'for a 10x peak (local benchmark)'], ['500 of 500', 'events delivered once after kill -9 (Rust gateway)']],
+        projects: ['agt', 'inf', 'rgw', 'rxdesign', 'rxcatalog', 'rxasset'],
+        skills: ['Agents, MCP and evals', 'LangGraph and MCP servers', 'Inference (ONNX, int8, Go)', 'Python and Rust', 'TypeScript and React', 'PostgreSQL and Redis', 'AWS and Terraform', 'OpenTelemetry and k6', 'Claude Code, Codex, opencode', 'Agent runs with acceptance checks']
+      },
+      notion: {
+        name: 'Notion', skillsFor: 'the Notion Software Engineer, Early Career (AI) role', file: 'Notion',
+        eyebrow: 'AI product engineering &middot; retrieval &middot; evals &middot; TypeScript and Python',
+        h1: 'Model-powered features, <em>measured before and after.</em>',
+        lede: 'Early-career engineer who builds model-powered features end to end. My public LangGraph agent platform has hybrid retrieval, 62 replay evals and LLM failover, my Go inference service serves an int8 model, and at work I built a design service with an LLM setting plus React and React Native products. I measure quality before and after a change.',
+        proof: [['62 evals', 'deterministic replay checks on the agent platform'], ['macro-F1 0.8636', 'same for fp32 and int8 model'], ['220+ tests', 'on the design API, no LLM calls']],
+        projects: ['agt', 'inf', 'rxdesign', 'rxasset', 'rxcatalog', 'con'],
+        skills: ['LLMs, embeddings and retrieval', 'Evals and guardrails', 'LangGraph and MCP', 'TypeScript and React', 'Python and FastAPI', 'React Native (Expo)', 'PostgreSQL and pgvector', 'AWS (ECS, RDS)', 'Claude Code, Codex, opencode', 'Agent runs with acceptance checks']
+      },
       meta: {
         name: 'Meta', skillsFor: 'Meta software engineer roles', file: 'Meta',
         eyebrow: 'Backend and infrastructure &middot; Python &middot; Rust &middot; Go',
@@ -881,7 +951,7 @@
     var more = document.getElementById('moreProjects');
     var allTools = document.getElementById('allTools');
     var buttons = document.querySelectorAll('.segmented button');
-    var SPECIAL = { jpmc: 1, 'jpmc-payments': 1, mintive: 1, genius: 1, pylon: 1, suno: 1, ande: 1, nuvo: 1, meta: 1, master: 1 };
+    var SPECIAL = { jpmc: 1, 'jpmc-payments': 1, mintive: 1, genius: 1, pylon: 1, suno: 1, ande: 1, nuvo: 1, embeddingvc: 1, automat: 1, syntra: 1, wonder: 1, fortinet: 1, fab2: 1, notion: 1, meta: 1, master: 1 };
 
     function lensFromUrl() {
       var p = null;
