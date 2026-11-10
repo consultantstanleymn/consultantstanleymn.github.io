@@ -348,6 +348,7 @@
           <button type="button" data-lens="jpmc-payments" aria-pressed="false" class="seg-special" hidden>JPMorganChase Payments</button>
           <button type="button" data-lens="mintive" aria-pressed="false" class="seg-special" hidden>Mintive</button>
           <button type="button" data-lens="genius" aria-pressed="false" class="seg-special" hidden>Genius AI</button>
+          <button type="button" data-lens="pylon" aria-pressed="false" class="seg-special" hidden>Pylon</button>
           <button type="button" data-lens="meta" aria-pressed="false" class="seg-special" hidden>Meta</button>
           <button type="button" data-lens="master" aria-pressed="false" class="seg-special" hidden>Everything</button>
         </div>
@@ -814,6 +815,15 @@
         projects: ['agt', 'led', 'ledui', 'rxasset', 'rxcatalog', 'inf'],
         skills: ['Claude Code, Codex, opencode', 'Agent runs with acceptance checks', 'LangGraph and MCP', 'TypeScript and React', 'React Native (Expo)', 'Python, Java and Go', 'PostgreSQL and SQL', 'AWS and Terraform', 'Payments: idempotency, outbox, SLOs', 'Testing: Playwright, k6, property tests']
       },
+      pylon: {
+        name: 'Pylon', skillsFor: 'the Pylon Generalist Software Engineer role', file: 'Pylon',
+        eyebrow: 'Generalist &middot; typed backends &middot; TypeScript &middot; PostgreSQL &middot; AWS',
+        h1: 'A generalist who owns it, <em>from design to release.</em>',
+        lede: 'Generalist software engineer at a 10-person startup. At work I designed the signed service-to-service API every platform module uses, cut a deep catalog query from 285 ms to 0.20 ms, fixed a regular expression denial-of-service bug, built a hospital design service and a React Native asset app, and automated AWS cost and security controls. I like strong types, PostgreSQL and code that stays correct under retries.',
+        proof: [['285 &rarr; 0.20 ms', 'keyset paging, row 150,000 (dev)'], ['Every module', 'calls one service API I designed'], ['138 s fixed', 'regex bug, 60,000 inputs checked']],
+        projects: ['rxcatalog', 'rxdesign', 'rxasset', 'cds', 'led', 'ledui'],
+        skills: ['TypeScript and React', 'Python and FastAPI', 'Rust, Java and C#', 'PostgreSQL and query tuning', 'Signed service APIs and security', 'Keyset paging and idempotency', 'React Native (Expo)', 'AWS (ECS, RDS, GuardDuty)', 'GitHub Actions release pipelines', 'Claude Code, Codex, opencode']
+      },
       meta: {
         name: 'Meta', skillsFor: 'Meta software engineer roles', file: 'Meta',
         eyebrow: 'Backend and infrastructure &middot; Python &middot; Rust &middot; Go',
@@ -841,7 +851,7 @@
     var more = document.getElementById('moreProjects');
     var allTools = document.getElementById('allTools');
     var buttons = document.querySelectorAll('.segmented button');
-    var SPECIAL = { jpmc: 1, 'jpmc-payments': 1, mintive: 1, genius: 1, meta: 1, master: 1 };
+    var SPECIAL = { jpmc: 1, 'jpmc-payments': 1, mintive: 1, genius: 1, pylon: 1, meta: 1, master: 1 };
 
     function lensFromUrl() {
       var p = null;
