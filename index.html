@@ -351,6 +351,7 @@
           <button type="button" data-lens="pylon" aria-pressed="false" class="seg-special" hidden>Pylon</button>
           <button type="button" data-lens="suno" aria-pressed="false" class="seg-special" hidden>Suno</button>
           <button type="button" data-lens="ande" aria-pressed="false" class="seg-special" hidden>Ande</button>
+          <button type="button" data-lens="nuvo" aria-pressed="false" class="seg-special" hidden>Nuvo</button>
           <button type="button" data-lens="meta" aria-pressed="false" class="seg-special" hidden>Meta</button>
           <button type="button" data-lens="master" aria-pressed="false" class="seg-special" hidden>Everything</button>
         </div>
@@ -844,6 +845,15 @@
         projects: ['agt', 'inf', 'led', 'rxdesign', 'rxasset', 'rxcatalog'],
         skills: ['LLM agents and tool use', 'LangGraph and MCP', 'Evals, guardrails and prompt-injection tests', 'Human-approval flows', 'LLM failover and cost records', 'Python and FastAPI', 'TypeScript and React', 'PostgreSQL and pgvector', 'Claude Code, Codex, opencode', 'Agent runs with acceptance checks']
       },
+      nuvo: {
+        name: 'Nuvo', skillsFor: 'the Nuvo New Grad AI Engineer role', file: 'Nuvo',
+        eyebrow: 'AI agents &middot; evals and guardrails &middot; payments &middot; Python and TypeScript',
+        h1: 'Agents that automate trade and payments, <em>with the evals to back them.</em>',
+        lede: 'New-grad AI engineer with an M.S. in Computer Science and a year at a 10-person startup. My public LangGraph and MCP platform has human approval, 62 replay evals, prompt-injection tests, guardrails and LLM failover, and my payments ledger and card dispute service stay correct under retries and races. I judge where AI helps and where it adds risk, and I code with Claude Code, Codex and opencode every day.',
+        proof: [['62 evals', 'deterministic replay checks on the agent platform'], ['0 money', 'created or lost in the payments ledger (checked)'], ['Exactly 1 winner', 'when two dispute decisions race (C#)']],
+        projects: ['agt', 'led', 'cds', 'inf', 'rxdesign', 'rxcatalog'],
+        skills: ['LLM agents and tool use', 'LangGraph and MCP', 'Evals and guardrails', 'Prompt-injection tests and PII redaction', 'LLM failover and cost records', 'Python and FastAPI', 'Payments: idempotency, outbox, concurrency', 'PostgreSQL and pgvector', 'TypeScript and React', 'Claude Code, Codex, opencode']
+      },
       meta: {
         name: 'Meta', skillsFor: 'Meta software engineer roles', file: 'Meta',
         eyebrow: 'Backend and infrastructure &middot; Python &middot; Rust &middot; Go',
@@ -871,7 +881,7 @@
     var more = document.getElementById('moreProjects');
     var allTools = document.getElementById('allTools');
     var buttons = document.querySelectorAll('.segmented button');
-    var SPECIAL = { jpmc: 1, 'jpmc-payments': 1, mintive: 1, genius: 1, pylon: 1, suno: 1, ande: 1, meta: 1, master: 1 };
+    var SPECIAL = { jpmc: 1, 'jpmc-payments': 1, mintive: 1, genius: 1, pylon: 1, suno: 1, ande: 1, nuvo: 1, meta: 1, master: 1 };
 
     function lensFromUrl() {
       var p = null;
