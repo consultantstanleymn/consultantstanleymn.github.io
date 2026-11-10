@@ -3,21 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Stanley N. — Backend and platform software engineer, open to relocate to the SF Bay Area, New York or Seattle. Python, FastAPI and AWS engineering (Python, FastAPI, React, TypeScript, Rust, AWS, PostgreSQL), customer integrations (webhooks, OAuth2/OIDC, LLM agents), applied ML/NLP research, and an AWS Certified Solutions Architect. Portfolio, open-source projects, and study guides.">
+<meta name="description" content="Stanley N., software engineer. Full stack, backend, platform and AI work: Python, FastAPI, React, TypeScript, Java, AWS and PostgreSQL. M.S. Computer Science (4.0 GPA), AWS Certified Solutions Architect. Huntington, IN, open to relocate anywhere.">
 <meta name="robots" content="index, follow">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFFBF2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1A1611" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://stanley-n.com/">
-<title>Stanley N. — Backend &amp; Platform Software Engineer</title>
+<title>Stanley N. | Software Engineer</title>
 
-<!-- Open Graph / social previews -->
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Stanley N.">
-<meta property="og:title" content="Stanley N. — Software Engineer, Applied ML/NLP &amp; Cloud">
-<meta property="og:description" content="Backend and platform software engineer. Python, FastAPI, AWS and AI-agent projects with measured results, AWS Certified Solutions Architect. Portfolio, projects, and study guides.">
+<meta property="og:title" content="Stanley N. | Software Engineer">
+<meta property="og:description" content="Full stack, backend, platform and AI engineering with public code and tests. M.S. Computer Science, AWS Certified Solutions Architect.">
 <meta property="og:url" content="https://stanley-n.com/">
 <meta property="og:image" content="https://stanley-n.com/assets/headshot.jpg">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Stanley N. — Software Engineer, Applied ML/NLP &amp; Cloud">
-<meta name="twitter:description" content="Backend and platform software engineer. Python, FastAPI, AWS, applied ML/NLP research, AWS Certified Solutions Architect.">
+<meta name="twitter:title" content="Stanley N. | Software Engineer">
+<meta name="twitter:description" content="Full stack, backend, platform and AI engineering with public code and tests.">
 <meta name="twitter:image" content="https://stanley-n.com/assets/headshot.jpg">
 
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -26,7 +28,6 @@
 <link rel="shortcut icon" href="assets/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 
-<!-- Structured data: helps Google (and recruiter-facing search tools) understand who this page is about -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -37,30 +38,11 @@
   "image": "https://stanley-n.com/assets/headshot.jpg",
   "email": "mailto:consultantstanleymn@gmail.com",
   "jobTitle": "Software Development Engineer",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Mass Technologies"
-  },
-  "alumniOf": {
-    "@type": "CollegeOrUniversity",
-    "name": "University of Minnesota"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Huntington",
-    "addressRegion": "IN",
-    "addressCountry": "US"
-  },
-  "hasCredential": {
-    "@type": "EducationalOccupationalCredential",
-    "credentialCategory": "certification",
-    "name": "AWS Certified Solutions Architect — Associate"
-  },
-  "knowsAbout": [
-    "Python", "Java", "TypeScript", "SQL", "AWS", "PostgreSQL",
-    "Machine Learning", "Natural Language Processing", "REST API design",
-    "Docker", "React", "FastAPI", "React Native", "GitHub Actions", "Kafka", "Cloud Architecture"
-  ],
+  "worksFor": { "@type": "Organization", "name": "Mass Technologies" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Minnesota Duluth" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Huntington", "addressRegion": "IN", "addressCountry": "US" },
+  "hasCredential": { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "AWS Certified Solutions Architect, Associate" },
+  "knowsAbout": ["Python", "Java", "TypeScript", "SQL", "AWS", "PostgreSQL", "React", "FastAPI", "Spring Boot", "React Native", "GitHub Actions", "Kafka", "Machine Learning", "Site Reliability Engineering"],
   "sameAs": [
     "https://github.com/consultantstanleymn",
     "https://github.com/stanley-s-nelavala",
@@ -68,41 +50,50 @@
   ]
 }
 </script>
+<script>document.documentElement.classList.add('js');</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&family=Archivo:ital,wght@0,400;0,500;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
+  /* Palette: warm paper, ink, tomato, sunflower. No blue, purple or teal. */
   :root {
-    --bg: #fafafa;
-    --bg-raised: #ffffff;
-    --fg: #09090b;
-    --muted-fg: #52525b;
-    --border: #e4e4e7;
-    --accent: #2563eb;
-    --accent-fg: #ffffff;
-    --focus-ring: #18181b;
-    --space-1: 8px;
-    --space-2: 16px;
-    --space-3: 24px;
-    --space-4: 40px;
-    --space-5: 64px;
-    --space-6: 96px;
-    --space-7: 140px;
+    --bg: #FFFBF2;
+    --bg-raised: #FFFFFF;
+    --bg-sun: #FFE9A8;
+    --fg: #1F1A14;
+    --muted-fg: #5C5040;
+    --border: #E9DDC7;
+    --ink: #1F1A14;
+    --accent: #C8341B;      /* tomato: text and button fill (5.1:1 on paper, white on it 5.3:1) */
+    --accent-fg: #FFFFFF;
+    --accent-pop: #FF5A36;  /* decorative only, never text */
+    --sun: #FFC83D;         /* sunflower: fills behind ink text (11.2:1) */
+    --go: #1F7A3A;          /* public-code badge (5.2:1 on paper) */
+    --shadow: #1F1A14;
+    --display: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --body: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --mono: 'Space Mono', ui-monospace, Menlo, Consolas, monospace;
+    --space-1: 8px; --space-2: 16px; --space-3: 24px; --space-4: 40px; --space-5: 64px; --space-6: 96px;
     --ease: cubic-bezier(0.16, 1, 0.3, 1);
-    --max: 980px;
+    --max: 1040px;
+    --header-h: 62px;
   }
-
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #0a0a0b;
-      --bg-raised: #131316;
-      --fg: #fafafa;
-      --muted-fg: #a1a1aa;
-      --border: #27272a;
-      --accent: #60a5fa;
-      --accent-fg: #0a0a0b;
-      --focus-ring: #fafafa;
+      --bg: #1A1611;
+      --bg-raised: #26201A;
+      --bg-sun: #3A2F14;
+      --fg: #FBF3E4;
+      --muted-fg: #C4B8A4;
+      --border: #3E352A;
+      --ink: #FBF3E4;
+      --accent: #FF7A5C;
+      --accent-fg: #1A1611;
+      --accent-pop: #FF7A5C;
+      --sun: #FFC83D;
+      --go: #7BD08F;
+      --shadow: #000000;
     }
   }
 
@@ -110,556 +101,281 @@
   html { scroll-behavior: smooth; }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+    *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
   }
-
   body {
-    margin: 0;
-    font-family: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-    background: var(--bg);
-    color: var(--fg);
-    -webkit-font-smoothing: antialiased;
-    line-height: 1.65;
+    margin: 0; font-family: var(--body); background: var(--bg); color: var(--fg);
+    line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden;
   }
-
   a { color: inherit; }
-  :focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; border-radius: 2px; }
-
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
   .container { max-width: var(--max); margin: 0 auto; padding: 0 var(--space-3); }
+  @media (max-width: 600px) { .container { padding: 0 16px; } }
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  .skip { position: absolute; left: -9999px; top: 8px; z-index: 100; background: var(--sun); color: #1F1A14; padding: 8px 14px; font-weight: 700; border: 2px solid #1F1A14; }
+  .skip:focus { left: 8px; }
 
-  /* ---- Header / nav ---- */
-  header {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px var(--space-3);
-    background: color-mix(in srgb, var(--bg) 88%, transparent);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid transparent;
+  /* ---- Header ---- */
+  header.site {
+    position: sticky; top: 0; z-index: 30; height: var(--header-h);
+    display: flex; align-items: center; justify-content: space-between; gap: var(--space-2);
+    padding: 0 var(--space-3); background: var(--bg); border-bottom: 2px solid var(--ink);
   }
-  header.scrolled { border-bottom-color: var(--border); }
-
-  .mark { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1rem; letter-spacing: -0.01em; text-decoration: none; }
-
-  nav.primary-nav { display: flex; gap: var(--space-3); }
-  nav.primary-nav a {
-    font-size: 0.88rem; font-weight: 500; color: var(--muted-fg); text-decoration: none;
-    transition: color 150ms var(--ease);
+  .mark { font-family: var(--display); font-weight: 700; font-size: 1.15rem; letter-spacing: 0.02em; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; }
+  .mark-dot { width: 14px; height: 14px; background: var(--accent-pop); border: 2px solid var(--ink); border-radius: 50%; }
+  nav.primary-nav { display: flex; align-items: center; gap: var(--space-3); }
+  nav.primary-nav a { font-size: 0.92rem; font-weight: 600; color: var(--muted-fg); text-decoration: none; padding: 6px 0; }
+  nav.primary-nav a:hover { color: var(--fg); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; text-decoration-color: var(--accent-pop); }
+  .btn.nav-resume { display: none; }
+  nav.primary-nav a.btn { color: #1F1A14; padding: 7px 14px; }
+  nav.primary-nav a.btn:hover { text-decoration: none; }
+  @media (max-width: 760px) {
+    header.site { padding: 0 16px; }
+    nav.primary-nav { display: none; }
+    .btn.nav-resume { display: inline-flex; }
   }
-  nav.primary-nav a:hover, nav.primary-nav a:focus-visible { color: var(--fg); }
 
-  @media (max-width: 640px) { nav.primary-nav { display: none; } }
+  /* ---- Buttons ---- */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px;
+    font-family: var(--mono); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em;
+    padding: 11px 20px; border: 2px solid var(--ink); border-radius: 3px; text-decoration: none; cursor: pointer;
+    box-shadow: 4px 4px 0 var(--shadow); transition: transform 120ms var(--ease), box-shadow 120ms var(--ease), background 120ms var(--ease);
+  }
+  .btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--shadow); }
+  .btn:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--shadow); }
+  .btn-primary { background: var(--accent); color: var(--accent-fg); }
+  .btn-sun { background: var(--sun); color: #1F1A14; }
+  .btn-plain { background: var(--bg-raised); color: var(--fg); }
+  .btn-small { min-height: 38px; padding: 7px 14px; font-size: 0.74rem; box-shadow: 3px 3px 0 var(--shadow); }
+  .btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+  /* ---- Lens bar (segmented control) ---- */
+  .lens-bar { display: none; }
+  .js .lens-bar {
+    display: block; position: sticky; top: var(--header-h); z-index: 25;
+    background: var(--bg); border-bottom: 1px solid var(--border); padding: 12px 0;
+  }
+  .lens-inner { display: flex; align-items: center; gap: var(--space-2); }
+  .seg-scroll { position: relative; min-width: 0; }
+  .lens-label { font-family: var(--mono); font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); white-space: nowrap; }
+  .segmented {
+    display: inline-flex; gap: 4px; padding: 4px; margin: 0; list-style: none;
+    background: var(--bg-raised); border: 2px solid var(--ink); border-radius: 4px; box-shadow: 3px 3px 0 var(--shadow);
+  }
+  .segmented button {
+    font-family: var(--body); font-size: 0.9rem; font-weight: 600; color: var(--fg); background: transparent;
+    border: 0; border-radius: 2px; padding: 8px 16px; min-height: 40px; cursor: pointer; white-space: nowrap;
+    transition: background 140ms var(--ease), color 140ms var(--ease);
+  }
+  .segmented button:hover { background: var(--bg-sun); }
+  .segmented button[aria-pressed="true"] { background: var(--sun); color: #1F1A14; box-shadow: inset 0 0 0 2px #1F1A14; font-weight: 700; }
+  .segmented button[hidden] { display: none; }
+  .segmented .seg-special { font-style: italic; }
+  .lens-note { margin-left: auto; font-size: 0.82rem; color: var(--muted-fg); white-space: nowrap; }
+  @media (max-width: 900px) { .lens-note { display: none; } }
+  @media (max-width: 760px) {
+    .js .lens-bar { position: static; padding: 12px 0 10px; }
+    .lens-inner { flex-direction: column; align-items: stretch; gap: 8px; }
+    .seg-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; padding: 0 6px 6px 0; scrollbar-width: none; }
+    .seg-scroll::-webkit-scrollbar { display: none; }
+    .segmented button { padding: 8px 12px; font-size: 0.86rem; }
+  }
 
   /* ---- Hero ---- */
-  .hero {
-    position: relative;
-    padding: var(--space-6) 0 var(--space-5);
-    overflow: hidden;
-    isolation: isolate;
-  }
-
-  .hero-bg {
-    position: absolute;
-    inset: -10% -5%;
-    z-index: -1;
-    pointer-events: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    -webkit-mask-image: radial-gradient(ellipse 65% 60% at 62% 40%, #000 0%, #000 35%, transparent 78%);
-    mask-image: radial-gradient(ellipse 65% 60% at 62% 40%, #000 0%, #000 35%, transparent 78%);
-    transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) scale(1.08);
-    transition: transform 700ms var(--ease);
-    will-change: transform;
-  }
-
-  .hero-bg pre {
-    margin: 0;
-    font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace;
-    font-size: clamp(2.6px, 0.34vw, 5px);
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    white-space: pre;
-    background: linear-gradient(115deg, var(--accent) 0%, #a78bfa 25%, var(--accent) 50%, #34d399 75%, var(--accent) 100%);
-    background-size: 300% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    opacity: 0.4;
-    animation: asciiDrift 26s ease-in-out infinite, asciiShimmer 14s linear infinite;
-  }
-
-  @keyframes asciiDrift {
-    0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.34; }
-    50% { transform: translate3d(0, -1.2%, 0) scale(1.015); opacity: 0.46; }
-  }
-  @keyframes asciiShimmer {
-    0% { background-position: 0% 0; }
-    100% { background-position: 300% 0; }
-  }
-
-  /* Floating gradient orbs for depth behind the portrait */
-  .hero-orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(60px);
-    mix-blend-mode: var(--orb-blend, normal);
-    opacity: 0.35;
-    pointer-events: none;
-    z-index: -2;
-  }
-  .hero-orb--a {
-    width: 340px; height: 340px; top: -6%; right: 8%;
-    background: radial-gradient(circle, var(--accent), transparent 70%);
-    animation: orbFloatA 18s ease-in-out infinite;
-  }
-  .hero-orb--b {
-    width: 260px; height: 260px; bottom: -8%; left: 6%;
-    background: radial-gradient(circle, #a78bfa, transparent 70%);
-    animation: orbFloatB 22s ease-in-out infinite;
-  }
-  @keyframes orbFloatA {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(-4%, 5%) scale(1.12); }
-  }
-  @keyframes orbFloatB {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(5%, -6%) scale(1.08); }
-  }
-
-  /* Scanline sweep across the hero for a subtle "scanning" tech feel */
-  .hero-scan {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--accent) 35%, transparent) 50%, transparent 100%);
-    height: 40%;
-    opacity: 0.25;
-    mix-blend-mode: overlay;
-    animation: scanSweep 9s ease-in-out infinite;
-  }
-  @keyframes scanSweep {
-    0% { transform: translateY(-120%); }
-    50% { transform: translateY(220%); }
-    100% { transform: translateY(-120%); }
-  }
-
-  @media (max-width: 760px) {
-    .hero-bg { opacity: 0.6; }
-    .hero-orb { display: none; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .hero-bg { transform: none !important; }
-  }
-
-  .eyebrow {
-    font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; font-weight: 500; color: var(--muted-fg);
-    text-transform: uppercase; letter-spacing: 0.12em; margin: 0 0 var(--space-2);
-  }
-
+  .hero { padding: var(--space-5) 0 var(--space-5); position: relative; }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.85fr); gap: var(--space-5); align-items: center; }
+  .eyebrow { font-family: var(--mono); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin: 0 0 var(--space-2); }
   h1 {
-    font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: clamp(2.2rem, 5.6vw, 3.9rem);
-    letter-spacing: -0.03em; line-height: 1.08; margin: 0 0 var(--space-3); max-width: 18ch;
+    font-family: var(--display); font-weight: 600; font-size: clamp(2.3rem, 5.4vw, 4.1rem); line-height: 1.04;
+    letter-spacing: -0.025em; margin: 0 0 var(--space-3); max-width: 17ch; text-wrap: balance;
   }
-
-  .lede { font-size: clamp(1.05rem, 2vw, 1.2rem); color: var(--muted-fg); max-width: 58ch; margin: 0 0 var(--space-4); }
-
-  .hero-actions { display: flex; gap: var(--space-2); flex-wrap: wrap; }
-
-  .hero-grid { display: grid; grid-template-columns: 1.35fr 0.9fr; align-items: center; gap: var(--space-5); }
-  .hero-text { min-width: 0; }
-
-  .hero-portrait {
-    position: relative;
-    justify-self: center;
-    width: min(300px, 100%);
-    aspect-ratio: 2 / 3;
-    animation: portraitFloat 7s ease-in-out infinite;
-  }
-  .hero-portrait img {
-    width: 100%; height: 100%; object-fit: cover;
-    border-radius: 28px;
-    display: block;
-    filter: grayscale(0.1) contrast(1.05);
-    box-shadow: 0 30px 70px -22px rgba(0, 0, 0, 0.55);
-    -webkit-mask-image: linear-gradient(180deg, #000 80%, transparent 100%);
-    mask-image: linear-gradient(180deg, #000 80%, transparent 100%);
-    transition: transform 450ms var(--ease), filter 450ms var(--ease);
-  }
-  .hero-portrait:hover img { transform: scale(1.02) translateY(-2px); filter: grayscale(0) contrast(1.05); }
-  .hero-portrait-glow {
-    position: absolute; inset: -20px;
-    border-radius: 36px;
-    z-index: -1;
-    background: linear-gradient(135deg, var(--accent), #a78bfa 50%, #34d399);
-    filter: blur(30px);
-    opacity: 0.32;
-    animation: glowPulse 5s ease-in-out infinite;
-  }
-  @keyframes portraitFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-  @keyframes glowPulse { 0%, 100% { opacity: 0.26; } 50% { opacity: 0.44; } }
-
+  h1 em { font-style: italic; font-weight: 500; color: var(--accent); background: linear-gradient(transparent 64%, var(--bg-sun) 64%, var(--bg-sun) 92%, transparent 92%); padding: 0 0.06em; }
+  .lede { font-size: clamp(1.04rem, 1.8vw, 1.18rem); color: var(--muted-fg); max-width: 60ch; margin: 0 0 var(--space-2); }
+  .where { font-family: var(--mono); font-size: 0.8rem; color: var(--fg); margin: 0 0 var(--space-4); display: flex; flex-wrap: wrap; gap: 6px 14px; }
+  .where span { display: inline-flex; align-items: center; gap: 6px; }
+  .where span::before { content: ""; width: 8px; height: 8px; background: var(--accent-pop); border: 1.5px solid var(--ink); border-radius: 50%; }
+  .proof-strip { list-style: none; padding: 0; margin: 0 0 var(--space-4); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2); max-width: 640px; }
+  .proof-strip li { background: var(--bg-raised); border: 2px solid var(--ink); border-radius: 3px; padding: 12px 14px; box-shadow: 3px 3px 0 var(--shadow); display: flex; flex-direction: column; gap: 4px; }
+  .proof-strip li:nth-child(2) { background: var(--bg-sun); }
+  .proof-strip strong { font-family: var(--display); font-size: 1.22rem; font-weight: 700; line-height: 1.1; letter-spacing: -0.01em; }
+  .proof-strip span { font-size: 0.8rem; line-height: 1.35; color: var(--muted-fg); }
+  @media (prefers-color-scheme: dark) { .proof-strip li:nth-child(2) span { color: var(--fg); } }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+  .hero-portrait { position: relative; justify-self: center; width: min(300px, 100%); aspect-ratio: 2 / 3; }
+  .hero-portrait::before { content: ""; position: absolute; inset: 22px -22px -22px 22px; background: var(--sun); border: 2px solid var(--ink); border-radius: 3px; }
+  .hero-portrait::after { content: ""; position: absolute; width: 64px; height: 64px; top: -20px; left: -20px; background: var(--accent-pop); border: 2px solid var(--ink); border-radius: 50%; }
+  .hero-portrait img { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: cover; display: block; border: 2px solid var(--ink); border-radius: 3px; }
   @media (max-width: 900px) {
-    .hero-grid { grid-template-columns: 1fr; }
-    .hero-portrait { order: -1; width: 168px; margin: 0 auto var(--space-2); }
+    .hero { padding-top: var(--space-4); }
+    .hero-grid { grid-template-columns: 1fr; gap: var(--space-4); }
+    .hero-portrait { order: -1; width: 116px; justify-self: start; margin-left: 14px; }
+    .hero-portrait::after { width: 40px; height: 40px; top: -12px; left: -14px; }
+    .hero-portrait::before { inset: 12px -12px -12px 12px; }
   }
-  @media (prefers-reduced-motion: reduce) {
-    .hero-portrait, .hero-portrait-glow { animation: none; }
+  @media (max-width: 560px) {
+    .proof-strip { grid-template-columns: 1fr; }
+    .proof-strip li { flex-direction: row; align-items: baseline; gap: 10px; }
+    .proof-strip strong { white-space: nowrap; }
+    .hero-actions .btn { flex: 1 1 auto; }
   }
 
-  .btn-primary, .btn-secondary {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.92rem;
-    padding: 12px 22px; border-radius: 10px; text-decoration: none;
-    transition: transform 150ms var(--ease), opacity 150ms var(--ease), border-color 150ms var(--ease);
-  }
-  .btn-primary { background: var(--fg); color: var(--bg); }
-  .btn-primary:hover, .btn-primary:focus-visible { transform: translateY(-1px); opacity: 0.88; }
-  .btn-secondary { border: 1px solid var(--border); color: var(--fg); }
-  .btn-secondary:hover, .btn-secondary:focus-visible { border-color: var(--fg); transform: translateY(-1px); }
-  .btn-primary:active, .btn-secondary:active { transform: scale(0.97); transition-duration: 90ms; }
+  /* ---- Sections ---- */
+  .section { padding-top: var(--space-5); padding-bottom: var(--space-5); border-top: 2px solid var(--ink); scroll-margin-top: 130px; }
+  .section-head { margin-bottom: var(--space-4); }
+  .section-label { font-family: var(--mono); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); margin: 0; }
+  .section-title { font-family: var(--display); font-size: clamp(1.8rem, 3.6vw, 2.6rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; margin: 6px 0 0; }
+  .section-sub { color: var(--muted-fg); margin: 10px 0 0; max-width: 62ch; }
+  .js .reveal { opacity: 0; transform: translateY(14px); transition: opacity 500ms var(--ease), transform 500ms var(--ease); }
+  .js .reveal.is-visible { opacity: 1; transform: none; }
 
-  /* ---- Reveal-on-scroll ---- */
-  .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
-  .reveal.is-visible { opacity: 1; transform: translateY(0); }
-
-  /* ---- Section shell ---- */
-  .section { padding: var(--space-5) var(--space-3); border-top: 1px solid var(--border); scroll-margin-top: 80px; }
-  .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-2); margin-bottom: var(--space-4); flex-wrap: wrap; }
-  .section-label {
-    font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; font-weight: 500; color: var(--muted-fg);
-    text-transform: uppercase; letter-spacing: 0.12em; margin: 0;
-  }
-  .section-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; letter-spacing: -0.02em; margin: 4px 0 0; }
-
-  /* ---- About ---- */
+  /* About */
   .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-5); align-items: start; }
   .about-grid p { color: var(--muted-fg); font-size: 1.02rem; margin: 0 0 var(--space-2); max-width: 62ch; }
   .fact-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); }
-  .fact-list li { display: flex; flex-direction: column; gap: 2px; border-left: 2px solid var(--border); padding-left: var(--space-2); }
-  .fact-label { font-family: 'Space Grotesk', sans-serif; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted-fg); }
-  .fact-value { font-size: 0.95rem; }
+  .fact-list li { display: flex; flex-direction: column; gap: 2px; border-left: 4px solid var(--sun); padding-left: 14px; }
+  .fact-label { font-family: var(--mono); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted-fg); }
+  .fact-value { font-size: 0.98rem; font-weight: 500; }
   @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; gap: var(--space-3); } }
 
-  /* ---- Timeline (experience) ---- */
-  .timeline { display: flex; flex-direction: column; }
-  .timeline-item { display: grid; grid-template-columns: 160px 1fr; gap: var(--space-3); padding: var(--space-3) 0; border-bottom: 1px solid var(--border); }
-  .timeline-item:last-child { border-bottom: none; }
-  .timeline-date { font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; color: var(--muted-fg); font-weight: 500; padding-top: 2px; }
-  .timeline-role { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 600; margin: 0 0 2px; letter-spacing: -0.01em; }
-  .timeline-org { font-size: 0.92rem; color: var(--accent); font-weight: 500; margin: 0 0 10px; }
-  .timeline-desc { font-size: 0.96rem; color: var(--muted-fg); margin: 0; max-width: 62ch; }
+  /* Timeline */
+  .timeline-item { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: var(--space-3); padding: var(--space-3) 0; border-bottom: 1px solid var(--border); }
+  .timeline-item:last-child { border-bottom: 0; }
+  .timeline-date { font-family: var(--mono); font-size: 0.82rem; color: var(--muted-fg); padding-top: 4px; }
+  .timeline-role { font-family: var(--display); font-size: 1.25rem; font-weight: 600; margin: 0 0 2px; }
+  .timeline-org { font-size: 0.94rem; color: var(--accent); font-weight: 600; margin: 0 0 10px; }
+  .timeline-desc { font-size: 0.97rem; color: var(--muted-fg); margin: 0; max-width: 66ch; }
   .timeline-desc + .timeline-desc { margin-top: 10px; }
-  .timeline-desc strong { color: var(--fg); font-weight: 600; }
+  .timeline-desc strong { color: var(--fg); }
   @media (max-width: 640px) { .timeline-item { grid-template-columns: 1fr; gap: 6px; } }
 
-  /* ---- Project cards ---- */
-  .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-3); }
+  /* Projects */
+  .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); }
   @media (max-width: 760px) { .project-grid { grid-template-columns: 1fr; } }
-
   .project-card {
-    background: var(--bg-raised); border: 1px solid var(--border); border-radius: 14px; padding: var(--space-4);
-    display: flex; flex-direction: column; gap: var(--space-2);
-    transition: border-color 200ms var(--ease), transform 200ms var(--ease), box-shadow 200ms var(--ease);
+    background: var(--bg-raised); border: 2px solid var(--ink); border-radius: 3px; padding: var(--space-3) var(--space-3) 20px;
+    display: flex; flex-direction: column; gap: 12px; box-shadow: 5px 5px 0 var(--shadow);
+    transition: transform 140ms var(--ease), box-shadow 140ms var(--ease);
   }
-  .project-card:hover { border-color: var(--fg); transform: translateY(-2px); box-shadow: 0 16px 40px -20px rgba(0,0,0,0.28); }
-  .project-card:active { transform: translateY(-2px) scale(0.985); transition-duration: 90ms; }
+  .project-card:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--accent-pop); }
+  #projGrid .project-card:first-child { background: var(--bg-sun); }
+  @media (prefers-color-scheme: dark) { #projGrid .project-card:first-child .project-desc { color: var(--fg); } }
+  .card-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+  .badge { font-family: var(--mono); font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 3px 8px; border: 1.5px solid currentColor; border-radius: 2px; }
+  .badge-public { color: var(--go); }
+  .badge-work { color: var(--accent); }
+  .badge-private { color: var(--muted-fg); }
+  .project-title { font-family: var(--display); font-size: 1.3rem; font-weight: 600; line-height: 1.2; margin: 0; letter-spacing: -0.01em; }
+  .project-desc { font-size: 0.95rem; color: var(--muted-fg); margin: 0; }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 6px; }
+  .tag { font-family: var(--mono); font-size: 0.72rem; color: var(--fg); background: var(--bg); border: 1px solid var(--ink); border-radius: 2px; padding: 3px 8px; }
+  .links { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+  .project-link { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 0.8rem; font-weight: 700; color: var(--accent); text-decoration: none; min-height: 32px; }
+  .project-link:hover { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
+  .project-link svg { width: 15px; height: 15px; }
+  .more { margin-top: var(--space-4); border: 2px solid var(--ink); border-radius: 3px; background: var(--bg-raised); box-shadow: 4px 4px 0 var(--shadow); }
+  .more > summary {
+    list-style: none; cursor: pointer; padding: 16px var(--space-3); font-family: var(--mono); font-weight: 700; font-size: 0.88rem;
+    text-transform: uppercase; letter-spacing: 0.06em; display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px;
+  }
+  .more > summary::-webkit-details-marker { display: none; }
+  .more > summary::after { content: "+"; font-size: 1.4rem; line-height: 1; width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; background: var(--sun); color: #1F1A14; border: 2px solid #1F1A14; border-radius: 50%; }
+  .more[open] > summary::after { content: "\2212"; }
+  .more[open] > summary { border-bottom: 2px solid var(--ink); }
+  .more-body { padding: var(--space-3); }
+  .more .project-card { box-shadow: 3px 3px 0 var(--shadow); }
+  .is-hidden { display: none !important; }
 
-  .project-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.15rem; font-weight: 600; margin: 0; letter-spacing: -0.01em; }
-  .project-desc { font-size: 0.94rem; color: var(--muted-fg); margin: 0; }
-  .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: var(--space-1); }
-  .project-link {
-    display: inline-flex; align-items: center; gap: 6px; font-family: 'Space Grotesk', sans-serif;
-    font-size: 0.82rem; font-weight: 600; text-decoration: none; color: var(--muted-fg);
-    transition: color 150ms var(--ease);
+  /* Skills */
+  .top-skills { list-style: none; counter-reset: sk; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+  .top-skills li {
+    counter-increment: sk; background: var(--bg-raised); border: 2px solid var(--ink); border-radius: 3px; padding: 12px 12px 12px 12px;
+    font-weight: 600; font-size: 0.95rem; line-height: 1.3; display: flex; flex-direction: column; gap: 4px; box-shadow: 3px 3px 0 var(--shadow);
   }
-  .project-link:hover, .project-link:focus-visible { color: var(--accent); }
-  .project-link svg { width: 14px; height: 14px; flex-shrink: 0; }
-  .project-link.is-private { color: var(--muted-fg); cursor: default; }
-  .project-link.is-private:hover { color: var(--muted-fg); }
-  .tag {
-    font-family: 'Space Grotesk', sans-serif; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
-    color: var(--muted-fg); border: 1px solid var(--border); border-radius: 999px; padding: 4px 10px;
-  }
-
-  /* ---- Study Guides side dock ---- */
-  .study-dock {
-    position: fixed;
-    top: 50%;
-    right: 0;
-    z-index: 15;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    background: color-mix(in srgb, var(--bg-raised) 90%, transparent);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 1px solid var(--border);
-    border-right: none;
-    border-radius: 16px 0 0 16px;
-    padding: var(--space-2) var(--space-1) var(--space-2) var(--space-2);
-    box-shadow: -16px 14px 44px -18px rgba(0, 0, 0, 0.4);
-    opacity: 0;
-    transform: translateY(-50%) translateX(46px);
-    transition: opacity 700ms var(--ease) 300ms, transform 700ms var(--ease) 300ms, border-color 200ms var(--ease);
-  }
-  .study-dock.is-visible { opacity: 1; transform: translateY(-50%) translateX(0); }
-
-  .study-dock-label {
-    font-family: 'Space Grotesk', sans-serif; font-size: 0.66rem; font-weight: 600; color: var(--muted-fg);
-    text-transform: uppercase; letter-spacing: 0.1em; padding: 2px 10px 6px;
-  }
-
-  .study-link {
-    display: flex; align-items: center; gap: 10px;
-    padding: 9px 12px; border-radius: 10px; text-decoration: none; color: var(--fg);
-    transition: background 200ms var(--ease), transform 200ms var(--ease);
-  }
-  .study-link:hover, .study-link:focus-visible { background: color-mix(in srgb, var(--accent) 14%, transparent); transform: translateX(-4px); }
-  .study-link .dot {
-    width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex-shrink: 0;
-    box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 60%, transparent);
-    animation: dockPulse 2.4s ease-in-out infinite;
-  }
-  .study-link .title { display: block; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.85rem; white-space: nowrap; }
-  .study-link .sub { display: block; font-size: 0.7rem; color: var(--muted-fg); white-space: nowrap; }
-  @keyframes dockPulse {
-    0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 55%, transparent); }
-    50% { box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 0%, transparent); }
-  }
-
-  @media (max-width: 900px) {
-    .study-dock {
-      position: static; margin: 0 var(--space-3) var(--space-5); transform: none !important; opacity: 1 !important;
-      flex-direction: row; align-items: center; border-radius: 14px; border-right: 1px solid var(--border);
-      box-shadow: none; overflow-x: auto; gap: 2px;
-    }
-    .study-dock-label { display: none; }
-    .study-link { flex-shrink: 0; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .study-dock { transition: opacity 300ms; }
-    .study-link .dot { animation: none; }
-  }
-
-
-  /* ---- Resources (curated, not my work) ---- */
-  .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-  .resource-list { list-style: none; padding: 0; margin: 0; }
-  .resource-card { display: flex; flex-direction: column; gap: var(--space-1); background: var(--bg-raised); border: 1px dashed var(--border); border-radius: 14px; padding: var(--space-4); }
-  .resource-card .badge { align-self: flex-start; font-family: 'Space Grotesk', sans-serif; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted-fg); border: 1px solid var(--border); border-radius: 999px; padding: 2px 10px; }
-  .resource-card .project-title a { text-decoration: none; }
-  .resource-card .project-title a:hover, .resource-card .project-title a:focus-visible { color: var(--accent); }
-  .resource-credit { font-size: 0.82rem; color: var(--muted-fg); margin: 0; }
-  .resource-intro { color: var(--muted-fg); max-width: 60ch; margin: 0 0 var(--space-4); }
-  .study-dock-label--curated { margin-top: 6px; padding-top: 10px; border-top: 1px dashed var(--border); }
-  .dot--curated { background: var(--muted-fg) !important; animation: none !important; }
-  .reveal .resource-card { opacity: 0; transform: translateY(14px); transition: opacity 550ms var(--ease), transform 550ms var(--ease); }
-  .reveal.is-visible .resource-card { opacity: 1; transform: none; }
-  @media (max-width: 900px) { .study-dock-label--curated { display: none; } }
-
-  /* ---- Ambient sitewide background motion ---- */
-  .bg-ambient { position: fixed; inset: 0; z-index: -20; overflow: hidden; pointer-events: none; }
-  .bg-ambient span {
-    position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.16;
-  }
-  .bg-ambient span:nth-child(1) { width: 480px; height: 480px; top: 8%; left: -8%; background: radial-gradient(circle, var(--accent), transparent 70%); animation: ambientA 34s ease-in-out infinite; }
-  .bg-ambient span:nth-child(2) { width: 420px; height: 420px; top: 55%; right: -10%; background: radial-gradient(circle, #a78bfa, transparent 70%); animation: ambientB 40s ease-in-out infinite; }
-  .bg-ambient span:nth-child(3) { width: 360px; height: 360px; bottom: -8%; left: 30%; background: radial-gradient(circle, #34d399, transparent 70%); animation: ambientC 46s ease-in-out infinite; }
-  @keyframes ambientA { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(6%, 8%); } }
-  @keyframes ambientB { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-7%, -5%); } }
-  @keyframes ambientC { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(4%, -6%) scale(1.1); } }
-  @media (prefers-reduced-motion: reduce) { .bg-ambient { display: none; } }
-
-  /* ---- Staggered card reveal within .reveal sections ---- */
-  .reveal .project-card, .reveal .timeline-item, .reveal .skill-group {
-    opacity: 0; transform: translateY(14px);
-    transition: opacity 550ms var(--ease), transform 550ms var(--ease);
-  }
-  .reveal.is-visible .project-card, .reveal.is-visible .timeline-item, .reveal.is-visible .skill-group { opacity: 1; transform: none; }
-  .reveal.is-visible .project-card:nth-child(1) { transition-delay: 40ms; }
-  .reveal.is-visible .project-card:nth-child(2) { transition-delay: 90ms; }
-  .reveal.is-visible .project-card:nth-child(3) { transition-delay: 140ms; }
-  .reveal.is-visible .project-card:nth-child(4) { transition-delay: 190ms; }
-  .reveal.is-visible .project-card:nth-child(5) { transition-delay: 240ms; }
-  .reveal.is-visible .project-card:nth-child(6) { transition-delay: 290ms; }
-  .reveal.is-visible .project-card:nth-child(7) { transition-delay: 340ms; }
-  .reveal.is-visible .project-card:nth-child(8) { transition-delay: 390ms; }
-  .reveal.is-visible .project-card:nth-child(9) { transition-delay: 440ms; }
-  .reveal.is-visible .project-card:nth-child(10) { transition-delay: 490ms; }
-  .reveal.is-visible .project-card:nth-child(11) { transition-delay: 540ms; }
-  .reveal.is-visible .project-card:nth-child(12) { transition-delay: 590ms; }
-  .reveal.is-visible .project-card:nth-child(13) { transition-delay: 640ms; }
-  .reveal.is-visible .project-card:nth-child(14) { transition-delay: 690ms; }
-  .reveal.is-visible .project-card:nth-child(15) { transition-delay: 740ms; }
-  .reveal.is-visible .project-card:nth-child(16) { transition-delay: 790ms; }
-  .reveal.is-visible .project-card:nth-child(17) { transition-delay: 840ms; }
-  .reveal.is-visible .project-card:nth-child(18) { transition-delay: 890ms; }
-  .reveal.is-visible .project-card:nth-child(19) { transition-delay: 940ms; }
-  .reveal.is-visible .project-card:nth-child(20) { transition-delay: 990ms; }
-  .reveal.is-visible .project-card:nth-child(21) { transition-delay: 1040ms; }
-  .reveal.is-visible .project-card:nth-child(22) { transition-delay: 1090ms; }
-  .reveal.is-visible .project-card:nth-child(23) { transition-delay: 1140ms; }
-  .reveal.is-visible .project-card:nth-child(24) { transition-delay: 1190ms; }
-  .reveal.is-visible .timeline-item:nth-child(1) { transition-delay: 40ms; }
-  .reveal.is-visible .timeline-item:nth-child(2) { transition-delay: 110ms; }
-  .reveal.is-visible .timeline-item:nth-child(3) { transition-delay: 180ms; }
-  .reveal.is-visible .timeline-item:nth-child(4) { transition-delay: 250ms; }
-
-  .card {
-    display: grid; grid-template-columns: 1fr auto; align-items: center; gap: var(--space-3);
-    background: var(--bg-raised); border: 1px solid var(--border); border-radius: 14px; padding: var(--space-4);
-    text-decoration: none; transition: border-color 200ms var(--ease), transform 200ms var(--ease), box-shadow 200ms var(--ease);
-  }
-  .card:hover, .card:focus-visible { border-color: var(--fg); transform: translateY(-2px); box-shadow: 0 12px 32px -16px rgba(0,0,0,0.25); }
-  .card-tag { display: inline-block; font-family: 'Space Grotesk', sans-serif; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: var(--space-1); }
-  .card-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; font-weight: 600; letter-spacing: -0.01em; margin: 0 0 8px; }
-  .card-desc { color: var(--muted-fg); font-size: 0.98rem; margin: 0; max-width: 56ch; }
-  .card-arrow {
-    width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border);
-    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-    transition: background 200ms var(--ease), border-color 200ms var(--ease), transform 200ms var(--ease);
-  }
-  .card:hover .card-arrow, .card:focus-visible .card-arrow { background: var(--fg); border-color: var(--fg); transform: translate(2px, -2px); }
-  .card:hover .card-arrow svg, .card:focus-visible .card-arrow svg { stroke: var(--bg); }
-  .card-arrow svg { width: 18px; height: 18px; stroke: var(--fg); transition: stroke 200ms var(--ease); }
-  @media (max-width: 560px) { .card { grid-template-columns: 1fr; } .card-arrow { display: none; } }
-
-  /* ---- Skills ---- */
-  .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
-  @media (max-width: 640px) { .skills-grid { grid-template-columns: 1fr; } }
-  .skill-group h3 { font-family: 'Space Grotesk', sans-serif; font-size: 0.95rem; font-weight: 600; margin: 0 0 var(--space-2); }
+  .top-skills li::before { content: counter(sk, decimal-leading-zero); font-family: var(--mono); font-size: 0.72rem; font-weight: 700; color: var(--accent); }
+  .top-skills li:nth-child(-n+3) { background: var(--sun); color: #1F1A14; }
+  .top-skills li:nth-child(-n+3)::before { color: #1F1A14; }
+  @media (max-width: 900px) { .top-skills { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); }
+  @media (max-width: 700px) { .skills-grid { grid-template-columns: 1fr; } }
+  .skill-group h3 { font-family: var(--display); font-size: 1.05rem; font-weight: 600; margin: 0 0 12px; }
   .skill-group .tag-row { padding-top: 0; }
 
-  /* ---- Contact ---- */
-  .contact-list { display: flex; flex-wrap: wrap; gap: var(--space-3); list-style: none; padding: 0; margin: 0; }
-  .contact-list a {
-    display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 500;
-    padding-bottom: 2px; border-bottom: 1px solid var(--border); transition: border-color 200ms var(--ease), color 200ms var(--ease);
-  }
-  .contact-list a:hover, .contact-list a:focus-visible { border-color: var(--fg); color: var(--accent); }
-  .contact-list svg { width: 16px; height: 16px; flex-shrink: 0; }
+  /* Resources */
+  .resource-list { list-style: none; padding: 0; margin: 0; }
+  .resource-card { border: 2px dashed var(--ink); border-radius: 3px; padding: var(--space-3); background: var(--bg-raised); display: flex; flex-direction: column; gap: 10px; max-width: 640px; }
+  .resource-card .project-title a { text-decoration: none; }
+  .resource-card .project-title a:hover { color: var(--accent); }
+  .resource-credit { font-size: 0.84rem; color: var(--muted-fg); margin: 0; }
+  .guides { display: flex; flex-wrap: wrap; gap: 14px; margin-top: var(--space-3); }
 
-  footer {
-    padding: var(--space-4) var(--space-3) var(--space-5); max-width: var(--max); margin: 0 auto;
-    color: var(--muted-fg); font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center;
-    gap: var(--space-2); flex-wrap: wrap;
+  /* Contact */
+  .contact-list { display: flex; flex-wrap: wrap; gap: 14px; list-style: none; padding: 0; margin: 0; }
+  .contact-list a { min-height: 46px; }
+
+  footer.site {
+    width: min(calc(var(--max) - 48px), calc(100% - 32px)); margin: 0 auto; padding: var(--space-3) 0 var(--space-5); border-top: 2px solid var(--ink);
+    font-family: var(--mono); font-size: 0.78rem; color: var(--muted-fg); display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--space-2);
   }
-  .cc { position: fixed; right: 20px; bottom: 20px; z-index: 60; width: min(400px, calc(100vw - 32px));
-    max-height: calc(100vh - 40px); overflow-y: auto;
-    background: var(--bg-raised); color: var(--fg); border: 1px solid var(--border); border-radius: 16px;
-    padding: 20px; box-shadow: 0 12px 40px rgba(0,0,0,0.18); font-size: 0.9rem; line-height: 1.5;
-    opacity: 0; transform: translateY(16px); transition: opacity .4s var(--ease), transform .4s var(--ease); }
-  .cc.is-visible { opacity: 1; transform: none; }
-  .cc[hidden] { display: none; }
-  .cc h2 { margin: 0 0 6px; font-size: 1rem; font-weight: 600; }
-  .cc p { margin: 0 0 14px; color: var(--muted-fg); }
-  .cc-actions { display: flex; gap: 8px; flex-wrap: wrap; }
-  .cc button { font: inherit; font-weight: 500; padding: 9px 14px; border-radius: 10px; cursor: pointer;
-    border: 1px solid var(--border); background: transparent; color: var(--fg); }
-  .cc button:hover { border-color: var(--fg); }
-  .cc button.cc-primary { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
-  .cc button:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
-  .cc h3 { margin: 4px 0 6px; font-size: 0.95rem; }
-  .cc ul, .cc ol { margin: 0 0 12px; padding-left: 1.2rem; color: var(--muted-fg); }
-  .cc li { margin: 3px 0; }
-  @media (prefers-reduced-motion: reduce) { .cc { transition: none; } }
-  .proof-strip { list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-3); padding: 0; margin: 0 0 var(--space-4); }
-  .proof-strip li { display: flex; flex-direction: column; gap: 2px; border-left: 2px solid var(--accent); padding-left: 12px; }
-  .proof-strip strong { font-family: 'Space Grotesk', sans-serif; font-size: 1.15rem; font-weight: 600; letter-spacing: -0.01em; }
-  .proof-strip span { font-size: 0.8rem; color: var(--muted-fg); }
-  /* ---- Character pass: warm paper, ink, terracotta. No blue, no glow. ---- */
-  :root {
-    --bg: #f3eee4; --bg-raised: #fbf8f1; --fg: #1d1a16; --muted-fg: #5b5348;
-    --border: #cfc5b3; --accent: #b4432a; --accent-fg: #ffffff; --focus-ring: #1d1a16;
-    --display: 'Fraunces', Georgia, serif; --mono: 'Space Mono', ui-monospace, Menlo, monospace;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #17130f; --bg-raised: #201b16; --fg: #f1eadc; --muted-fg: #b3a998; --border: #3b342b; --accent: #e8825f; --accent-fg: #17130f; --focus-ring: #f1eadc; }
-  }
-  body { background-image: radial-gradient(color-mix(in srgb, var(--fg) 7%, transparent) 1px, transparent 1px); background-size: 22px 22px; }
-  .bg-ambient, .hero-orb, .hero-scan, .hero-portrait-glow { display: none !important; }
-  .hero-bg pre { background: none; -webkit-background-clip: border-box; background-clip: border-box; color: var(--fg); animation: none; opacity: 0.09; }
-  h1, h2, h3, .mark, .project-title, .timeline-role, .proof-strip strong, .section-title { font-family: var(--display); letter-spacing: -0.015em; }
-  h1 { font-weight: 600; letter-spacing: -0.025em; line-height: 1.04; max-width: 15ch; font-size: clamp(2.4rem, 6vw, 4.4rem); }
-  h1 em { font-style: italic; color: var(--accent); font-weight: 500; }
-  .mark { font-weight: 700; letter-spacing: 0.04em; }
-  .eyebrow, .section-label, .btn-primary, .btn-secondary, .fact-label, .tag, .project-link, .timeline-date { font-family: var(--mono); }
-  .eyebrow, .section-label { color: var(--accent); letter-spacing: 0.14em; font-size: 0.78rem; }
-  .section { border-top: 2px solid var(--fg); }
-  .section-title { font-weight: 600; font-size: clamp(1.7rem, 3.6vw, 2.5rem); }
-  .btn-primary, .btn-secondary { border-radius: 2px; border: 2px solid var(--fg); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; box-shadow: 3px 3px 0 var(--fg); transition: transform 120ms var(--ease), box-shadow 120ms var(--ease); }
-  .btn-primary { background: var(--accent); color: var(--accent-fg); border-color: var(--fg); }
-  .btn-secondary { background: var(--bg-raised); }
-  .btn-primary:hover, .btn-secondary:hover, .btn-primary:focus-visible, .btn-secondary:focus-visible { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--fg); opacity: 1; border-color: var(--fg); }
-  .btn-primary:active, .btn-secondary:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--fg); }
-  .hero-portrait { animation: none; transform: rotate(-1.6deg); }
-  .hero-portrait img { border-radius: 2px; border: 2px solid var(--fg); box-shadow: 10px 10px 0 var(--accent); -webkit-mask-image: none; mask-image: none; filter: grayscale(0.15) contrast(1.05) sepia(0.12); }
-  .hero-portrait:hover img { transform: none; filter: none; }
-  .project-card, .resource-card, .card { border-radius: 3px !important; border: 1.5px solid var(--fg) !important; box-shadow: 4px 4px 0 color-mix(in srgb, var(--fg) 85%, transparent); background: var(--bg-raised); transition: transform 140ms var(--ease), box-shadow 140ms var(--ease); }
-  .project-card:hover, .card:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--accent); }
-  .resource-card { border-style: dashed !important; box-shadow: none; }
-  .tag { border-radius: 2px !important; border: 1px solid var(--fg) !important; background: transparent !important; color: var(--fg) !important; text-transform: none; letter-spacing: 0; }
-  .proof-strip li { border-left: 3px solid var(--accent); }
-  .proof-strip strong { font-size: 1.3rem; }
-  .contact-list a { border-bottom: 2px solid var(--fg); }
-  .contact-list a:hover, .contact-list a:focus-visible { color: var(--accent); border-color: var(--accent); }
-  .cc { border-radius: 3px; border: 2px solid var(--fg); box-shadow: 6px 6px 0 var(--fg); }
-  .cc h2, .cc h3 { font-family: var(--display); }
-  .cc button { border-radius: 2px; border: 2px solid var(--fg); font-family: var(--mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
-  .cc button.cc-primary { background: var(--accent); border-color: var(--fg); color: var(--accent-fg); }
-  footer { border-top: 2px solid var(--fg); font-family: var(--mono); font-size: 0.78rem; }
-  .proof-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2); max-width: 600px; }
-  .proof-strip span { font-size: 0.74rem; line-height: 1.35; }
-  .proof-strip strong { font-size: 1.1rem; line-height: 1.15; }
-  @media (max-width: 600px) { .proof-strip { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <div class="bg-ambient" aria-hidden="true"><span></span><span></span><span></span></div>
-
-  <header id="siteHeader">
-    <a class="mark" href="#top">STANLEY N.</a>
-    <nav class="primary-nav" aria-label="Section navigation">
+  <header class="site">
+    <a class="mark" href="#top"><span class="mark-dot" aria-hidden="true"></span>STANLEY N.</a>
+    <nav class="primary-nav" aria-label="Sections">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
-      <a href="#resources">Resources</a>
+      <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
-      <a href="assets/Stanley_Nelavala_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <a class="btn btn-sun btn-small js-resume" href="assets/resume/Stanley_Nelavala_Resume_Fullstack.pdf" target="_blank" rel="noopener">Resume</a>
     </nav>
+    <a class="btn btn-sun btn-small nav-resume js-resume" href="assets/resume/Stanley_Nelavala_Resume_Fullstack.pdf" target="_blank" rel="noopener">Resume</a>
   </header>
 
-  <main id="top">
-    <section class="hero" id="heroSection">
-      <div class="hero-orb hero-orb--a" aria-hidden="true"></div>
-      <div class="hero-orb hero-orb--b" aria-hidden="true"></div>
-      <div class="hero-scan" aria-hidden="true"></div>
-      <div class="hero-bg" aria-hidden="true"><pre id="asciiPortrait"></pre></div>
+  <div class="lens-bar" id="lensBar">
+    <div class="container lens-inner">
+      <span class="lens-label" id="lensLabel">View as</span>
+      <div class="seg-scroll">
+        <div class="segmented" role="group" aria-labelledby="lensLabel">
+          <button type="button" data-lens="fullstack" aria-pressed="true">Full stack</button>
+          <button type="button" data-lens="backend" aria-pressed="false">Backend</button>
+          <button type="button" data-lens="platform" aria-pressed="false">Platform / SRE</button>
+          <button type="button" data-lens="ai" aria-pressed="false">AI</button>
+          <button type="button" data-lens="jpmc" aria-pressed="false" class="seg-special" hidden>JPMorganChase</button>
+          <button type="button" data-lens="meta" aria-pressed="false" class="seg-special" hidden>Meta</button>
+          <button type="button" data-lens="master" aria-pressed="false" class="seg-special" hidden>Everything</button>
+        </div>
+      </div>
+      <span class="lens-note" id="lensNote">Same facts, ordered for the role.</span>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="hero" id="top">
       <div class="container hero-grid">
-        <div class="hero-text">
-          <p class="eyebrow">Backend &amp; Platform Engineering &middot; AI Integration &middot; AWS</p>
-          <h1>I build systems that aren't allowed to have a <em>bad day.</em></h1>
-          <p class="lede">Software engineer who owns systems end to end. On a 10-person hospital operations platform I designed the service-to-service API every module uses and built a design service and an iOS and Android app. M.S. in Computer Science (4.0 GPA). Open to relocate: SF Bay Area, New York, Seattle.</p>
-          <ul class="proof-strip" aria-label="What I have owned">
-            <li><strong>Every module</strong><span>runs on one API I designed</span></li>
-            <li><strong>3 products</strong><span>built end to end</span></li>
-            <li><strong>168 &rarr; 53 hrs a week</strong><span>dev server hours</span></li>
+        <div>
+          <p class="eyebrow" id="lensEyebrow">Full stack engineering &middot; Python &middot; React &middot; AWS</p>
+          <h1 id="lensHeadline">From the database to the <em>phone in your hand.</em></h1>
+          <p class="lede" id="lensLede">Full stack engineer at a 10-person hospital operations startup: FastAPI and PostgreSQL backends, React and TypeScript web apps, and a React Native app released to iOS and Android through separate pipelines. M.S. in Computer Science (4.0 GPA) and AWS Certified Solutions Architect.</p>
+          <p class="where"><span>Huntington, IN</span><span>Open to relocate anywhere</span></p>
+          <ul class="proof-strip" id="lensProof" aria-label="Highlights">
+            <li><strong>3 products</strong><span>built end to end at work</span></li>
+            <li><strong>285 &rarr; 0.20 ms</strong><span>deep catalog query (dev database)</span></li>
+            <li><strong>14% &rarr; 93%</strong><span>mobile test coverage</span></li>
           </ul>
           <div class="hero-actions">
-            <a class="btn-primary" href="assets/Stanley_Nelavala_Resume.pdf" target="_blank" rel="noopener">View resume</a>
-            <a class="btn-secondary" href="#projects">See projects</a>
-            <a class="btn-secondary" href="#contact">Get in touch</a>
+            <a class="btn btn-primary js-resume" href="assets/resume/Stanley_Nelavala_Resume_Fullstack.pdf" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg>
+              <span class="js-resume-label">Full stack resume</span>
+            </a>
+            <a class="btn btn-plain" href="#projects">See projects</a>
+            <a class="btn btn-plain" href="#contact">Get in touch</a>
           </div>
         </div>
         <div class="hero-portrait">
-          <div class="hero-portrait-glow" aria-hidden="true"></div>
           <img src="assets/headshot.jpg" alt="Portrait of Stanley N." width="1334" height="2000" loading="eager" fetchpriority="high">
         </div>
       </div>
@@ -667,21 +383,19 @@
 
     <section id="about" class="container section reveal">
       <div class="section-head">
-        <div>
-          <p class="section-label">About</p>
-          <h2 class="section-title">A bit of background</h2>
-        </div>
+        <p class="section-label">About</p>
+        <h2 class="section-title">A bit of background</h2>
       </div>
       <div class="about-grid">
         <div>
-          <p>I'm a software development engineer at Mass Technologies. I build and own features across a multi-tenant hospital operations platform: FastAPI and PostgreSQL backends, React and TypeScript web apps, an Expo mobile app, and the AWS and GitHub Actions pipelines that release them. I built a design service for hospitals end to end, an on-device voice assistant for the mobile app, and a signed machine-to-machine API for a large medical device catalog.</p>
-          <p>Before that, I spent two years as a graduate researcher studying how misinformation about transgender and nonbinary communities spreads on TikTok, building a pipeline that processed over a million videos with GPU-accelerated video analysis, OCR, and topic modeling. I've also built real-time data pipelines on AWS, and taught machine learning as adjunct faculty through August 2026.</p>
-          <p>I'm an AWS Certified Solutions Architect. Outside of work I build things for fun — agent-orchestration tools, a terminal I can drive from my phone, small language models fine-tuned on niche datasets — mostly to see what breaks.</p>
+          <p>I'm a software development engineer at Mass Technologies, on a 10-person team building a multi-tenant hospital operations platform that has not launched yet. I own features end to end: FastAPI and PostgreSQL backends, React and TypeScript web apps, a React Native app for iOS and Android, and the GitHub Actions pipelines that release them. I designed the signed service-to-service API that every platform module uses, and built the hospital design service and the asset app.</p>
+          <p>Before that I spent two years as a graduate researcher studying how misinformation about transgender and nonbinary communities spreads on TikTok, with a pipeline that collected and analyzed over a million videos. I also taught Java and machine learning as adjunct faculty through August 2026.</p>
+          <p>Outside work I build public projects with tests and evidence: a payments ledger with SLOs and a failure lab, an agent platform with replay evals, a Rust webhook gateway and a Go inference service.</p>
         </div>
         <ul class="fact-list">
-          <li><span class="fact-label">Based in</span><span class="fact-value">Huntington, IN. Open to relocate: SF Bay Area, New York, Seattle</span></li>
+          <li><span class="fact-label">Based in</span><span class="fact-value">Huntington, IN. Open to relocate anywhere</span></li>
           <li><span class="fact-label">Education</span><span class="fact-value">M.S. Computer Science, University of Minnesota Duluth (4.0 GPA)</span></li>
-          <li><span class="fact-label">Certification</span><span class="fact-value">AWS Certified Solutions Architect — Associate</span></li>
+          <li><span class="fact-label">Certification</span><span class="fact-value">AWS Certified Solutions Architect, Associate</span></li>
           <li><span class="fact-label">Currently</span><span class="fact-value">Software Development Engineer, Mass Technologies</span></li>
         </ul>
       </div>
@@ -689,10 +403,8 @@
 
     <section id="experience" class="container section reveal">
       <div class="section-head">
-        <div>
-          <p class="section-label">Experience</p>
-          <h2 class="section-title">Where I've worked &amp; taught</h2>
-        </div>
+        <p class="section-label">Experience</p>
+        <h2 class="section-title">Where I've worked and taught</h2>
       </div>
       <div class="timeline">
         <div class="timeline-item">
@@ -700,36 +412,36 @@
           <div>
             <h3 class="timeline-role">Software Development Engineer</h3>
             <p class="timeline-org">Mass Technologies, Huntington, IN</p>
-            <p class="timeline-desc">Build and own features across 23 repositories on a multi-tenant hospital operations platform. Backends use FastAPI and PostgreSQL, web apps use React and TypeScript, and the mobile app uses Expo. A platform service resolves the tenant database for every request.</p>
-            <p class="timeline-desc"><em>Proprietary code.</em></p>
-            <p class="timeline-desc"><strong>Design service for hospitals.</strong> Built the v2 product from scratch, backend and web: guided design modes, document ingestion and extraction, constraint checking, versioning, and a drawing assistant with a validator. Wrote a deterministic layout engine that packs rooms on a grid and places doors, zones, and exits in code, with a setting to draw with an LLM or in code only. Built roles, sharing, and a review workflow, plus export to DXF at true scale and to PDF.</p>
-            <p class="timeline-desc"><strong>Mobile app (iOS and Android).</strong> Built the React Native app with scan-to-search, barcode prefill, attachment upload, and a design system. Built an on-device voice assistant with Whisper speech recognition, Kokoro text to speech, and an optional small language model, so voice works without a cloud call. Set up separate iOS and Android release pipelines with TestFlight submit.</p>
-            <p class="timeline-desc"><strong>Device catalog and machine-to-machine API.</strong> Designed and built the signed API that connects the device catalog to the planning, ordering, and detection services, with per-call tenant claims, replay protection, and a Redis rate limiter. Hardened it after a security audit. Built ranked device search and batch import matching.</p>
-            <p class="timeline-desc"><strong>Quality and delivery.</strong> Automated Playwright end-to-end tests through MFA sign-in, built a k6 performance kit, and ran releases and CI (checks, Dependabot, CODEOWNERS) behind a suite of 1,300+ tests. Contribute to security hardening with GuardDuty malware scanning for S3 (standardized across 8 modules) and CodeQL. Built a weekday start and stop schedule for dev and acceptance ECS services and RDS databases to cut AWS cost, and a reusable post-deploy health report.</p>
+            <p class="timeline-desc">Build and own features across 23 repositories on a multi-tenant hospital operations platform (pre-launch; numbers come from dev and test environments). Backends use FastAPI and PostgreSQL, web apps use React and TypeScript, and the mobile app uses Expo. Proprietary code.</p>
+            <p class="timeline-desc"><strong>Service-to-service API.</strong> Designed, built and integrated into every platform module the signed M2M API: each call proves which service and tenant sent it. Hardened it after a security audit with a Redis rate limiter and replay protection.</p>
+            <p class="timeline-desc"><strong>Design service for hospitals.</strong> Built RxDesign, backend and web: guided design modes, document ingestion, constraint checking, versioning, roles and sharing, and export to DXF at true scale and PDF. Wrote a deterministic layout engine that places rooms on a 0.5 ft grid with doors, exits and flow lines, with a setting to draw with an LLM or in code only. 220+ offline tests on the API.</p>
+            <p class="timeline-desc"><strong>Mobile app (iOS and Android).</strong> Built the React Native app with scan-to-search and an on-device voice assistant (Whisper, Kokoro and an optional small model run on the phone, no cloud call). Set up separate iOS and Android release pipelines with automatic TestFlight submission and raised statement coverage from 14% to 93%.</p>
+            <p class="timeline-desc"><strong>Performance and quality.</strong> Replaced offset paging with keyset paging on the catalog: on a 328,000-device dev database the query for row 150,000 fell from 285 ms to 0.20 ms. Cut the planning Items page from 3 calls and 162 KB to 2 calls and 37 KB. Fixed a regular expression denial-of-service bug (an 80-character input took about 138 s; the new pattern matched the old results on 60,000 random inputs).</p>
+            <p class="timeline-desc"><strong>Cloud cost and security.</strong> Automated weekday start and stop of dev and acceptance ECS services and RDS databases: about 53 hours a week instead of 168. Standardized GuardDuty malware scanning of uploads across 9 app modules and triaged CodeQL findings.</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-date">Jan 2026 &ndash; Aug 2026</div>
           <div>
-            <h3 class="timeline-role">Adjunct Faculty</h3>
-            <p class="timeline-org">The College of St. Scholastica</p>
-            <p class="timeline-desc">Taught Programming II (Java) and Machine Learning for Data Science — object-oriented design, data-driven problem solving, and applied ML, with a hands-on, project-based approach.</p>
+            <h3 class="timeline-role">Adjunct Faculty (part-time)</h3>
+            <p class="timeline-org">The College of St. Scholastica, Duluth, MN</p>
+            <p class="timeline-desc">Taught Programming II (Java) and Machine Learning for Data Science.</p>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-date">2023 &ndash; 2025</div>
+          <div class="timeline-date">Aug 2023 &ndash; Aug 2025</div>
           <div>
-            <h3 class="timeline-role">Graduate Researcher &amp; Teaching Assistant</h3>
-            <p class="timeline-org">University of Minnesota</p>
-            <p class="timeline-desc">Researched multi-modal misinformation on TikTok under Prof. Md Momen Bhuiyan, building data collection and analysis pipelines. TA'd Intro to Python, Natural Language Processing, and Parallel Programming.</p>
+            <h3 class="timeline-role">Graduate Research Assistant and Teaching Assistant</h3>
+            <p class="timeline-org">University of Minnesota Duluth</p>
+            <p class="timeline-desc">Built a pipeline (Python, Node.js, MySQL, FFmpeg, PaddleOCR) that collected and analyzed 1M+ TikTok videos from 300k+ authors for thesis research on misinformation, then grouped themes with BERTopic. Presented at the UMD CS graduate poster session. Led labs and office hours for Python, NLP and Parallel Programming.</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-date">2022 &ndash; 2023</div>
           <div>
             <h3 class="timeline-role">Research Intern</h3>
-            <p class="timeline-org">IIITDM Kancheepuram &amp; IIT Kanpur</p>
-            <p class="timeline-desc">Image/video optimization for IoT applications and a Python-based parser for virtual reconfigurable circuits; separately, statistical modeling of IVF success rates.</p>
+            <p class="timeline-org">IIITDM Kancheepuram and IIT Kanpur</p>
+            <p class="timeline-desc">Image and video optimization for IoT, a Python parser for reconfigurable circuits, and statistical modeling of IVF success rates.</p>
           </div>
         </div>
       </div>
@@ -737,477 +449,442 @@
 
     <section id="projects" class="container section reveal">
       <div class="section-head">
-        <div>
-          <p class="section-label">Projects</p>
-          <h2 class="section-title">Selected work</h2>
-        </div>
+        <p class="section-label">Projects</p>
+        <h2 class="section-title">Selected work</h2>
+        <p class="section-sub">Public repos have code, tests and evidence files you can read. Work projects are proprietary. Performance numbers marked local come from one laptop.</p>
       </div>
-      <div class="project-grid">
-        <div class="project-card">
-          <h3 class="project-title">Payments Ledger Service</h3>
-          <p class="project-desc">A double-entry ledger service with payment authorize, capture, void and refund, and idempotency keys so retries never move money twice. A transactional outbox publishes events to Kafka (Redpanda), and property tests and a k6 load test check that no money is created or lost. Three SLIs with 28-day error budgets, burn-rate alerts tested with promtool and a Grafana SLO dashboard. A scripted failure lab (Kafka down, Postgres restart, relay crash, poison event, Toxiproxy latency) with balance checks after each scenario. A dead-letter topic with once-only redrive. Rollback by image digest across an expand-and-contract Flyway migration, k6 SLO thresholds as a gate, an append-only caller audit log and a STRIDE review of the money path. A React and TypeScript operations console (Sass, light and dark themes) is served by the same Spring Boot app over read-only paged endpoints, with Playwright tests that include axe accessibility checks and keyboard-only flows. A separate Java test suite adds Cucumber scenarios, REST Assured contract checks, Selenium UI tests and a JMeter plan with a pass or fail gate, and black-box probes with promtool-tested alerts.</p>
-          <div class="tag-row"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">PostgreSQL</span><span class="tag">Kafka (Redpanda)</span><span class="tag">OpenTelemetry</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Toxiproxy</span><span class="tag">k6</span><span class="tag">React</span><span class="tag">Playwright + axe</span><span class="tag">Cucumber</span><span class="tag">Selenium</span><span class="tag">JMeter</span></div>
-          <a class="project-link" href="https://github.com/consultantstanleymn/payments-ledger-service" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-            View on GitHub
-          </a>
-        </div>
-        <div class="project-card">
-          <h3 class="project-title">Card Dispute Service</h3>
-          <p class="project-desc">A C# service for card dispute cases on ASP.NET Core and .NET 10 with EF Core and PostgreSQL. Disputes move through a checked state machine, and when two reviewers decide the same case at once exactly one wins. Create calls are idempotent, lists use keyset paging that stays correct with ties, inserts and deletes, and aging reports use raw SQL. Evidence uploads go through the AWS SDK with magic-byte and size checks and a SHA-256 hash. The tests were written first, with 30 unit and 32 integration tests. It exposes bounded-label metrics and readiness checks, runs as a non-root container image with a clean Trivy scan, and ships CloudFormation for ECS Fargate that is linted and policy-checked but not deployed.</p>
-          <div class="tag-row"><span class="tag">C#</span><span class="tag">.NET 10</span><span class="tag">ASP.NET Core</span><span class="tag">EF Core</span><span class="tag">PostgreSQL</span><span class="tag">xUnit</span><span class="tag">AWS SDK</span><span class="tag">CloudFormation</span><span class="tag">Docker</span></div>
-          <a class="project-link" href="https://github.com/consultantstanleymn/card-dispute-service" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-            View on GitHub
-          </a>
-        </div>
-        <div class="project-card">
-          <h3 class="project-title">FHIR Analytics Pipeline</h3>
-          <p class="project-desc">A pipeline for synthetic HL7 FHIR R4 records that validates and quarantines bad lines, pseudonymizes patients, loads DuckDB and builds dbt marts through an Airflow DAG. It uses the Azure Blob SDK on the Azurite emulator and Bicep validated in CI. dbt model contracts, source freshness checks, a quarantine-rate gate and a provenance manifest for every run. A k-anonymity check (k=5) before publishing, versioned HMAC pseudonymization keys with a rotation test, and a HIPAA-style control mapping. Pipeline metrics with a 06:00 freshness alert tested with promtool, a failure lab for corrupt input, schema drift, late updates and storage outage, and 108 tests.</p>
-          <div class="tag-row"><span class="tag">Python</span><span class="tag">Airflow</span><span class="tag">dbt</span><span class="tag">DuckDB</span><span class="tag">Bicep</span><span class="tag">HL7 FHIR R4</span><span class="tag">k-anonymity</span><span class="tag">promtool</span></div>
-          <a class="project-link" href="https://github.com/consultantstanleymn/fhir-analytics-pipeline" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-            View on GitHub
-          </a>
-        </div>
-        <div class="project-card">
-          <h3 class="project-title">Inference Gateway</h3>
-          <p class="project-desc">A Go service that serves an int8-quantized banking-intent classifier over HTTP and gRPC, with micro-batching, deadlines and load shedding. It has a model quality gate in CI, a Helm chart tested on kind, and OpenTelemetry traces. A diagnostics stack with Jaeger, Prometheus and a Grafana golden-signals dashboard, a bounded-label cardinality budget and latency exemplars linked to traces. One-factor experiments with pprof that ruled out GC and tokenizer cost, a Locust profile beside k6, and a capacity model (Little's law) that sizes a 10x launch peak at 2 to 3 replicas (local benchmark). A canary controller with a weighted proxy that rolled a faulty version back on its own, latency SLO alerts tested with promtool, and a release manifest with model and runtime hashes and a CycloneDX SBOM.</p>
-          <div class="tag-row"><span class="tag">Go</span><span class="tag">gRPC</span><span class="tag">ONNX Runtime</span><span class="tag">Helm</span><span class="tag">OpenTelemetry</span><span class="tag">Jaeger</span><span class="tag">Grafana</span><span class="tag">Locust</span><span class="tag">pprof</span></div>
-          <a class="project-link" href="https://github.com/consultantstanleymn/inference-gateway" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-            View on GitHub
-          </a>
-        </div>
-        <div class="project-card">
-          <h3 class="project-title">Agent Integration Platform</h3>
-          <p class="project-desc">A support-case platform with a LangGraph workflow: typed state, a Postgres checkpointer, human approval before large refunds with resume after restart, step and token budgets, and a written authority file. One constrained MCP write tool, output guardrails, PII redaction and an append-only audit log. 62 deterministic replay evals and prompt-injection tests. Hybrid retrieval with pgvector and full-text search fused by RRF, access labels, a 48-query golden set (labels pending review), a versioned /v2/search and a Qdrant comparison in an ADR. Failover between two LLM provider adapters with token cost records. S3, SQS (with DLQ) and Secrets Manager adapters with emulated integration tests, Terraform modules, Redis rate limiting and embedding cache, OpenTelemetry in Jaeger, a Locust load test and a release manifest with a CycloneDX SBOM.</p>
-          <div class="tag-row"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">LangGraph</span><span class="tag">MCP</span><span class="tag">PostgreSQL (pgvector)</span><span class="tag">Redis</span><span class="tag">OpenTelemetry</span><span class="tag">Locust</span><span class="tag">Terraform</span></div>
-          <a class="project-link" href="https://github.com/consultantstanleymn/agent-integration-platform" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-            View on GitHub
-          </a>
-        </div>
-        <div class="project-card">
-          <h3 class="project-title">Customer Integration Console</h3>
-          <p class="project-desc">A full-stack console to connect data sources, run incremental ETL into PostgreSQL and monitor runs, with a dead-letter queue and replay and data quality checks. OIDC sign-in with discovery and PKCE against a mock IdP, Keycloak realm config, and client-credentials scopes for machine clients. A STRIDE threat model, an authorization matrix test over every route and role, and 10 negative token tests. Envelope encryption (AES-256-GCM) of source credentials with key rotation, a hash-chained audit log with tamper detection, CSP and security headers. A security gate with gitleaks, npm audit, Trivy image scans, a CycloneDX SBOM and an exceptions file with expiry. 256 tests plus 7 browser tests.</p>
-          <div class="tag-row"><span class="tag">TypeScript</span><span class="tag">Next.js</span><span class="tag">Fastify</span><span class="tag">PostgreSQL</span><span class="tag">OIDC</span><span class="tag">STRIDE</span><span class="tag">Trivy</span><span class="tag">Kubernetes</span></div>
-          <a class="project-link" href="https://github.com/consultantstanleymn/customer-integration-console" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-            View on GitHub
-          </a>
-        </div>
-        <div class="project-card">
-          <h3 class="project-title">Webhook and Connector Gateway</h3>
-          <p class="project-desc">A Rust gateway that verifies HMAC-SHA256 signed customer webhooks in constant time, applies per-tenant rate limits and idempotency, and stores events durably before delivery with transforms. A worker pool handles retries with backoff, dead letters with replay and circuit breakers. SQLite and Postgres stores behind one store port (FOR UPDATE SKIP LOCKED claim, versioned migrations), with the full suite of 88 tests on both backends. Global 503 backpressure with Retry-After, a per-tenant retry budget, and a kill -9 failure lab where 500 of 500 events reach the downstream once after redrive. Delivery SLO alerts tested with promtool, a k6 load test, OpenTelemetry spans in Jaeger, and signing secrets encrypted at rest (AES-256-GCM) with a reseal command for key rotation.</p>
-          <div class="tag-row"><span class="tag">Rust</span><span class="tag">axum</span><span class="tag">tokio</span><span class="tag">SQLite</span><span class="tag">PostgreSQL</span><span class="tag">OpenTelemetry</span><span class="tag">k6</span><span class="tag">Docker</span></div>
-          <a class="project-link" href="https://github.com/consultantstanleymn/webhook-connector-gateway" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-            View on GitHub
-          </a>
-        </div>
-        <div class="project-card">
-          <h3 class="project-title">Mina: invoicing and purchases app</h3>
-          <p class="project-desc">A web app for small businesses to manage clients, write invoices and handle purchase documents, with exact integer money math, PDF export, row-level security and a tamper-evident audit chain. It has no real users and is tested with about 7,700 backend tests.</p>
-          <div class="tag-row"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">React</span><span class="tag">TypeScript</span></div>
-          <span class="project-link is-private">Proprietary code</span>
-        </div>
-        <div class="project-card">
-          <h3 class="project-title">Live Defined: hospitality website</h3>
-          <p class="project-desc">A project that redesigned and extended a supplied Next.js and Payload CMS codebase for a family hospitality brand, adding a swappable logo system, light and dark themes, a host portal and a five-screen stay page. It has no real users and runs about 3,700 unit tests.</p>
-          <div class="tag-row"><span class="tag">Next.js</span><span class="tag">Payload CMS</span><span class="tag">TypeScript</span><span class="tag">PostgreSQL</span><span class="tag">Playwright</span></div>
-          <span class="project-link is-private">Proprietary code</span>
-        </div>
-        <div class="project-card">
+
+      <div class="project-grid" id="projGrid">
+        <article class="project-card" data-id="rxdesign">
+          <div class="card-top"><span class="badge badge-work">Work &middot; proprietary</span></div>
           <h3 class="project-title">RxDesign: design service for hospitals</h3>
-          <p class="project-desc">A managed service that turns a hospital's needs into a floor plan. Guided setup, document ingestion, constraint and adjacency checks, a deterministic layout engine, versioning, sharing with roles, and export to DXF and PDF. Backed by 70+ offline tests that use fake models.</p>
-          <div class="tag-row"><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">LLM</span><span class="tag">S3</span></div>
-          <span class="project-link is-private">Proprietary code</span>
-        </div>
-        <div class="project-card">
+          <p class="project-desc">Turns a hospital's needs into a floor plan. Guided setup, document ingestion, constraint and adjacency checks, a deterministic layout engine on a 0.5 ft grid, versioning, sharing with roles, and export to DXF and PDF. Backed by 220+ offline tests on the API.</p>
+          <div class="tag-row"><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">PostgreSQL</span><span class="tag">LLM</span><span class="tag">S3</span></div>
+        </article>
+        <article class="project-card" data-id="rxasset">
+          <div class="card-top"><span class="badge badge-work">Work &middot; proprietary</span></div>
           <h3 class="project-title">RxAsset mobile app with on-device voice</h3>
-          <p class="project-desc">An iOS and Android app for hospital asset teams. Scan to search, barcode prefill, offline-friendly drafts, and a voice assistant that runs fully on the phone with Whisper, Kokoro, and an optional Qwen model. Includes separate release pipelines with TestFlight submit.</p>
-          <div class="tag-row"><span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">Whisper</span><span class="tag">Kokoro</span><span class="tag">EAS</span></div>
-          <span class="project-link is-private">Proprietary code</span>
-        </div>
-        <div class="project-card">
-          <h3 class="project-title">RxCatalog machine-to-machine API</h3>
-          <p class="project-desc">A signed service-to-service API for a large medical device catalog, with per-call tenant claims, replay protection, an atomic Redis rate limiter, ranked device search, and batch import matching.</p>
-          <div class="tag-row"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">JSONB</span></div>
-          <span class="project-link is-private">Proprietary code</span>
-        </div>
-          <div class="project-card">
-            <h3 class="project-title">Aurelia &mdash; a voice tutor for iPhone, built on Linux</h3>
-            <p class="project-desc">The native SwiftUI rewrite of Study Mentor: 238 AWS and LSAT days plus 24 quant weeks taught by conversation, with a live whiteboard, spaced repetition and SQLite progress. Compiled and signed on Fedora with xtool. The hard part was that the app cannot be screenshotted and its logs go nowhere, so it writes its own log file and you pull it over USB.</p>
-            <div class="tag-row"><span class="tag">SwiftUI</span><span class="tag">AVAudioSession</span><span class="tag">Speech</span><span class="tag">SQLite</span><span class="tag">xtool</span></div>
-            <a class="project-link" href="https://github.com/consultantstanleymn/aurelia-ios" target="_blank" rel="noopener noreferrer">
-              View on GitHub
-            </a>
-            <a class="project-link" href="https://stanley-n.com/aurelia-ios/" target="_blank" rel="noopener noreferrer">
-              Read the build
-            </a>
-          </div>
-        <div class="project-card">
-          <h3 class="project-title">openGym for iPhone, built on Linux</h3>
-          <p class="project-desc">A native iPhone gym tracker compiled and installed from a Fedora laptop with no Mac, no Xcode and no App Store, around openGym's AGPL source. A SwiftPM shell and a JavaScript reimplementation of the Capacitor bridge, with a Darwin SDK built from Xcode 27.</p>
-          <div class="tag-row"><span class="tag">Swift</span><span class="tag">SwiftPM</span><span class="tag">WebKit</span><span class="tag">Capacitor</span><span class="tag">xtool</span></div>
-          <a class="project-link" href="https://github.com/consultantstanleymn/openGym-ios" target="_blank" rel="noopener noreferrer">
-            View on GitHub
-          </a>
-          <a class="project-link" href="https://stanley-n.com/opengym-ios/" target="_blank" rel="noopener noreferrer">
-            Read the build
-          </a>
-        </div>
-        <div class="project-card">
-          <h3 class="project-title">Study Mentor</h3>
-          <p class="project-desc">An open-source, self-hosted AI voice tutor with a live Mermaid whiteboard. It teaches, quizzes and pushes back by voice, tracks weak topics, and resumes where you left off. Built for AWS SAP-C02, LSAT and quant interview prep.</p>
-          <div class="tag-row"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Kokoro TTS</span><span class="tag">faster-whisper</span><span class="tag">Mermaid</span></div>
-          <a class="project-link" href="https://github.com/consultantstanleymn/study-mentor" target="_blank" rel="noopener noreferrer">
-            View on GitHub
-          </a>
-          <a class="project-link" href="https://stanley-n.com/study-mentor/" target="_blank" rel="noopener noreferrer">
-            Project page
-          </a>
-        </div>
-        <div class="project-card">
-          <h3 class="project-title">TikTok Misinformation Pipeline</h3>
-          <p class="project-desc">An automated research pipeline collecting and analyzing over a million TikTok videos to study how misinformation about transgender and nonbinary communities spreads — GPU-accelerated video processing, OCR text extraction, BERTopic modeling, and influence-network analysis.</p>
-          <div class="tag-row"><span class="tag">Python</span><span class="tag">FFmpeg</span><span class="tag">PaddleOCR</span><span class="tag">BERTopic</span></div>
-        </div>
-        <div class="project-card">
-          <h3 class="project-title">MarketPulseRT</h3>
-          <p class="project-desc">A real-time stock market data pipeline ingesting and analyzing live financial data with Kafka stream processing and AWS Glue/Athena for large-scale querying, with schema evolution and fault-tolerant streaming built in.</p>
-          <div class="tag-row"><span class="tag">Kafka</span><span class="tag">AWS Glue</span><span class="tag">Athena</span><span class="tag">EC2 / S3</span></div>
-          <a class="project-link" href="https://github.com/stanley-s-nelavala/MarketPulseRT" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-            View on GitHub
-          </a>
-        </div>
-        <div class="project-card">
-          <h3 class="project-title">Bulldog-On-Board</h3>
-          <p class="project-desc">A mobile app streamlining the transition process for newly admitted university students, with a Firebase backend for real-time auth and cloud storage and a Figma-driven UI for campus maps and event reminders.</p>
-          <div class="tag-row"><span class="tag">Flutter</span><span class="tag">Firebase</span><span class="tag">Figma</span></div>
-        </div>
-        <div class="project-card">
-          <h3 class="project-title">Multilingual LLM Fine-Tuning</h3>
-          <p class="project-desc">Fine-tuning LLaMA 2 and Mistral 7B on multilingual datasets with QLoRA and PEFT, evaluating text completion, question answering, and summarization across languages — including Telugu — under limited compute.</p>
-          <div class="tag-row"><span class="tag">LLaMA 2</span><span class="tag">Mistral 7B</span><span class="tag">QLoRA / PEFT</span></div>
-          <a class="project-link" href="https://github.com/stanley-s-nelavala/FineTune-Multilingual-LLMs" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-            View on GitHub
-          </a>
-        </div>
-        <div class="project-card">
-          <h3 class="project-title">sweethome3d-mcp</h3>
-          <p class="project-desc">A local MCP server that lets an LLM create and edit Sweet Home 3D floor plans directly — walls, rooms, furniture, and dimensions — by operating on the file format, without the app open.</p>
-          <div class="tag-row"><span class="tag">Python</span><span class="tag">MCP</span><span class="tag">CI / CodeQL</span></div>
-          <a class="project-link" href="https://github.com/consultantstanleymn/sweethome3d-mcp" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-            View on GitHub
-          </a>
-        </div>
-        <div class="project-card">
-          <h3 class="project-title">AURORA (axis)</h3>
-          <p class="project-desc">A machine-native execution graph language for autonomous AI agents — deterministic DAG compilation, capability-based security on every node, and self-healing execution via JSON Patch recovery, with a compact binary format for agent-to-agent communication.</p>
-          <div class="tag-row"><span class="tag">Rust</span><span class="tag">DAG Compiler</span><span class="tag">Agent Security</span></div>
-          <a class="project-link" href="https://github.com/ssnelavala-masstcs/axis" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-            View on GitHub
-          </a>
-        </div>
-        <div class="project-card">
-          <h3 class="project-title">NeuralFlow</h3>
-          <p class="project-desc">A local-first desktop app for building multi-agent AI workflows visually — drag-and-drop orchestration over LangGraph and CrewAI, running entirely on-device with any model, no Docker or cloud required.</p>
-          <div class="tag-row"><span class="tag">Tauri</span><span class="tag">Next.js</span><span class="tag">Fastify</span><span class="tag">React Flow</span><span class="tag">LangGraph / CrewAI</span></div>
-          <a class="project-link" href="https://github.com/ssnelavala-masstcs/neuralflow" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-            View on GitHub
-          </a>
-        </div>
-        <div class="project-card">
-          <h3 class="project-title">Tether</h3>
-          <p class="project-desc">A self-hosted, mobile-optimized web terminal that mirrors your laptop's tmux sessions (or spawns fresh PTY shells) so you can monitor and drive a running terminal session from your phone — zero cloud dependencies.</p>
-          <div class="tag-row"><span class="tag">Rust</span><span class="tag">xterm.js</span><span class="tag">PTY</span></div>
-          <a class="project-link" href="https://github.com/ssnelavala-masstcs/tether" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-            View on GitHub
-          </a>
-        </div>
-        <div class="project-card">
-          <h3 class="project-title">Quant Finance Checklist</h3>
-          <p class="project-desc">A self-hostable, real-time synced progress tracker for a 24-week quant finance study plan, with scheduled push notifications for the next uncompleted task — built to keep shared progress in sync across devices.</p>
-          <div class="tag-row"><span class="tag">Supabase</span><span class="tag">Netlify</span><span class="tag">Push Notifications</span></div>
-          <a class="project-link" href="https://github.com/consultantstanleymn/quant-checklist" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-            View on GitHub
-          </a>
-        </div>
-        <div class="project-card">
-          <h3 class="project-title">USMLE AI Research Suite</h3>
-          <p class="project-desc">A three-part research effort on AI in USMLE preparation for international medical graduates: a multimodal multi-agent system for personalized study planning, a cross-sectional survey on AI tool adoption, and a systematic evaluation of LLM performance on USMLE-style questions.</p>
-          <div class="tag-row"><span class="tag">Python</span><span class="tag">Multi-Agent</span><span class="tag">RAG</span><span class="tag">Research</span></div>
-          <a class="project-link" href="https://github.com/ssnelavala-masstcs/Agentic-AI-for-USMLE-Prep" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-            View on GitHub
-          </a>
-        </div>
+          <p class="project-desc">An iOS and Android app for hospital asset teams with scan-to-search, barcode prefill and a voice assistant that runs on the phone (Whisper, Kokoro, optional Qwen), with no cloud call. Separate release pipelines with automatic TestFlight submission; statement coverage raised from 14% to 93% with 582 tests.</p>
+          <div class="tag-row"><span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">EAS</span><span class="tag">GitHub Actions</span><span class="tag">Jest</span><span class="tag">Whisper</span></div>
+        </article>
+        <article class="project-card" data-id="con">
+          <div class="card-top"><span class="badge badge-public">Public code</span></div>
+          <h3 class="project-title">Customer Integration Console</h3>
+          <p class="project-desc">A full-stack console to connect data sources, run incremental ETL into PostgreSQL and monitor runs. OIDC sign-in with discovery and PKCE against a mock IdP, client-credentials scopes for machines, an authorization matrix test over every route and role, and 10 negative token tests. Envelope encryption (AES-256-GCM) with key rotation, a hash-chained audit log, CSP and a security gate. 256 tests plus 7 browser tests.</p>
+          <div class="tag-row"><span class="tag">TypeScript</span><span class="tag">Next.js</span><span class="tag">Fastify</span><span class="tag">PostgreSQL</span><span class="tag">OIDC</span><span class="tag">Trivy</span></div>
+          <div class="links"><a class="project-link" href="https://github.com/consultantstanleymn/customer-integration-console" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a></div>
+        </article>
+        <article class="project-card" data-id="ledui">
+          <div class="card-top"><span class="badge badge-public">Public code</span></div>
+          <h3 class="project-title">Ledger Ops Console and QA Suite</h3>
+          <p class="project-desc">A React 19 and TypeScript ops console (Sass, light and dark themes) served by the ledger at /console/ over read-only endpoints that share one keyset paging contract: 32 Vitest tests, 13 Playwright tests and 6 axe tests with zero WCAG 2.1 A and AA violations. A separate Java QA suite runs 41 black-box API tests (16 Cucumber scenarios, REST Assured and JSON-schema contract tests), 6 Selenium UI tests with 0 flaky, and a JMeter gate that passed with about 32,000 samples, 0% errors and p95 of 81 to 148 ms against 300 ms (local laptop numbers).</p>
+          <div class="tag-row"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Sass</span><span class="tag">Playwright</span><span class="tag">axe</span><span class="tag">Cucumber</span><span class="tag">REST Assured</span><span class="tag">Selenium</span><span class="tag">JMeter</span></div>
+          <div class="links"><a class="project-link" href="https://github.com/consultantstanleymn/payments-ledger-service" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a></div>
+        </article>
+        <article class="project-card" data-id="agt">
+          <div class="card-top"><span class="badge badge-public">Public code</span></div>
+          <h3 class="project-title">Agent Integration Platform</h3>
+          <p class="project-desc">A support-case platform on a LangGraph workflow: typed state, a Postgres checkpointer, human approval that resumes after restart, step and token budgets, and one constrained MCP write tool. 62 deterministic replay evals, prompt-injection tests, output guardrails, PII redaction and an append-only audit log. Hybrid retrieval (pgvector and full-text search fused by RRF) with access labels, and failover between two LLM adapters with token cost records. 304 tests at 94% coverage.</p>
+          <div class="tag-row"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">LangGraph</span><span class="tag">MCP</span><span class="tag">pgvector</span><span class="tag">Redis</span><span class="tag">Terraform</span></div>
+          <div class="links"><a class="project-link" href="https://github.com/consultantstanleymn/agent-integration-platform" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a></div>
+        </article>
+        <article class="project-card" data-id="mina">
+          <div class="card-top"><span class="badge badge-private">Private repo</span></div>
+          <h3 class="project-title">Mina: invoicing and purchases app</h3>
+          <p class="project-desc">A web app for small businesses to manage clients, write invoices and handle purchase documents, with exact integer money math, PDF export in three templates, forced row-level security and a tamper-evident audit chain. It has no real users and runs about 7,700 backend tests.</p>
+          <div class="tag-row"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">React</span><span class="tag">TypeScript</span></div>
+        </article>
       </div>
+
+      <details class="more" id="moreProjects">
+        <summary><span>More projects (<span id="moreCount">20</span>)</span></summary>
+        <div class="more-body">
+          <div class="project-grid" id="moreGrid">
+            <article class="project-card" data-id="led">
+              <div class="card-top"><span class="badge badge-public">Public code</span></div>
+              <h3 class="project-title">Payments Ledger Service</h3>
+              <p class="project-desc">A double-entry ledger with authorize, capture, void, refund and transfer, and idempotency keys so retries never move money twice. A transactional outbox publishes to a Kafka API (Redpanda); property tests and a k6 check confirm no money is created or lost. Three SLIs with 28-day error budgets, six burn-rate alerts tested with promtool and a Grafana SLO dashboard. A scripted failure lab (Kafka down, Postgres restart, relay crash, poison event, Toxiproxy latency) checks balances after each run. Rollback by image digest across an expand-and-contract Flyway migration, a k6 SLO gate and a dead-letter topic with once-only redrive.</p>
+              <div class="tag-row"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">PostgreSQL</span><span class="tag">Flyway</span><span class="tag">Kafka API</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">k6</span></div>
+              <div class="links"><a class="project-link" href="https://github.com/consultantstanleymn/payments-ledger-service" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a></div>
+            </article>
+            <article class="project-card" data-id="cds">
+              <div class="card-top"><span class="badge badge-public">Public code</span></div>
+              <h3 class="project-title">Card Dispute Service</h3>
+              <p class="project-desc">A C# service for card dispute cases on ASP.NET Core and .NET 10 with EF Core and PostgreSQL. Disputes move through a strict state machine, and when two decisions on one case race, exactly one wins. Idempotent create, keyset paging tested with ties, inserts and deletes, and a raw-SQL aging report. Evidence uploads check magic bytes and a 5 MB limit. Tests were written first: 30 unit and 32 integration. Non-root image with a clean Trivy scan, Prometheus metrics and readiness checks; CloudFormation for ECS Fargate is linted and policy-checked only, with no deploy run.</p>
+              <div class="tag-row"><span class="tag">C#</span><span class="tag">.NET 10</span><span class="tag">ASP.NET Core</span><span class="tag">EF Core</span><span class="tag">PostgreSQL</span><span class="tag">xUnit</span><span class="tag">CloudFormation</span></div>
+              <div class="links"><a class="project-link" href="https://github.com/consultantstanleymn/card-dispute-service" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a></div>
+            </article>
+            <article class="project-card" data-id="rxcatalog">
+              <div class="card-top"><span class="badge badge-work">Work &middot; proprietary</span></div>
+              <h3 class="project-title">RxCatalog search and service-to-service API</h3>
+              <p class="project-desc">A signed service-to-service API for a large medical device catalog, with per-call tenant claims, replay protection and an atomic Redis rate limiter. Keyset cursors with a unique-id tie-break so pages never skip or repeat rows: the query for row 150,000 fell from 285 ms to 0.20 ms on a 328,000-device dev database.</p>
+              <div class="tag-row"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">JSONB</span></div>
+            </article>
+            <article class="project-card" data-id="rgw">
+              <div class="card-top"><span class="badge badge-public">Public code</span></div>
+              <h3 class="project-title">Webhook and Connector Gateway</h3>
+              <p class="project-desc">A Rust gateway that verifies HMAC-SHA256 signed webhooks in constant time, applies per-tenant rate limits and idempotency, and stores events before delivery. Retries with backoff, dead letters with replay and circuit breakers. SQLite and Postgres stores (FOR UPDATE SKIP LOCKED) behind one port, with the same 88 tests on both. Global 503 backpressure with Retry-After and a kill -9 failure lab where 500 of 500 events reach the downstream once after redrive.</p>
+              <div class="tag-row"><span class="tag">Rust</span><span class="tag">axum</span><span class="tag">tokio</span><span class="tag">PostgreSQL</span><span class="tag">SQLite</span><span class="tag">OpenTelemetry</span><span class="tag">k6</span></div>
+              <div class="links"><a class="project-link" href="https://github.com/consultantstanleymn/webhook-connector-gateway" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a></div>
+            </article>
+            <article class="project-card" data-id="inf">
+              <div class="card-top"><span class="badge badge-public">Public code</span></div>
+              <h3 class="project-title">Inference Gateway</h3>
+              <p class="project-desc">A Go service that serves an int8-quantized banking-intent classifier over HTTP and gRPC with micro-batching, deadlines and load shedding; macro-F1 is 0.8636 for both fp32 and int8. A diagnostics stack with Jaeger, Prometheus and Grafana. One-factor experiments with pprof ruled out GC and tokenizer cost, and a Little's law model sizes a 10x launch peak at 2 to 3 replicas (local benchmark). A canary controller rolled a faulty version back on its own.</p>
+              <div class="tag-row"><span class="tag">Go</span><span class="tag">gRPC</span><span class="tag">ONNX Runtime</span><span class="tag">PyTorch</span><span class="tag">Helm</span><span class="tag">Jaeger</span><span class="tag">pprof</span></div>
+              <div class="links"><a class="project-link" href="https://github.com/consultantstanleymn/inference-gateway" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a></div>
+            </article>
+            <article class="project-card" data-id="fhr">
+              <div class="card-top"><span class="badge badge-public">Public code</span></div>
+              <h3 class="project-title">FHIR Analytics Pipeline</h3>
+              <p class="project-desc">A pipeline for synthetic HL7 FHIR R4 records that validates and quarantines bad lines, pseudonymizes patients and builds dbt marts on DuckDB through an Airflow DAG, using the Azure Blob SDK on the Azurite emulator. dbt contracts, freshness checks, a quarantine-rate gate, a provenance manifest per run, a k-anonymity check (k=5), versioned HMAC keys with a rotation test and a HIPAA-style control mapping. 108 tests.</p>
+              <div class="tag-row"><span class="tag">Python</span><span class="tag">Airflow</span><span class="tag">dbt</span><span class="tag">DuckDB</span><span class="tag">Bicep</span><span class="tag">HL7 FHIR R4</span></div>
+              <div class="links"><a class="project-link" href="https://github.com/consultantstanleymn/fhir-analytics-pipeline" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a></div>
+            </article>
+            <article class="project-card" data-id="livedefined">
+              <div class="card-top"><span class="badge badge-private">Private</span></div>
+              <h3 class="project-title">Live Defined: hospitality website</h3>
+              <p class="project-desc">Redesigned and extended a supplied Next.js and Payload CMS codebase for a family hospitality brand: a swappable logo system, light and dark themes, a host portal and a five-screen stay page. It has no real users and runs about 3,700 unit tests.</p>
+              <div class="tag-row"><span class="tag">Next.js</span><span class="tag">Payload CMS</span><span class="tag">TypeScript</span><span class="tag">PostgreSQL</span><span class="tag">Playwright</span></div>
+            </article>
+            <article class="project-card" data-id="aurelia">
+              <div class="card-top"><span class="badge badge-public">Public code</span></div>
+              <h3 class="project-title">Aurelia, a voice tutor for iPhone built on Linux</h3>
+              <p class="project-desc">A native SwiftUI voice tutor with a live whiteboard, spaced repetition and SQLite progress, compiled and signed on Fedora with no Mac. 152 tests pass with swift test on Linux. The app writes its own log file because its logs go nowhere on device.</p>
+              <div class="tag-row"><span class="tag">SwiftUI</span><span class="tag">Speech</span><span class="tag">SQLite</span><span class="tag">xtool</span></div>
+              <div class="links">
+                <a class="project-link" href="https://github.com/consultantstanleymn/aurelia-ios" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a>
+                <a class="project-link" href="aurelia-ios/">Read the build &rarr;</a>
+              </div>
+            </article>
+            <article class="project-card" data-id="opengym">
+              <div class="card-top"><span class="badge badge-public">Public code</span></div>
+              <h3 class="project-title">openGym for iPhone, built on Linux</h3>
+              <p class="project-desc">A native iPhone gym tracker compiled and installed from a Fedora laptop with no Mac and no Xcode install, around openGym's AGPL source by Duarte Santos. A SwiftPM shell and a JavaScript version of the Capacitor bridge.</p>
+              <div class="tag-row"><span class="tag">Swift</span><span class="tag">SwiftPM</span><span class="tag">WebKit</span><span class="tag">Capacitor</span></div>
+              <div class="links">
+                <a class="project-link" href="https://github.com/consultantstanleymn/openGym-ios" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a>
+                <a class="project-link" href="opengym-ios/">Read the build &rarr;</a>
+              </div>
+            </article>
+            <article class="project-card" data-id="studymentor">
+              <div class="card-top"><span class="badge badge-public">Public code</span></div>
+              <h3 class="project-title">Study Mentor</h3>
+              <p class="project-desc">A self-hosted voice tutor with a live Mermaid whiteboard. It teaches, quizzes and pushes back by voice, tracks weak topics and resumes where you left off.</p>
+              <div class="tag-row"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">faster-whisper</span><span class="tag">Kokoro</span><span class="tag">Mermaid</span></div>
+              <div class="links"><a class="project-link" href="https://github.com/consultantstanleymn/study-mentor" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a></div>
+            </article>
+            <article class="project-card" data-id="tiktok">
+              <div class="card-top"><span class="badge badge-private">Research</span></div>
+              <h3 class="project-title">TikTok Misinformation Pipeline</h3>
+              <p class="project-desc">A research pipeline that collected and analyzed over a million TikTok videos to study how misinformation about transgender and nonbinary communities spreads: GPU-accelerated frame extraction, OCR, BERTopic modeling and influence scoring.</p>
+              <div class="tag-row"><span class="tag">Python</span><span class="tag">FFmpeg</span><span class="tag">PaddleOCR</span><span class="tag">BERTopic</span></div>
+            </article>
+            <article class="project-card" data-id="sweethome">
+              <div class="card-top"><span class="badge badge-public">Public code</span></div>
+              <h3 class="project-title">sweethome3d-mcp</h3>
+              <p class="project-desc">A local MCP server that lets an LLM create and edit Sweet Home 3D floor plans (walls, rooms, furniture and dimensions) by working on the file format, without the app open.</p>
+              <div class="tag-row"><span class="tag">Python</span><span class="tag">MCP</span><span class="tag">CodeQL</span></div>
+              <div class="links"><a class="project-link" href="https://github.com/consultantstanleymn/sweethome3d-mcp" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a></div>
+            </article>
+            <article class="project-card" data-id="finetune">
+              <div class="card-top"><span class="badge badge-public">Public code</span></div>
+              <h3 class="project-title">Multilingual LLM Fine-Tuning</h3>
+              <p class="project-desc">Fine-tuning LLaMA 2 and Mistral 7B on multilingual datasets with QLoRA and PEFT, evaluating completion, question answering and summarization across languages, including Telugu, under limited compute.</p>
+              <div class="tag-row"><span class="tag">LLaMA 2</span><span class="tag">Mistral 7B</span><span class="tag">QLoRA</span><span class="tag">PEFT</span></div>
+              <div class="links"><a class="project-link" href="https://github.com/stanley-s-nelavala/FineTune-Multilingual-LLMs" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a></div>
+            </article>
+            <article class="project-card" data-id="marketpulse">
+              <div class="card-top"><span class="badge badge-public">Public code</span></div>
+              <h3 class="project-title">MarketPulseRT</h3>
+              <p class="project-desc">A real-time stock market data pipeline with Kafka stream processing and AWS Glue and Athena for querying, with schema evolution.</p>
+              <div class="tag-row"><span class="tag">Kafka</span><span class="tag">AWS Glue</span><span class="tag">Athena</span><span class="tag">S3</span></div>
+              <div class="links"><a class="project-link" href="https://github.com/stanley-s-nelavala/MarketPulseRT" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a></div>
+            </article>
+            <article class="project-card" data-id="neuralflow">
+              <div class="card-top"><span class="badge badge-public">Public code</span></div>
+              <h3 class="project-title">NeuralFlow</h3>
+              <p class="project-desc">A local-first desktop app for building agent workflows visually, with drag-and-drop orchestration over LangGraph that runs on-device with any model.</p>
+              <div class="tag-row"><span class="tag">Tauri</span><span class="tag">Next.js</span><span class="tag">Fastify</span><span class="tag">React Flow</span><span class="tag">LangGraph</span></div>
+              <div class="links"><a class="project-link" href="https://github.com/ssnelavala-masstcs/neuralflow" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a></div>
+            </article>
+            <article class="project-card" data-id="aurora">
+              <div class="card-top"><span class="badge badge-public">Public code</span></div>
+              <h3 class="project-title">AURORA (axis)</h3>
+              <p class="project-desc">An execution graph language for autonomous agents: deterministic DAG compilation, capability checks on every node and recovery through JSON Patch, with a compact binary format.</p>
+              <div class="tag-row"><span class="tag">Rust</span><span class="tag">DAG compiler</span><span class="tag">Agent security</span></div>
+              <div class="links"><a class="project-link" href="https://github.com/ssnelavala-masstcs/axis" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a></div>
+            </article>
+            <article class="project-card" data-id="tether">
+              <div class="card-top"><span class="badge badge-public">Public code</span></div>
+              <h3 class="project-title">Tether</h3>
+              <p class="project-desc">A self-hosted, mobile-friendly web terminal that mirrors laptop tmux sessions (or starts fresh PTY shells) so you can drive a running session from your phone, with no cloud.</p>
+              <div class="tag-row"><span class="tag">Rust</span><span class="tag">xterm.js</span><span class="tag">PTY</span></div>
+              <div class="links"><a class="project-link" href="https://github.com/ssnelavala-masstcs/tether" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a></div>
+            </article>
+            <article class="project-card" data-id="usmle">
+              <div class="card-top"><span class="badge badge-public">Public code</span></div>
+              <h3 class="project-title">USMLE AI Research Suite</h3>
+              <p class="project-desc">A three-part research effort on AI in USMLE preparation for international medical graduates: an agent-based study planner, a survey on AI tool adoption and an evaluation of LLMs on USMLE-style questions.</p>
+              <div class="tag-row"><span class="tag">Python</span><span class="tag">RAG</span><span class="tag">Research</span></div>
+              <div class="links"><a class="project-link" href="https://github.com/ssnelavala-masstcs/Agentic-AI-for-USMLE-Prep" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a></div>
+            </article>
+            <article class="project-card" data-id="bulldog">
+              <div class="card-top"><span class="badge badge-private">Student project</span></div>
+              <h3 class="project-title">Bulldog-On-Board</h3>
+              <p class="project-desc">A mobile app for newly admitted university students, with a Firebase backend for sign-in and storage and campus maps and event reminders.</p>
+              <div class="tag-row"><span class="tag">Flutter</span><span class="tag">Firebase</span><span class="tag">Figma</span></div>
+            </article>
+            <article class="project-card" data-id="quant">
+              <div class="card-top"><span class="badge badge-public">Public code</span></div>
+              <h3 class="project-title">Quant Finance Checklist</h3>
+              <p class="project-desc">A self-hostable, real-time synced progress tracker for a 24-week quant study plan, with scheduled push notifications for the next open task.</p>
+              <div class="tag-row"><span class="tag">Supabase</span><span class="tag">Netlify</span><span class="tag">Push notifications</span></div>
+              <div class="links"><a class="project-link" href="https://github.com/consultantstanleymn/quant-checklist" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a></div>
+            </article>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section id="skills" class="container section reveal">
+      <div class="section-head">
+        <p class="section-label">Skills</p>
+        <h2 class="section-title">Top 10 for <span id="skillsFor">full stack roles</span></h2>
+      </div>
+      <ol class="top-skills" id="topSkills">
+        <li>Python</li><li>TypeScript and React</li><li>FastAPI</li><li>PostgreSQL and SQL</li><li>React Native and Expo</li>
+        <li>Next.js</li><li>AWS (ECS, RDS, S3)</li><li>GitHub Actions CI/CD</li><li>Playwright and Vitest</li><li>Java and Spring Boot</li>
+      </ol>
+      <details class="more" id="allTools">
+        <summary><span>All tools</span></summary>
+        <div class="more-body skills-grid">
+          <div class="skill-group">
+            <h3>Languages</h3>
+            <div class="tag-row"><span class="tag">Python</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">SQL</span><span class="tag">Java</span><span class="tag">C#</span><span class="tag">Go</span><span class="tag">Rust</span><span class="tag">Swift</span><span class="tag">Dart</span><span class="tag">Bash</span></div>
+          </div>
+          <div class="skill-group">
+            <h3>Backend and data</h3>
+            <div class="tag-row"><span class="tag">FastAPI</span><span class="tag">Spring Boot</span><span class="tag">ASP.NET Core</span><span class="tag">EF Core</span><span class="tag">Fastify</span><span class="tag">Node.js</span><span class="tag">axum and tokio</span><span class="tag">REST and versioning</span><span class="tag">gRPC</span><span class="tag">Idempotency</span><span class="tag">Transactional outbox</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">Kafka API (Redpanda)</span><span class="tag">SQLite</span><span class="tag">MySQL</span><span class="tag">SQLAlchemy</span><span class="tag">Alembic</span><span class="tag">Flyway</span><span class="tag">sqlx</span><span class="tag">pgvector</span><span class="tag">Airflow</span><span class="tag">dbt</span><span class="tag">DuckDB</span></div>
+          </div>
+          <div class="skill-group">
+            <h3>Frontend and mobile</h3>
+            <div class="tag-row"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Vite</span><span class="tag">Sass</span><span class="tag">React Native</span><span class="tag">Expo and EAS</span><span class="tag">SwiftUI</span><span class="tag">Flutter</span><span class="tag">Tauri</span><span class="tag">Firebase</span><span class="tag">Accessibility (axe, WCAG 2.1 AA)</span></div>
+          </div>
+          <div class="skill-group">
+            <h3>AI and ML</h3>
+            <div class="tag-row"><span class="tag">LangGraph</span><span class="tag">MCP</span><span class="tag">RAG and hybrid retrieval (RRF)</span><span class="tag">Deterministic LLM evals</span><span class="tag">Human-in-the-loop approvals</span><span class="tag">Guardrails and PII redaction</span><span class="tag">LLM failover and cost records</span><span class="tag">PyTorch</span><span class="tag">ONNX Runtime</span><span class="tag">int8 quantization</span><span class="tag">QLoRA and PEFT</span><span class="tag">BERTopic</span><span class="tag">PaddleOCR</span><span class="tag">On-device speech (Whisper, Kokoro)</span><span class="tag">Pandas</span></div>
+          </div>
+          <div class="skill-group">
+            <h3>Cloud and delivery</h3>
+            <div class="tag-row"><span class="tag">AWS (ECS, ECR, RDS, S3, SQS, Lambda, CloudFront, IAM, Secrets Manager, CloudWatch, EventBridge, SES, SNS, GuardDuty)</span><span class="tag">Terraform</span><span class="tag">CloudFormation (lint)</span><span class="tag">AWS CDK</span><span class="tag">Docker and Compose</span><span class="tag">Kubernetes (kind)</span><span class="tag">Helm</span><span class="tag">GitHub Actions (reusable workflows, OIDC)</span><span class="tag">Azure Blob SDK on Azurite</span><span class="tag">Bicep</span><span class="tag">Linux</span></div>
+          </div>
+          <div class="skill-group">
+            <h3>Reliability and observability</h3>
+            <div class="tag-row"><span class="tag">OpenTelemetry</span><span class="tag">Jaeger</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">SLOs and burn-rate alerts</span><span class="tag">promtool</span><span class="tag">Blackbox probes</span><span class="tag">Failure labs and runbooks</span><span class="tag">Toxiproxy</span><span class="tag">Canary rollback</span><span class="tag">Rollback by image digest</span><span class="tag">Expand-and-contract migrations</span><span class="tag">Capacity planning (Little's law)</span><span class="tag">pprof</span></div>
+          </div>
+          <div class="skill-group">
+            <h3>Testing</h3>
+            <div class="tag-row"><span class="tag">pytest</span><span class="tag">Jest</span><span class="tag">Vitest</span><span class="tag">Playwright</span><span class="tag">JUnit 5</span><span class="tag">Testcontainers</span><span class="tag">jqwik property tests</span><span class="tag">xUnit</span><span class="tag">Cucumber (BDD)</span><span class="tag">REST Assured</span><span class="tag">Selenium</span><span class="tag">JMeter</span><span class="tag">k6</span><span class="tag">Locust</span></div>
+          </div>
+          <div class="skill-group">
+            <h3>Security</h3>
+            <div class="tag-row"><span class="tag">STRIDE threat modeling</span><span class="tag">OAuth2 and OIDC</span><span class="tag">Authorization matrix tests</span><span class="tag">Negative token tests</span><span class="tag">Envelope encryption (AES-GCM)</span><span class="tag">Hash-chained audit logs</span><span class="tag">HMAC webhooks</span><span class="tag">Row-level security</span><span class="tag">gitleaks</span><span class="tag">Trivy</span><span class="tag">CycloneDX SBOM</span><span class="tag">CodeQL</span><span class="tag">CSP and security headers</span><span class="tag">HIPAA-style control mapping</span></div>
+          </div>
+        </div>
+      </details>
     </section>
 
     <section id="resources" class="container section reveal">
       <div class="section-head">
-        <div>
-          <p class="section-label">Resources</p>
-          <h2 class="section-title">Recommended resources</h2>
-        </div>
+        <p class="section-label">Resources</p>
+        <h2 class="section-title">Study guides and recommendations</h2>
       </div>
-      <p class="resource-intro">Things other people built that I find useful. I didn&rsquo;t create any of these; all credit goes to the authors linked on each card. I&rsquo;ll keep adding to this list.</p>
-      <ul class="project-grid resource-list">
+      <ul class="resource-list">
         <li class="resource-card">
-          <span class="badge">Recommended &middot; not my work</span>
-          <h3 class="project-title"><a href="https://github.com/aasthas2022/SDE-Interview-and-Prep-Roadmap/tree/main" target="_blank" rel="noopener external">SDE Interview &amp; Prep Roadmap<span class="sr-only"> (external, opens in new tab)</span> &#8599;</a></h3>
+          <span class="badge badge-private" style="align-self:flex-start">Recommended &middot; not my work</span>
+          <h3 class="project-title"><a href="https://github.com/aasthas2022/SDE-Interview-and-Prep-Roadmap/tree/main" target="_blank" rel="noopener external">SDE Interview and Prep Roadmap<span class="sr-only"> (external, opens in new tab)</span> &#8599;</a></h3>
           <p class="resource-credit">By <a href="https://github.com/aasthas2022" target="_blank" rel="noopener external">aasthas2022</a> on GitHub &middot; added <time datetime="2026-11-01">Nov 2026</time></p>
-          <p class="project-desc"><strong>My take:</strong> a checklist-driven roadmap (~700 topics, prioritized P0&ndash;P2) covering DSA, system design, OS, networking, databases, security and agentic AI/LLM engineering for SDE interviews. A good way to see what to study and track progress.</p>
-          <div class="tag-row"><span class="tag">Interviews</span><span class="tag">System Design</span><span class="tag">DSA</span><span class="tag">Agentic AI</span></div>
+          <p class="project-desc"><strong>My take:</strong> a checklist roadmap of about 700 topics, ranked P0 to P2, covering DSA, system design, OS, networking, databases, security and LLM engineering for SDE interviews.</p>
         </li>
       </ul>
-    </section>
-
-    <aside class="study-dock" id="studyDock" aria-label="Study guides and recommended resources">
-      <p class="study-dock-label">My Study Guides</p>
-      <a class="study-link" href="/aws-sa-pro-curriculum/">
-        <span class="dot" aria-hidden="true"></span>
-        <span>
-          <span class="title">AWS SA Pro</span>
-          <span class="sub">14-week SAP-C02 curriculum</span>
-        </span>
-      </a>
-      <a class="study-link" href="/lsat-170-curriculum/">
-        <span class="dot" aria-hidden="true"></span>
-        <span>
-          <span class="title">LSAT 170</span>
-          <span class="sub">28-week prep curriculum</span>
-        </span>
-      </a>
-      <p class="study-dock-label study-dock-label--curated">Recommended &middot; not mine</p>
-      <a class="study-link" href="#resources">
-        <span class="dot dot--curated" aria-hidden="true"></span>
-        <span>
-          <span class="title">Resources</span>
-          <span class="sub">Useful things others built</span>
-        </span>
-      </a>
-    </aside>
-
-    <section id="skills" class="container section reveal">
-      <div class="section-head">
-        <div>
-          <p class="section-label">Skills</p>
-          <h2 class="section-title">Toolbox</h2>
-        </div>
-      </div>
-      <div class="skills-grid">
-        <div class="skill-group">
-          <h3>Languages</h3>
-          <div class="tag-row"><span class="tag">Python</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">Java</span><span class="tag">Rust</span><span class="tag">C / C++</span><span class="tag">SQL</span><span class="tag">Dart</span><span class="tag">Swift</span><span class="tag">Bash</span><span class="tag">Go</span><span class="tag">C#</span></div>
-        </div>
-        <div class="skill-group">
-          <h3>Cloud &amp; DevOps</h3>
-          <div class="tag-row"><span class="tag">AWS (ECS, ECR, ALB, RDS, Lambda, S3, CloudFront, IAM, Secrets Manager, CloudWatch, EventBridge, SES, SNS, Glue, Athena)</span><span class="tag">Docker</span><span class="tag">AWS SAM / CDK</span><span class="tag">Terraform</span><span class="tag">Kubernetes manifests</span><span class="tag">GitHub Actions (reusable workflows, OIDC)</span><span class="tag">Git / GitHub</span><span class="tag">Kafka</span><span class="tag">Jira</span><span class="tag">Kafka (Redpanda)</span><span class="tag">Helm</span><span class="tag">OpenTelemetry</span><span class="tag">AWS S3, SQS and Secrets Manager adapters (emulated tests)</span><span class="tag">Cost budget and teardown scripts</span><span class="tag">Release manifests and CycloneDX SBOM</span><span class="tag">Terraform modules (IAM, budget)</span><span class="tag">Docker Compose</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">SLOs and burn-rate alerts</span><span class="tag">Jaeger</span><span class="tag">Canary rollout and rollback</span><span class="tag">Kubernetes (Helm on kind)</span><span class="tag">Failure labs and runbooks</span><span class="tag">Expand-and-contract migrations</span><span class="tag">Rollback by image digest</span><span class="tag">Toxiproxy</span><span class="tag">Observability (metrics, traces, exemplars)</span><span class="tag">Capacity planning (Little's law)</span><span class="tag">pprof</span><span class="tag">Azure Blob SDK on Azurite</span><span class="tag">CloudFormation</span></div>
-        </div>
-        <div class="skill-group">
-          <h3>Web &amp; Mobile</h3>
-          <div class="tag-row"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Vite</span><span class="tag">Zustand</span><span class="tag">FastAPI</span><span class="tag">SQLAlchemy / Alembic</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">Flask</span><span class="tag">Node.js</span><span class="tag">React Native / Expo</span><span class="tag">Flutter</span><span class="tag">Tauri</span><span class="tag">Firebase</span><span class="tag">Spring Boot</span><span class="tag">gRPC</span><span class="tag">Next.js</span><span class="tag">Fastify</span><span class="tag">axum</span><span class="tag">PostgreSQL SKIP LOCKED queues</span><span class="tag">Ports and adapters</span><span class="tag">Migrations (Alembic, Flyway, sqlx)</span><span class="tag">pgvector</span><span class="tag">Hybrid search (full-text and vectors, RRF)</span><span class="tag">REST API versioning</span><span class="tag">Idempotency</span><span class="tag">Redis rate limiting and embedding cache</span><span class="tag">Queues and dead-letter handling (SQS, Kafka, Postgres)</span><span class="tag">ASP.NET Core</span><span class="tag">.NET 10</span><span class="tag">EF Core</span><span class="tag">Sass</span></div>
-        </div>
-        <div class="skill-group">
-          <h3>Data &amp; ML</h3>
-          <div class="tag-row"><span class="tag">Pandas</span><span class="tag">PyTorch</span><span class="tag">BERTopic</span><span class="tag">Plotly</span><span class="tag">QLoRA / PEFT</span><span class="tag">FFmpeg</span><span class="tag">PaddleOCR</span><span class="tag">Airflow</span><span class="tag">dbt</span><span class="tag">DuckDB</span><span class="tag">ONNX Runtime</span><span class="tag">dbt contracts</span><span class="tag">Data-quality gates</span><span class="tag">Data provenance</span><span class="tag">k-anonymity</span><span class="tag">HMAC pseudonymization</span><span class="tag">Key rotation</span><span class="tag">HL7 FHIR R4</span><span class="tag">Model quantization (int8)</span></div>
-        </div>
-        <div class="skill-group">
-          <h3>AI &amp; Agents</h3>
-          <div class="tag-row"><span class="tag">MCP</span><span class="tag">LangGraph</span><span class="tag">CrewAI</span><span class="tag">RAG</span><span class="tag">Multi-Agent Systems</span><span class="tag">Claude Code</span><span class="tag">LLM Tool Use</span><span class="tag">Evals</span><span class="tag">Human-in-the-loop approvals</span><span class="tag">Output guardrails</span><span class="tag">PII redaction</span><span class="tag">Deterministic LLM evals (replay)</span><span class="tag">Hosted LLM adapters with failover</span><span class="tag">LLM token cost records</span><span class="tag">Hybrid retrieval (pgvector, Qdrant)</span><span class="tag">OpenTelemetry GenAI spans</span><span class="tag">Codex</span><span class="tag">opencode</span><span class="tag">DeepSeek</span><span class="tag">AI-assisted development</span></div>
-        </div>
-        <div class="skill-group">
-          <h3>Testing &amp; Security</h3>
-          <div class="tag-row"><span class="tag">pytest</span><span class="tag">Vitest</span><span class="tag">Playwright</span><span class="tag">k6</span><span class="tag">ruff / ESLint</span><span class="tag">CodeQL</span><span class="tag">GuardDuty</span><span class="tag">Dependabot</span><span class="tag">IAM roles</span><span class="tag">Webhooks / HMAC</span><span class="tag">OAuth2 / OIDC</span><span class="tag">Locust</span><span class="tag">STRIDE threat modeling</span><span class="tag">OIDC and RBAC (mock IdP, Keycloak realm config)</span><span class="tag">OAuth2 client-credentials scopes</span><span class="tag">Authorization matrix tests</span><span class="tag">Negative token tests</span><span class="tag">Envelope encryption (AES-GCM)</span><span class="tag">Secrets management</span><span class="tag">Hash-chained audit logging</span><span class="tag">gitleaks</span><span class="tag">Trivy</span><span class="tag">SBOM (CycloneDX)</span><span class="tag">CSP and security headers</span><span class="tag">Security gate (npm audit, pip-audit, cargo audit, govulncheck)</span><span class="tag">promtool</span><span class="tag">HIPAA-style control mapping</span><span class="tag">GitHub Actions security and test workflows</span><span class="tag">jqwik property tests</span><span class="tag">xUnit</span><span class="tag">Cucumber</span><span class="tag">REST Assured</span><span class="tag">Selenium</span><span class="tag">JMeter</span><span class="tag">axe (accessibility)</span></div>
-        </div>
-        <div class="skill-group">
-          <h3>Web Platform &amp; SEO</h3>
-          <div class="tag-row"><span class="tag">Schema.org / JSON-LD</span><span class="tag">Open Graph</span><span class="tag">Web Animations / CSS Motion</span><span class="tag">IntersectionObserver</span><span class="tag">Supabase</span><span class="tag">Netlify</span></div>
-        </div>
+      <div class="guides">
+        <a class="btn btn-plain btn-small" href="/aws-sa-pro-curriculum/">My AWS SA Pro guide (14 weeks)</a>
+        <a class="btn btn-plain btn-small" href="/lsat-170-curriculum/">My LSAT 170 guide (28 weeks)</a>
       </div>
     </section>
 
     <section id="contact" class="container section reveal">
       <div class="section-head">
-        <div>
-          <p class="section-label">Get in touch</p>
-          <h2 class="section-title">Say hello</h2>
-        </div>
+        <p class="section-label">Get in touch</p>
+        <h2 class="section-title">Say hello</h2>
       </div>
       <ul class="contact-list">
-        <li>
-          <a href="assets/Stanley_Nelavala_Resume.pdf" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg>
-            View resume
-          </a>
-        </li>
-        <li>
-          <a href="assets/Stanley_Nelavala_Resume.pdf" download="Stanley_Nelavala_Resume.pdf">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
-            Download resume (PDF)
-          </a>
-        </li>
-        <li>
-          <a href="mailto:consultantstanleymn@gmail.com">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>
-            consultantstanleymn@gmail.com
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/stanley-sujith-nelavala" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-4 0v6h-4v-6a6 6 0 0 1 6-6Z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="1.6"/></svg>
-            LinkedIn
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/consultantstanleymn" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-            GitHub (consultantstanleymn)
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/stanley-s-nelavala" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-            GitHub (stanley-s-nelavala)
-          </a>
-        </li>
+        <li><a class="btn btn-primary js-resume" href="assets/resume/Stanley_Nelavala_Resume_Fullstack.pdf" target="_blank" rel="noopener"><span class="js-resume-label">Full stack resume</span></a></li>
+        <li><a class="btn btn-plain js-resume js-download" href="assets/resume/Stanley_Nelavala_Resume_Fullstack.pdf" download="Stanley_Nelavala_Resume_Fullstack.pdf">Download PDF</a></li>
+        <li><a class="btn btn-plain" href="mailto:consultantstanleymn@gmail.com">consultantstanleymn@gmail.com</a></li>
+        <li><a class="btn btn-plain" href="https://www.linkedin.com/in/stanley-sujith-nelavala" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a class="btn btn-plain" href="https://github.com/consultantstanleymn" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a class="btn btn-plain" href="https://github.com/stanley-s-nelavala" target="_blank" rel="noopener noreferrer">GitHub (older work)</a></li>
       </ul>
     </section>
   </main>
 
-  <div class="cc" id="cookieBanner" role="dialog" aria-live="polite" aria-labelledby="ccTitle" hidden>
-    <div id="ccMain">
-      <h2 id="ccTitle">We value your privacy</h2>
-      <p>This site sets no cookies, runs no trackers and stores nothing in your browser. If you want cookies anyway, we have a recipe.</p>
-      <div class="cc-actions">
-        <button type="button" class="cc-primary" data-cc="recipe">Accept cookies</button>
-        <button type="button" data-cc="recipe">Manage cookies</button>
-        <button type="button" data-cc="close">Decline</button>
-      </div>
-    </div>
-    <div id="ccRecipe" hidden>
-      <h2>Your cookie preferences</h2>
-      <h3>Chocolate chip cookies (about 24)</h3>
-      <ul>
-        <li>225 g (1 cup) butter, softened</li>
-        <li>150 g (3/4 cup) brown sugar, 100 g (1/2 cup) white sugar</li>
-        <li>2 eggs and 2 tsp vanilla extract</li>
-        <li>280 g (2 1/4 cups) flour, 1 tsp baking soda, 1 tsp salt</li>
-        <li>340 g (2 cups) chocolate chips</li>
-      </ul>
-      <ol>
-        <li>Heat the oven to 190 C (375 F).</li>
-        <li>Beat the butter and both sugars until pale.</li>
-        <li>Add the eggs and vanilla. Mix well.</li>
-        <li>Stir in the flour, baking soda and salt. Fold in the chips.</li>
-        <li>Drop spoonfuls on a lined tray. Bake 9 to 11 minutes.</li>
-        <li>Cool for 5 minutes, then eat them.</li>
-      </ol>
-      <div class="cc-actions"><button type="button" class="cc-primary" data-cc="close">Done</button></div>
-    </div>
-  </div>
-
-  <footer>
-    <span>&copy; <span id="year"></span> Stanley N.</span>
+  <footer class="site">
+    <span>&copy; 2026 Stanley N.</span>
     <span>Built with dedication and ambition.</span>
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+  (function () {
+    var R = 'assets/resume/Stanley_Nelavala_Resume_';
+    var LENSES = {
+      fullstack: {
+        name: 'Full stack', skillsFor: 'full stack roles', file: 'Fullstack',
+        eyebrow: 'Full stack engineering &middot; Python &middot; React &middot; AWS',
+        h1: 'From the database to the <em>phone in your hand.</em>',
+        lede: 'Full stack engineer at a 10-person hospital operations startup: FastAPI and PostgreSQL backends, React and TypeScript web apps, and a React Native app released to iOS and Android through separate pipelines. M.S. in Computer Science (4.0 GPA) and AWS Certified Solutions Architect.',
+        proof: [['3 products', 'built end to end at work'], ['285 &rarr; 0.20 ms', 'deep catalog query (dev database)'], ['14% &rarr; 93%', 'mobile test coverage']],
+        projects: ['rxdesign', 'rxasset', 'con', 'ledui', 'agt', 'mina'],
+        skills: ['Python', 'TypeScript and React', 'FastAPI', 'PostgreSQL and SQL', 'React Native and Expo', 'Next.js', 'AWS (ECS, RDS, S3)', 'GitHub Actions CI/CD', 'Playwright and Vitest', 'Java and Spring Boot']
+      },
+      backend: {
+        name: 'Backend', skillsFor: 'backend roles', file: 'Backend',
+        eyebrow: 'Backend engineering &middot; APIs &middot; Data &middot; Correctness',
+        h1: 'Backends that stay correct when <em>retries get messy.</em>',
+        lede: 'Backend engineer who owns systems end to end. I designed the service-to-service API that every module of a hospital operations platform uses, cut a deep catalog query from 285 ms to 0.20 ms, and build public Java, Rust, C# and Python services with idempotency, outboxes and failure labs.',
+        proof: [['Every module', 'calls one service API I designed'], ['285 &rarr; 0.20 ms', 'keyset paging, row 150,000 (dev)'], ['88 tests', 'pass on two storage backends (Rust)']],
+        projects: ['rxcatalog', 'led', 'rgw', 'cds', 'agt', 'con'],
+        skills: ['Python and FastAPI', 'PostgreSQL and SQL', 'Java and Spring Boot', 'Rust (axum, tokio)', 'REST, idempotency and outbox', 'Redis', 'Kafka API (Redpanda)', 'C# and ASP.NET Core', 'Go and gRPC', 'Migrations (Alembic, Flyway)']
+      },
+      platform: {
+        name: 'Platform / SRE', skillsFor: 'platform and SRE roles', file: 'Platform',
+        eyebrow: 'Platform and reliability &middot; AWS &middot; SLOs &middot; Observability',
+        h1: 'Reliability you can <em>measure, test and roll back.</em>',
+        lede: 'Backend engineer focused on reliability. My public projects define SLIs with 28-day error budgets and promtool-tested burn-rate alerts, run scripted failure labs, roll back by image digest and size capacity with a Little’s law model. At work I cut dev and test server runtime from 168 to about 53 hours a week.',
+        proof: [['168 &rarr; 53 h', 'weekly dev and test server runtime'], ['9 modules', 'standardized upload malware scanning'], ['6 alerts', 'burn-rate rules tested with promtool']],
+        projects: ['led', 'inf', 'rgw', 'cds', 'rxasset', 'fhr'],
+        skills: ['AWS (ECS, RDS, S3, GuardDuty)', 'SLOs and burn-rate alerts', 'Prometheus and Grafana', 'OpenTelemetry and Jaeger', 'GitHub Actions CI/CD', 'Docker', 'Kubernetes (kind) and Helm', 'Terraform', 'Failure labs and canary rollback', 'k6 and Locust']
+      },
+      ai: {
+        name: 'AI', skillsFor: 'AI engineering roles', file: 'AI',
+        eyebrow: 'AI engineering &middot; Agents &middot; Evals &middot; On-device models',
+        h1: 'AI features with <em>guardrails, evals and a human in the loop.</em>',
+        lede: 'Software engineer who ships AI integrations end to end: a hospital design service with a deterministic layout engine and an LLM setting, an on-device voice assistant with no cloud call, and a public LangGraph agent platform with human approval, replay evals and failover between two LLM adapters.',
+        proof: [['62 evals', 'deterministic replay, all passing'], ['No cloud call', 'on-device voice assistant'], ['0.8636', 'macro-F1 at int8, same as fp32']],
+        projects: ['agt', 'rxdesign', 'rxasset', 'inf', 'sweethome', 'studymentor'],
+        skills: ['Python', 'LangGraph', 'MCP', 'RAG and hybrid retrieval', 'Deterministic LLM evals', 'Guardrails and PII redaction', 'PyTorch', 'ONNX Runtime (int8)', 'FastAPI', 'pgvector and PostgreSQL']
+      },
+      jpmc: {
+        name: 'JPMorganChase', skillsFor: 'Software Engineer II roles', file: 'JPMC',
+        eyebrow: 'Software engineering &middot; Java &middot; Python &middot; React &middot; AWS',
+        h1: 'Money-path services in <em>Java, C# and Python.</em>',
+        lede: 'Software engineer who builds money-path services: a public Java and Spring Boot payments ledger with idempotency, an outbox and SLOs, a React ops console, a Java QA suite with Cucumber, REST Assured, Selenium and JMeter, and a C# card dispute service. At work I build Python APIs, React apps and GitHub Actions release pipelines.',
+        proof: [['Exactly 1 winner', 'when two dispute decisions race (C#)'], ['41 + 6 tests', 'black-box API and Selenium (Java)'], ['28-day', 'error budgets with burn-rate alerts']],
+        projects: ['led', 'ledui', 'cds', 'rxcatalog', 'rxdesign', 'rxasset'],
+        skills: ['Java and Spring Boot', 'Python and FastAPI', 'React and TypeScript', 'SQL and PostgreSQL', 'AWS (ECS, RDS, S3)', 'GitHub Actions CI/CD', 'Observability (Prometheus, Grafana, OpenTelemetry)', 'Test automation (Cucumber, REST Assured, Selenium, JMeter)', 'C# and .NET', 'Kafka API (Redpanda)']
+      },
+      meta: {
+        name: 'Meta', skillsFor: 'Meta software engineer roles', file: 'Meta',
+        eyebrow: 'Backend and infrastructure &middot; Python &middot; Rust &middot; Go',
+        h1: 'Backends measured <em>before and after.</em>',
+        lede: 'Backend engineer who measures. On a 328,000-device dev database I cut a deep catalog query from 285 ms to 0.20 ms, and I designed the signed service-to-service API every platform module uses. Public Python, Rust and Go services come with tests, traces, load tests and failure labs.',
+        proof: [['285 &rarr; 0.20 ms', 'row 150,000 of 328k rows (dev)'], ['500 of 500', 'events delivered once after kill -9'], ['2 to 3 replicas', 'for a 10x peak (local benchmark)']],
+        projects: ['rxcatalog', 'rgw', 'inf', 'agt', 'rxdesign', 'led'],
+        skills: ['Python', 'Rust', 'Go', 'React and TypeScript', 'PostgreSQL and query tuning', 'Profiling (pprof) and load tests (k6, Locust)', 'Queues, idempotency and backpressure', 'gRPC', 'PyTorch and ONNX Runtime', 'OpenTelemetry tracing']
+      },
+      master: {
+        name: 'Everything', skillsFor: 'every role (full record)', file: 'Master', all: true,
+        eyebrow: 'Full record &middot; every project &middot; every tool',
+        h1: 'Everything I have built, <em>in one place.</em>',
+        lede: 'The complete version: work at a 10-person hospital operations startup, teaching, research and every public and private project, with the full tool list open below.',
+        proof: [['Every module', 'calls one service API I designed'], ['5 languages', 'Python, Java, C#, Go and Rust in public code'], ['168 &rarr; 53 h', 'weekly dev and test server runtime']],
+        projects: ['rxdesign', 'rxasset', 'rxcatalog', 'led', 'ledui', 'cds', 'agt', 'con', 'rgw', 'inf', 'fhr', 'mina', 'livedefined', 'aurelia', 'opengym', 'studymentor', 'tiktok', 'sweethome', 'finetune', 'marketpulse', 'neuralflow', 'aurora', 'tether', 'usmle', 'bulldog', 'quant'],
+        skills: ['Python', 'TypeScript and React', 'Java and Spring Boot', 'SQL and PostgreSQL', 'FastAPI', 'AWS', 'C#, Go and Rust', 'LangGraph and MCP', 'SLOs and observability', 'Test automation']
+      }
+    };
+    var ORDER = LENSES.master.projects;
+    var cards = {};
+    document.querySelectorAll('.project-card[data-id]').forEach(function (c) { cards[c.getAttribute('data-id')] = c; });
+    var projGrid = document.getElementById('projGrid');
+    var moreGrid = document.getElementById('moreGrid');
+    var more = document.getElementById('moreProjects');
+    var allTools = document.getElementById('allTools');
+    var buttons = document.querySelectorAll('.segmented button');
+    var SPECIAL = { jpmc: 1, meta: 1, master: 1 };
 
-    var header = document.getElementById('siteHeader');
-    window.addEventListener('scroll', function () {
-      header.classList.toggle('scrolled', window.scrollY > 8);
-    }, { passive: true });
+    function lensFromUrl() {
+      var p = null;
+      try { p = new URLSearchParams(window.location.search).get('lens'); } catch (e) {}
+      p = p ? p.toLowerCase() : '';
+      return Object.prototype.hasOwnProperty.call(LENSES, p) ? p : 'fullstack';
+    }
+
+    function apply(name, updateUrl) {
+      var L = LENSES[name];
+      document.documentElement.setAttribute('data-lens', name);
+      document.getElementById('lensEyebrow').innerHTML = L.eyebrow;
+      document.getElementById('lensHeadline').innerHTML = L.h1;
+      document.getElementById('lensLede').textContent = L.lede;
+      document.getElementById('lensProof').innerHTML = L.proof.map(function (p) {
+        return '<li><strong>' + p[0] + '</strong><span>' + p[1] + '</span></li>';
+      }).join('');
+      document.getElementById('skillsFor').textContent = L.skillsFor;
+      document.getElementById('topSkills').innerHTML = L.skills.map(function (s) {
+        return '<li>' + s.replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</li>';
+      }).join('');
+      var href = R + L.file + '.pdf';
+      document.querySelectorAll('.js-resume').forEach(function (a) {
+        a.setAttribute('href', href);
+        if (a.classList.contains('js-download')) a.setAttribute('download', 'Stanley_Nelavala_Resume_' + L.file + '.pdf');
+      });
+      document.querySelectorAll('.js-resume-label').forEach(function (s) { s.textContent = L.name + ' resume'; });
+
+      // Projects: prominent ones in order, the rest behind "More projects".
+      var shown = L.projects;
+      shown.forEach(function (id) { if (cards[id]) projGrid.appendChild(cards[id]); });
+      var rest = ORDER.filter(function (id) { return shown.indexOf(id) === -1; });
+      rest.forEach(function (id) { if (cards[id]) moreGrid.appendChild(cards[id]); });
+      document.getElementById('moreCount').textContent = rest.length;
+      more.classList.toggle('is-hidden', rest.length === 0);
+      if (L.all) { allTools.open = true; }
+
+      buttons.forEach(function (b) {
+        var id = b.getAttribute('data-lens');
+        b.setAttribute('aria-pressed', id === name ? 'true' : 'false');
+        if (SPECIAL[id]) b.hidden = id !== name;
+      });
+      var sc = document.querySelector('.seg-scroll');
+      var act = document.querySelector('.segmented button[data-lens="' + name + '"]');
+      if (sc && act && sc.scrollWidth > sc.clientWidth) {
+        var right = act.offsetLeft + act.offsetWidth;
+        if (right > sc.scrollLeft + sc.clientWidth || act.offsetLeft < sc.scrollLeft) sc.scrollLeft = Math.max(0, right - sc.clientWidth + 12);
+      }
+      document.title = name === 'fullstack' ? 'Stanley N. | Software Engineer' : 'Stanley N. | ' + L.name + ' | Software Engineer';
+
+      if (updateUrl && window.history && history.replaceState) {
+        var url = window.location.pathname + (name === 'fullstack' ? '' : '?lens=' + name) + window.location.hash;
+        history.replaceState(null, '', url);
+      }
+    }
+
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () { apply(b.getAttribute('data-lens'), true); });
+    });
+    var start = lensFromUrl();
+    var raw = null;
+    try { raw = new URLSearchParams(window.location.search).get('lens'); } catch (e) {}
+    apply(start, raw !== null && (raw.toLowerCase() !== start));
 
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0, rootMargin: "0px 0px -6% 0px" });
-      document.querySelectorAll('.reveal').forEach(function (el) { observer.observe(el); });
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -6% 0px' });
+      document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
     } else {
       document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
     }
-
-    // ---- Study Guides side dock: fade/slide in shortly after load ----
-    (function () {
-      var dock = document.getElementById('studyDock');
-      if (!dock) return;
-      window.setTimeout(function () { dock.classList.add('is-visible'); }, 500);
-    })();
-
-    // ---- Hero ASCII-portrait background: load + subtle 3D mouse-parallax tilt ----
-    (function () {
-      var pre = document.getElementById('asciiPortrait');
-      var heroBg = document.querySelector('.hero-bg');
-      var heroSection = document.getElementById('heroSection');
-      if (!pre || !heroBg || !heroSection) return;
-
-      fetch('assets/ascii-portrait.txt')
-        .then(function (r) { return r.ok ? r.text() : ''; })
-        .then(function (txt) { if (txt) pre.textContent = txt; })
-        .catch(function () {});
-
-      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduceMotion || !window.matchMedia('(hover: hover)').matches) return;
-
-      var targetX = 0, targetY = 0, curX = 0, curY = 0, raf = null;
-      var MAX_TILT = 7;
-
-      function loop() {
-        curX += (targetX - curX) * 0.06;
-        curY += (targetY - curY) * 0.06;
-        heroBg.style.setProperty('--tilt-x', curY.toFixed(2) + 'deg');
-        heroBg.style.setProperty('--tilt-y', curX.toFixed(2) + 'deg');
-        raf = requestAnimationFrame(loop);
-      }
-
-      heroSection.addEventListener('mousemove', function (e) {
-        var rect = heroSection.getBoundingClientRect();
-        var px = (e.clientX - rect.left) / rect.width - 0.5;
-        var py = (e.clientY - rect.top) / rect.height - 0.5;
-        targetX = px * MAX_TILT * 2;
-        targetY = -py * MAX_TILT;
-        if (!raf) raf = requestAnimationFrame(loop);
-      }, { passive: true });
-
-      heroSection.addEventListener('mouseleave', function () {
-        targetX = 0; targetY = 0;
-      }, { passive: true });
-    })();
-    // ---- Cookie banner (joke): no cookies, no storage; shows on each load ----
-    (function () {
-      var b = document.getElementById('cookieBanner');
-      if (!b) return;
-      b.hidden = false;
-      window.setTimeout(function () { b.classList.add('is-visible'); }, 800);
-      b.addEventListener('click', function (e) {
-        var a = e.target.getAttribute && e.target.getAttribute('data-cc');
-        if (a === 'recipe') {
-          document.getElementById('ccMain').hidden = true;
-          document.getElementById('ccRecipe').hidden = false;
-        } else if (a === 'close') {
-          b.classList.remove('is-visible');
-          window.setTimeout(function () { b.hidden = true; }, 400);
-        }
-      });
-    })();
+  })();
   </script>
 </body>
 </html>
